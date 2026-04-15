@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 export const useMenuStore = create((set, get) => ({
-
+  //HA MED IMMER? UNDERLÄTTAR FÖR MUTERING
   menu: [],
 
   // 1. INIT (replace full list from API)
@@ -31,6 +31,7 @@ export const useMenuStore = create((set, get) => ({
     })),
 
   // OPTIONAL: get an item with id as key
+  //Användbar för att skapa cart beställningen
   getItemById: (id) => {
     return get().menu.find((item) => item.id === id);
   },

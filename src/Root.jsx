@@ -1,9 +1,4 @@
-
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
 import { NavLink, Outlet } from 'react-router'
-import './styles/index.css'
 
 export default function App() {
 

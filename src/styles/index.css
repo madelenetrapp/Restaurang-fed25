@@ -1,25 +1,15 @@
 @import './header.css';
-
+@import 'buttons.css';
 /* Alla imports här är globala */
 
 :root {
-  --text: #9ca3af;
-  --text-h: #f3f4f6;
-  --bg: #16171d;
-  --border: #2e303a;
-  --code-bg: #1f2028;
-  --accent: #c084fc;
-  --accent-bg: rgba(192, 132, 252, 0.15);
-  --accent-border: rgba(192, 132, 252, 0.5);
-  --social-bg: rgba(47, 48, 58, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
+  /* Alla färger, styleguide stuff! */
+
+  /* Byt ut mot bestämd font! */
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
-
-
 }
 
 *,
@@ -29,6 +19,7 @@
 }
 
 html {
+  /* Använd bestämd default size! */
   font-size: 18px;
   scroll-behavior: smooth;
 }
@@ -38,7 +29,6 @@ body {
   font-family: var(--sans);
   line-height: 1.45;
   letter-spacing: 0.18px;
-  color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -48,7 +38,7 @@ body {
 }
 
 #root {
-  /* margin: 0 auto; */
+  /* small viewport height */
   min-height: 100svh;
   width: 100%;
   display: flex;
