@@ -1,202 +1,101 @@
 
 //TS definition
 {
-  id: string
-  name: string
+  name: string //DETTA ANVÄNDS SOM IDENTIFIER/ID/Key
   type: string
+  // type kan vara ===
+  // starter | main | dessert | dip | drink | Ny valfri.
 
   price: number
+  //Innehåller inte strängen SEK så den måste läggas till vid rendering.
 
-  ingredients: lista med strängar
+  ingredients: //Om ifall att... extra arbete xD
 
-  tags: extra instanceof
-    description:
+  description: // paragraf om matens innehåll. Bör vara lockade för kunder.
+
+  tags: {
+    //vegan: true / false
+    //glutenfri: true / false
+    //spicy: 0, 1, 2 eller 3 (0 är inte, 1 är lite, 2 är lagom, 3 är mycket)
+  }
 }
 
 
 
 export const menu = [
   {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
+    name: "Vitlöksbröd",
+    type: "starter",
 
-    price: 49, // SEK
+    price: 49,
 
-    ingredients: ["vetemjöl", "vitlök", "smör"],
+    description: "Rostat vitlöksbröd med örtsmör",
+    // ingredients: ["vetemjöl", "vitlök", "smör"],
 
     tags: {
       vegan: false,
       glutenFree: false,
-      spicy: {
-        state: false,
-        amount: ""
-      } //lite | medium | mycket
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
+      spicy: 0
+    }
   },
   {
-    // id: "starter-1",
-    name: "Cheeze Sticks", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
+    name: "Cheeze Sticks",
+    type: "starter",
 
-    price: 56, // SEK
+    price: 56,
 
-    ingredients: ["ost", "sesamfrön", "vetemjöl", "kryddor", "ägg", "panko", "olja"],
+    description: "Friterade brödpinnar med ost",
 
     tags: {
       vegan: false,
       glutenFree: false,
-      spicy: {
-        state: false,
-        amount: ""
-      } //lite | medium | mycket
-    },
-
-    description: "Friterade brödpinnar med ost"
+      spicy: 0
+    }
   },
   {
-    // id: "starter-1",
-    name: "Buffalo wings", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
+    name: "Buffalo wings",
+    type: "starter",
 
-    price: 62, // SEK
+    price: 62,
 
-    ingredients: ["kyckling", "vitlök", "kryddor", "tomatpure", "olja", "vitvinsvinäger", "honung", "tabasco", "worcestershiresås"],
+    description: "Honungs griljerade kyckling vingar med celleri och bluecheese dip",
+    // ingredients: ["kyckling", "vitlök", "kryddor", "tomatpure", "olja", "vitvinsvinäger", "honung", "tabasco", "worcestershiresås"],
 
     tags: {
       vegan: false,
       glutenFree: false,
-      spicy: {
-        state: true,
-        amount: "medium"
-      } //lite | medium | mycket
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
+      spicy: 2
+    }
   },
   {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
+    name: "Andreas spicy smashed burger",
+    type: "main",
 
-    price: 49, // SEK
+    price: 298,
 
-    ingredients: ["bröd", "vitlök", "smör"],
+    description: "Denna heta börgare är fullpackad med jalapeños, caramelisared lök, tryffelmajo i ett nybakat och rostat brioche bröd.",
+    // ingredients: tbh?
 
     tags: {
       vegan: false,
       glutenFree: false,
-      spicy: {
-        state: false,
-        amount: ""
-      } //lite | medium | mycket | inte-alls
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
+      spicy: 3
+    }
+  },
   {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
+    name: "",
+    type: "",
 
-    price: 49, // SEK
+    price: ,
 
-    ingredients: ["bröd", "vitlök", "smör"],
-
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
-  {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
-
-    price: 49, // SEK
-
-    ingredients: ["bröd", "vitlök", "smör"],
+    description: "",
+    // ingredients: tbh?
 
     tags: {
       vegan: false,
       glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
-  {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
-
-    price: 49, // SEK
-
-    ingredients: ["bröd", "vitlök", "smör"],
-
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
-  {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
-
-    price: 49, // SEK
-
-    ingredients: ["bröd", "vitlök", "smör"],
-
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
-  {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
-
-    price: 49, // SEK
-
-    ingredients: ["bröd", "vitlök", "smör"],
-
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
-  {
-    // id: "starter-1",
-    name: "Vitlöksbröd", //eller använd name som id?
-    type: "starter", // starter | main | dessert | dip | drink
-
-    price: 49, // SEK
-
-    ingredients: ["bröd", "vitlök", "smör"],
-
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: false
-    },
-
-    description: "Rostat vitlöksbröd med örtsmör"
-  }
+      spicy: 0
+    }
+  },
 
 ]
