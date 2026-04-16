@@ -81,20 +81,82 @@ export const menuList = [
       spicy: 3
     }
   },
-  // {
-  //   name: "",
-  //   type: "",
+  {
+    name: "Green Ember Vegan Burger",
+    type: "Main",
 
-  //   price: ,
+    price: 210,
 
-  //   description: "",
-  //   // ingredients: tbh?
+    description: "Antoninas’ plant-based patty with a perfectly seared crust, layered with dairy-free cheese and a vibrant, slightly spicy herb dressing. Served in a toasted bun with fresh, crisp toppings – a modern, flavor-driven vegan option with depth and balance",
 
-  //   tags: {
-  //     vegan: false,
-  //     glutenFree: false,
-  //     spicy: 0
-  //   }
-  // },
+
+    tags: {
+      vegan: true,
+      glutenFree: false,
+      spicy: 2
+    }
+  },
+
+  {
+    name: "Golden Herb Chicken Burger",
+    type: "Main",
+
+    price: 267,
+
+    description: "Maddes’ tender, juicy chicken fillet, perfectly seasoned and grilled to a golden finish, layered with melted cheese and a delicate herb-infused dressing. Served in a toasted brioche bun with crisp, fresh toppings – a refined balance of flavor and texture.",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+  {
+    name: "Midnight Reserve Beef Burger",
+    type: "Main",
+
+    price: 298,
+
+    description: "Valentinos’ premium beef patty, expertly smashed and seared for a deep caramelized crust, layered with aged cheese and a rich, savory house dressing. Served in a toasted brioche bun with carefully selected toppings – a bold yet refined expression of the classic beef burger.",
+
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 1
+    }
+  },
+
+  {
+    name: "Signature Prime Beef Burger",
+    type: "Main",
+
+    price: 298,
+
+    description: "Henriks’ a finely ground prime beef patty, seared to a rich, caramelized finish and layered with melted aged cheese. Finished with a smooth, house-crafted dressing and served in a lightly toasted brioche bun with crisp, balanced toppings – a modern, elevated take on the classic burger.",
+
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+  {
+    name: " Pure Craft Gluten-Free Burger",
+    type: "Main",
+
+    price: 298,
+
+    description: "Arnors’ a premium beef patty, expertly seared for a rich caramelized crust and layered with melted cheese. Served in a soft gluten-free bun with fresh, carefully selected toppings and a refined house dressing – a balanced, full-flavor experience without compromise.",
+
+
+    tags: {
+      vegan: false,
+      glutenFree: true,
+      spicy: 0
+    }
+  },
 
 ]
