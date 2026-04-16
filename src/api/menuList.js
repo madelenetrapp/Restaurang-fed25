@@ -1,35 +1,34 @@
 
 //TS definition
 {
-  name: string //DETTA ANVÄNDS SOM IDENTIFIER/ID/Key
-  type: string
+  // name: string //DETTA ANVÄNDS SOM IDENTIFIER/ID/Key
+  // type: string
   // type kan vara ===
-  // starter | main | dessert | dip | drink | Ny valfri.
+  // Starter | Main | dessert | dip | drink | Ny valfri.
 
-  price: number
+  // price: number
   //Innehåller inte strängen SEK så den måste läggas till vid rendering.
 
-  ingredients: //Om ifall att... extra arbete xD
+  // ingredients: //Om ifall att... extra arbete xD
 
-  description: // paragraf om matens innehåll. Bör vara lockade för kunder.
+  // description: // paragraf om matens innehåll. Bör vara lockade för kunder.
 
-  tags: {
-    //vegan: true / false
-    //glutenfri: true / false
-    //spicy: 0, 1, 2 eller 3 (0 är inte, 1 är lite, 2 är lagom, 3 är mycket)
-  }
+  // tags: {
+  //vegan: true / false
+  //glutenfri: true / false
+  //spicy: 0, 1, 2 eller 3 (0 är inte, 1 är lite, 2 är lagom, 3 är mycket)
 }
 
 
 
-export const menu = [
+export const menuList = [
   {
     name: "Vitlöksbröd",
-    type: "starter",
+    type: "Starter",
 
     price: 49,
 
-    description: "Rostat vitlöksbröd med örtsmör",
+    description: "Toasted garlic bread with a golden surface, generously brushed with herb butter on fresh parsley, garlic and a hint of lemon.",
     // ingredients: ["vetemjöl", "vitlök", "smör"],
 
     tags: {
@@ -40,11 +39,11 @@ export const menu = [
   },
   {
     name: "Cheeze Sticks",
-    type: "starter",
+    type: "Starter",
 
     price: 56,
 
-    description: "Friterade brödpinnar med ost",
+    description: "Crispy fried breadsticks filled with melted cheese, golden on the outside and wonderfully creamy on the inside. Served piping hot – perfect for sharing (or not)",
 
     tags: {
       vegan: false,
@@ -54,11 +53,11 @@ export const menu = [
   },
   {
     name: "Buffalo wings",
-    type: "starter",
+    type: "Starter",
 
     price: 62,
 
-    description: "Honungs griljerade kyckling vingar med celleri och bluecheese dip",
+    description: "Chicken wings glazed with honey and hot buffalo sauce, grilled to a perfectly caramelized surface. Served with crispy celery and a creamy blue cheese dip that balances heat and sweetness.",
     // ingredients: ["kyckling", "vitlök", "kryddor", "tomatpure", "olja", "vitvinsvinäger", "honung", "tabasco", "worcestershiresås"],
 
     tags: {
@@ -68,12 +67,12 @@ export const menu = [
     }
   },
   {
-    name: "Andreas spicy smashed burger",
-    type: "main",
+    name: "Spicy Smashed Burger",
+    type: "Main",
 
     price: 298,
 
-    description: "Denna heta börgare är fullpackad med jalapeños, caramelisared lök, tryffelmajo i ett nybakat och rostat brioche bröd.",
+    description: "Juicy premium burger made from freshly ground prime rib, grilled to a perfectly caramelized surface and topped with aged cheese. Served in a lightly toasted brioche bun with carefully selected toppings and the house's signature dressing - a balanced and elegant interpretation of a modern classic.",
     // ingredients: tbh?
 
     tags: {
@@ -82,20 +81,20 @@ export const menu = [
       spicy: 3
     }
   },
-  {
-    name: "",
-    type: "",
+  // {
+  //   name: "",
+  //   type: "",
 
-    price: ,
+  //   price: ,
 
-    description: "",
-    // ingredients: tbh?
+  //   description: "",
+  //   // ingredients: tbh?
 
-    tags: {
-      vegan: false,
-      glutenFree: false,
-      spicy: 0
-    }
-  },
+  //   tags: {
+  //     vegan: false,
+  //     glutenFree: false,
+  //     spicy: 0
+  //   }
+  // },
 
 ]
