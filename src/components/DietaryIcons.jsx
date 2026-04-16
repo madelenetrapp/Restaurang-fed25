@@ -1,0 +1,15 @@
+export default function DietaryIcons({ tags }) {
+
+  return (
+    <>
+      {tags.glutenFree &&
+        <img src="" alt="Gluten free"></img>}
+
+      {tags.vegan && <img src="" alt="Vegan"></img>}
+
+      {[...Array(tags.spicy || 0)].map((_, i) => (
+        <img key={i} src="/chili.png" alt="Chili icon" />
+      ))}
+    </>
+  )
+}
