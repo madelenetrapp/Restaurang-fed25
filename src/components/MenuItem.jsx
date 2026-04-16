@@ -20,7 +20,7 @@ export default function MenuItem({ item }) {
       {item.tags.vegan && <img src="" alt="Vegan"></img>
       }
 
-      <DietaryIcons />
+      {/* <DietaryIcons /> */}
 
       {/* {
         item.spicy
