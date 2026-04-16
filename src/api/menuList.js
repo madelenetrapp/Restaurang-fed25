@@ -81,12 +81,12 @@ export const menuList = [
   },
   {
     name: "Green Ember Vegan Burger",
-    type: "main",
+    type: "Main",
 
     price: 210,
 
     description: "Antoninas’ plant-based patty with a perfectly seared crust, layered with dairy-free cheese and a vibrant, slightly spicy herb dressing. Served in a toasted bun with fresh, crisp toppings – a modern, flavor-driven vegan option with depth and balance",
-   
+
 
     tags: {
       vegan: true,
@@ -95,9 +95,9 @@ export const menuList = [
     }
   },
 
-    {
+  {
     name: "Golden Herb Chicken Burger",
-    type: "main",
+    type: "Main",
 
     price: 267,
 
@@ -109,9 +109,9 @@ export const menuList = [
       spicy: 0
     }
   },
-    {
+  {
     name: "Midnight Reserve Beef Burger",
-    type: "main",
+    type: "Main",
 
     price: 298,
 
@@ -125,9 +125,9 @@ export const menuList = [
     }
   },
 
-      {
+  {
     name: "Signature Prime Beef Burger",
-    type: "main",
+    type: "Main",
 
     price: 298,
 
@@ -141,9 +141,9 @@ export const menuList = [
     }
   },
 
-        {
+  {
     name: " Pure Craft Gluten-Free Burger",
-    type: "main",
+    type: "Main",
 
     price: 298,
 
