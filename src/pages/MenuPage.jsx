@@ -5,54 +5,25 @@ import { Fragment } from 'react'
 export default function MenuPage() {
 
   //TODO byt från att använda menuList till att använda menu i menuStore
-  const menuTypes = ["Starter", "Main"]
+  // const menuTypes = ["Starter", "Main"]
+  const menuTypeOrder = ["Starter", "Main", "Dessert"];
 
-  // const starters = menuList.filter(s => s.type === "Starter")
-  // const mains = menuList.filter(s => s.type === "Main")
-  // const desserts = menuList.filter(s => s.type === "Dessert")
-
-
-  // const groupedMenuList = menuList.reduce((newList, item) => {
-  //   if (!newList[item.type]) {
-  //     newList[item.type] = []
-  //   }
-  //   newList[item.type].push(item)
-  //   return newList
-  // }, {})
-
-  // const types = Object.keys(groupedMenuList)
-
+  const menuTypes = menuTypeOrder.filter(type =>
+    menuList.some(item => item.type === type)
+  );
   return (
     <>
       <h1 className='menu-header'>Menu</h1>
 
       {menuTypes.map(type => (
-
         <Fragment key={type} >
           <h1 className='category-header'> {type} </h1>
 
           {menuList.filter(s => s.type === type).map(item => (
-            <MenuItem key={item.name} item={item}></MenuItem>
+            <MenuItem key={item.name} item={item} />
           ))}
-
         </Fragment>
-
-
       ))}
-
-
-
-      {/* {types.map(type => (
-        <div className='type-of-card-container' key={type}>
-          <h1 className='category-header'> {type} </h1>
-
-          {groupedMenuList[type].map(item => (
-            <MenuItem item={item}></MenuItem>
-          ))}
-        </div >
-      ))
-      } */}
     </>
-
   )
 }
