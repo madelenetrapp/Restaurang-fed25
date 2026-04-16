@@ -6,10 +6,22 @@
 
   /* Alla färger, styleguide stuff! */
 
+  --primary-text-col: #F0DDC6;
+  --primary-buttons-col: #8B3C00;
+  --primary-background-col: #141111;
+  --card-highlight-col: #574E43;
+  --red-accent-light: #3E0001;
+  --red-accent-dark: #240000;
+
+  --red-gradient: linear-gradient(135deg, var(--red-accent-light), var(--red-accent-dark));
+
+  --text-style-pro: 'Zen Antique';
+  --text-style-artistic: 'inconsolata';
+
   /* Byt ut mot bestämd font! */
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* --sans: system-ui, 'Segoe UI' */
+  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
+  /* --mono: ui-monospace, Consolas, monospace; */
 }
 
 *,
