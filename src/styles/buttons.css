@@ -1,0 +1,10 @@
+.navlink-button {
+  background: var(--buttons-col);
+  width: 140px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 22px;
+}

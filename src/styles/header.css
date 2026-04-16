@@ -1,3 +1,81 @@
-p {
-  font-size: 2em;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100svw;
+    height: 200px;
+    background-image:
+      linear-gradient(var(--red-accent-light-opacity),
+        var(--red-accent-dark-opacity)),
+      url('../assets/dark-brown-wood-texture-background-with-design-space.jpg');
+    background-repeat: repeat;
+    /* background-size: cover;
+    background-position: center; */
+  }
 }
+
+.header-adjuster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0px, 4vw, 70px);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(15px, 3vw, 30px)
+}
+
+.header-navlink-logo {
+  display: flex;
+}
+
+.header-logo {
+  height: clamp(150px, 30vw, 200px);
+}
+
+@media (max-width: 450px) {
+  .header-navlink-logo {
+    justify-content: center;
+    align-items: center;
+  }
+
+  header {
+    flex-direction: column;
+
+    &:before {
+      height: 320px;
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+
+@media (min-width: 1400px) {
+  header {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 650px) {
+  .header-adjuster {
+    flex-direction: column-reverse;
+  }
+}
+
+/* .phone-number {
+  text- text-align: center;
+} */

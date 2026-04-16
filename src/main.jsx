@@ -12,4 +12,3 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={projectRouter} />
   </StrictMode>
 )
-//  Valentino är här!

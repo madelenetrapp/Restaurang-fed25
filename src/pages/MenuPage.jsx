@@ -1,8 +1,12 @@
 import { menuList } from '../api/menuList.js'
 import MenuItem from '../components/MenuItem.jsx'
 import { Fragment } from 'react'
+import DebugOverlay from '../debug/DebugOverlay.jsx';
 
 export default function MenuPage() {
+
+
+
 
   //TODO byt från att använda menuList till att använda menu i menuStore
   // const menuTypes = ["Starter", "Main"]
@@ -12,7 +16,9 @@ export default function MenuPage() {
     menuList.some(item => item.type === type)
   );
   return (
+
     <>
+      <DebugOverlay></DebugOverlay>
       <h1 className='menu-header'>Menu</h1>
 
       {menuTypes.map(type => (
