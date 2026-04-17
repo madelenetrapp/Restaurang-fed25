@@ -21,7 +21,7 @@ export default function MenuPage() {
       <h1>Menu</h1>
       <div className='grid-box'>
         {menuTypes.map(type => (
-          <div key={type} >
+          <div key={type} className='type-box' >
 
             <h2> {type} </h2>
             {menuList.filter(s => s.type === type).map(item => (

@@ -1,0 +1,40 @@
+.header-img:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1000;
+  height: 200px;
+
+  background-image:
+    linear-gradient(var(--red-accent-light-opacity),
+      var(--red-accent-dark-opacity)),
+    url('../assets/dark-brown-wood-texture-background-with-design-space.jpg');
+  background-repeat: repeat;
+
+  @media (max-width: 450px) {
+    height: 320px;
+  }
+}
+
+.footer-img:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* top: 0;
+	left: 50%;
+	transform: translateX(-50%); */
+
+  height: 400px;
+  width: 9dvw;
+
+  z-index: -1;
+
+  background-image:
+    linear-gradient(var(--red-accent-dark-opacity), var(--red-accent-light-opacity)),
+    url('../assets/dark-brown-wood-texture-background-with-design-space.jpg');
+
+  background-repeat: repeat;
+
+  /* &:before {} */
+}

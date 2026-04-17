@@ -4,11 +4,12 @@ import logo from "../assets/lyan-footer.webp";
 export default function Footer() {
   const navLinkClass =
     (base) =>
-    ({ isActive }) =>
-      isActive ? `${base} active` : base;
+      ({ isActive }) =>
+        isActive ? `${base} active` : base;
 
   return (
-    <footer className="footer">
+    <footer>
+      <div className='footer-background'></div>
       {/* Logo */}
       <img className="footer-logo" src={logo} alt="Lyan logo" />
 
