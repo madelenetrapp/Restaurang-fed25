@@ -1,6 +1,8 @@
 @import './header.css';
 @import './buttons.css';
 @import './debug.css';
+@import './pages.css';
+@import './menu.css';
 /* Alla imports här är globala */
 
 :root {
@@ -24,19 +26,14 @@
   --font-style-pro: 'Zen Antique', serif;
   --font-style-artistic: 'inconsolata', monospace;
 
-  /* Byt ut mot bestämd font! */
-  /* --sans: system-ui, 'Segoe UI' */
-  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
-  /* --mono: ui-monospace, Consolas, monospace; */
-
-  --font-size-menu-header: 44px;
+  --font-size-page-header: 50px;
   --font-size-card-header: 20px;
-  --font-size-phone: 16px;
+  --font-size-phone: 20px;
   --font-size-card-text: 12px;
   --font-size-p: 12px;
   --font-size-price: 16px;
   --font-size-footer: 15px;
-  --font-size-button: 20px;
+  --font-size-button: 22px;
 
   --letter-spacing-card-text: 0.04em;
   --letter-spacing-price: 0.04em;
@@ -78,51 +75,50 @@ body {
   background-color: var(--primary-background-col);
 }
 
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
 h1,
 h2 {
-  font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  margin: 10px 0;
+
+  @media (max-width: 450px) {
+    text-align: center;
+  }
 }
 
 h1 {
-  font-size: 56px;
+  font-size: var(--font-size-page-header);
   letter-spacing: -1.68px;
-  margin: 32px 0;
-
-  /* @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  } */
+  margin-bottom: 30px;
 }
 
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
-  margin: 0 0 8px;
+  background: var(--red-accent-light);
+  height: 40px;
+  text-align: center;
+  padding-top: 3px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+}
 
-  /* @media (max-width: 1024px) {
-    font-size: 20px;
-  } */
+h3 {
+  margin: 0
 }
 
 p {
   font-family: var(--font-style-artistic);
   color: var(--text-col);
-  /* font-size: 16px; */
 }
 
 main {
   flex: 1;
+  margin: 0 30px;
+
+  @media (max-width: 450px) {
+    margin: 0;
+  }
 }
 
 img {

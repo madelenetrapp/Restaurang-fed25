@@ -19,17 +19,18 @@ export default function MenuPage() {
 
     <>
       <DebugOverlay></DebugOverlay>
-      <h1 className='menu-header'>Menu</h1>
+      <h1>Menu</h1>
+      <div className='grid-box'>
+        {menuTypes.map(type => (
+          <div key={type} >
 
-      {menuTypes.map(type => (
-        <Fragment key={type} >
-          <h1 className='category-header'> {type} </h1>
-
-          {menuList.filter(s => s.type === type).map(item => (
-            <MenuItem key={item.name} item={item} />
-          ))}
-        </Fragment>
-      ))}
+            <h2> {type} </h2>
+            {menuList.filter(s => s.type === type).map(item => (
+              <MenuItem key={item.name} item={item} />
+            ))}
+          </div>
+        ))}
+      </div>
     </>
   )
 }
