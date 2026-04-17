@@ -13,7 +13,7 @@ export default function Header() {
         <img className="header-logo" src="./src/assets/lyan-header.webp" alt="test" />
       </NavLink>
 
-      <div className='header-adjuster'>
+      <div className='phone-and-nav-box'>
         <p>0123 456 789</p>
         <nav className='header-nav'>
           <NavLink to='/menu' className={navLinkClass("navlink-button")}>Menu</NavLink>
