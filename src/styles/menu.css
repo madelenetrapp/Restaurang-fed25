@@ -2,15 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(0px, 4vw, 100px);
+  justify-items: center;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-
   }
 }
 
 .card-container {
-
   background: var(--red-gradient);
   font-family: var(--font-style-artistic);
 
@@ -49,11 +48,6 @@
   /* debug visual (remove later) */
   background: rgba(0, 0, 0, 0);
 
-}
-
-.item-name-and-icons {
-  /* display: flex; */
-  /* justify-content: space-around; */
 }
 
 .item-name {

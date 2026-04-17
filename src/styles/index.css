@@ -1,7 +1,13 @@
-@import './header.css';
-@import './buttons.css';
 @import './debug.css';
+<<<<<<< Updated upstream
 @import './pages.css';
+=======
+@import './overlays.css';
+@import './header.css';
+@import './footer.css';
+@import './pages.css';
+@import './buttons.css';
+>>>>>>> Stashed changes
 @import './menu.css';
 /* Alla imports här är globala */
 
@@ -51,6 +57,8 @@ html {
   /* Använd bestämd default size! */
   font-size: 18px;
   scroll-behavior: smooth;
+  /* overflow-x: clip; */
+  /* safety net */
 }
 
 body {
@@ -89,6 +97,12 @@ h1 {
   font-size: var(--font-size-page-header);
   letter-spacing: -1.68px;
   margin-bottom: 30px;
+  margin-left: clamp(0px, 10vw, 60px);
+
+  @media (max-width: 900px) {
+    text-align: center;
+    margin-left: 0;
+  }
 }
 
 h2 {
@@ -115,6 +129,7 @@ p {
 main {
   flex: 1;
   margin: 0 30px;
+  min-height: 53svh;
 
   @media (max-width: 450px) {
     margin: 0;
@@ -137,7 +152,15 @@ button {
 }
 
 .app {
-  max-width: 1100px;
-  margin: 0 auto;
   padding: 0 16px;
+<<<<<<< Updated upstream
+=======
+  min-height: 100vh;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1100px;
+  min-width: none;
+>>>>>>> Stashed changes
 }
