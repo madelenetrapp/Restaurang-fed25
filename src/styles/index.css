@@ -28,6 +28,20 @@
   /* --sans: system-ui, 'Segoe UI' */
   /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
   /* --mono: ui-monospace, Consolas, monospace; */
+
+  --font-size-menu-header: 44px;
+  --font-size-card-header: 20px;
+  --font-size-phone: 16px;
+  --font-size-card-text: 12px;
+  --font-size-p: 12px;
+  --font-size-price: 16px;
+  --font-size-footer: 15px;
+  --font-size-button: 20px;
+
+  --letter-spacing-card-text: 0.04em;
+  --letter-spacing-price: 0.04em;
+  --letter-spacing-phone: 0em;
+  --letter-spacing-p: 0.04em;
 }
 
 *,
