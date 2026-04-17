@@ -1,5 +1,12 @@
-.card-header {
-  font-size: var(--font-size-card-header);
+.grid-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0px, 4vw, 100px);
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+
+  }
 }
 
 .card-container {
@@ -7,6 +14,7 @@
   background: var(--red-gradient);
   font-family: var(--font-style-artistic);
 
+  position: relative;
   max-width: 400px;
   padding: 15px 20px;
   border-radius: 20px;
@@ -14,10 +22,48 @@
   margin: 30px 0;
 }
 
-/* .grid-box {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(0px, 7vw, 1000px);
+.card-header {
+  font-size: var(--font-size-card-header);
+}
 
+.bread-text-area {
+  position: relative;
+}
 
-} */
+.remove-shape {
+  float: right;
+  width: 120px;
+  height: 120px;
+
+  /* shape */
+  shape-outside: ellipse(50% 10%);
+  clip-path: ellipse(50% 50%);
+
+  /* positioning */
+  margin-left: 0px;
+  margin-bottom: 10px;
+
+  /* move it visually to bottom-right */
+  margin-top: 250px;
+
+  /* debug visual (remove later) */
+  background: rgba(0, 0, 0, 0);
+
+}
+
+.item-name-and-icons {
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
+
+.item-name {
+  /* min-width: 100%; */
+  /* min-width: 34ch; */
+  max-width: 25ch;
+}
+
+.dietary-icons {
+  position: absolute;
+  display: flex;
+  right: 0;
+}

@@ -1,6 +1,5 @@
 import { menuList } from '../api/menuList.js'
 import MenuItem from '../components/MenuItem.jsx'
-import { Fragment } from 'react'
 import DebugOverlay from '../debug/DebugOverlay.jsx';
 
 export default function MenuPage() {
