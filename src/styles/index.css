@@ -1,6 +1,8 @@
 @import './header.css';
 @import './buttons.css';
 @import './debug.css';
+@import './loginpage.css';
+
 /* Alla imports här är globala */
 
 :root {
