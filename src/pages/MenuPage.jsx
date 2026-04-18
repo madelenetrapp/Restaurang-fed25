@@ -1,6 +1,8 @@
-import { menuList } from '../api/menuList.js'
+// import { menuList } from '../api/menuList.js'
 import MenuItem from '../components/MenuItem.jsx'
 import DebugOverlay from '../debug/DebugOverlay.jsx';
+// import { useInitMenu } from '../hooks/useInitMenu.js';
+import { useLoaderData } from 'react-router';
 
 export default function MenuPage() {
 
@@ -8,12 +10,15 @@ export default function MenuPage() {
 
 
   //TODO byt från att använda menuList till att använda menu i menuStore
-  // const menuTypes = ["Starter", "Main"]
+
   const menuTypeOrder = ["Starter", "Main", "Dessert"];
 
+
+  const menuList = useLoaderData()
+
   const menuTypes = menuTypeOrder.filter(type =>
-    menuList.some(item => item.type === type)
-  );
+    menuList.some(item => item.type === type));
+
   return (
 
     <>
