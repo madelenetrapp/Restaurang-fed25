@@ -14,7 +14,6 @@ async function loadMenu() {
     return [];
   }
 }
-export { loadMenu }
 
 async function saveMenu() {
   try {
@@ -29,14 +28,14 @@ async function saveMenu() {
         value: menuList             //value beror på vad api säger!
       })
     })
-     console.log("save ok:", response.ok);
+    console.log("save ok:", response.ok);
     return response.ok
   } catch (error) {
     console.error("Kunde inte spara:", error);
     return false;
   }
 }
-export { saveMenu }
+export { saveMenu, loadMenu }
 
 
 // Detta är ett exempel:
