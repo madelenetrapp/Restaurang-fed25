@@ -3,16 +3,35 @@ header {
   align-items: center;
   justify-content: space-around;
   height: 200px;
+  margin-bottom: 50px;
 
   @media (max-width: 450px) {
     flex-direction: column;
-    margin-bottom: 110px;
-
+    margin-bottom: 150px;
   }
 
   p {
     font-size: var(--font-size-phone);
     margin: 0;
+    letter-spacing: var(--letter-spacing-phone);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1000;
+    height: 200px;
+
+    background-image:
+      linear-gradient(var(--red-accent-light-opacity),
+        var(--red-accent-dark-opacity)),
+      url('../assets/dark-brown-wood-texture-background-with-design-space.jpg');
+    background-repeat: repeat;
+
+    @media (max-width: 450px) {
+      height: 320px;
+    }
   }
 }
 

@@ -1,12 +1,9 @@
 @import './debug.css';
 @import './pages.css';
-@import './overlays.css';
 @import './header.css';
 @import './footer.css';
-@import './pages.css';
 @import './buttons.css';
 @import './menu.css';
-@import './footer.css';
 /* Alla imports här är globala */
 
 :root {
@@ -31,42 +28,38 @@
   --font-style-artistic: 'inconsolata', monospace;
 
   --font-size-page-header: 50px;
-  --font-size-card-header: 20px;
-  --font-size-phone: 20px;
-  --font-size-card-text: 12px;
-  --font-size-p: 12px;
-  --font-size-price: 16px;
-  --font-size-footer: 15px;
-  --font-size-button: 22px;
+  --font-size-category-header: 30px;
+  --font-size-card-header: 24px;
+  --font-size-phone: 24px;
+  --font-size-p: 20px;
+  --font-size-price: 22px;
+  --font-size-button: 24px;
 
-  --letter-spacing-card-text: 0.04em;
-  --letter-spacing-price: 0.04em;
-  --letter-spacing-phone: 0em;
-  --letter-spacing-p: 0.04em;
+  --font-size-footer: 20px;
+
+  --letter-spacing-card-text: 4%;
+  --letter-spacing-price: 4%;
+  --letter-spacing-phone: 0;
+  --letter-spacing-p: 4%;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
-  /* Använd bestämd default size! */
-  font-size: 18px;
   scroll-behavior: smooth;
   /* overflow-x: clip; */
   /* safety net */
 }
 
 body {
-  margin: 0;
   font-family: var(--font-style-pro);
-  line-height: 1.45;
-  letter-spacing: 0.18px;
   color: var(--text-col);
   background: var(--bg-col);
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -81,21 +74,28 @@ body {
   background-color: var(--primary-background-col);
 }
 
-h1,
-h2 {
-  font-weight: 500;
-  margin: 10px 0;
+.app {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  min-height: 53svh;
+  max-width: 1100px;
+  margin: 0 auto;
 
   @media (max-width: 450px) {
-    text-align: center;
+    margin: 0;
   }
 }
 
 h1 {
+  font-family: var(--font-style-pro);
   font-size: var(--font-size-page-header);
-  letter-spacing: -1.68px;
-  margin-bottom: 30px;
+  font-weight: normal;
+
   margin-left: clamp(0px, 10vw, 60px);
+  margin-bottom: 20px;
 
   @media (max-width: 900px) {
     text-align: center;
@@ -104,34 +104,30 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
+  font-size: var(--font-size-category-header);
   background: var(--red-accent-light);
-  height: 40px;
+  font-family: var(--font-style-pro);
+  font-weight: normal;
+  height: 50px;
   text-align: center;
-  padding-top: 3px;
   border-radius: 10px;
   box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
 }
 
 h3 {
-  margin: 0;
+  font-family: var(--font-style-artistic);
+  margin-bottom: 0;
+  font-size: var(--font-size-card-header);
+  font-weight: bolder;
+  margin-bottom: 20px;
 }
 
 p {
   font-family: var(--font-style-artistic);
   color: var(--text-col);
-}
-
-main {
-  flex: 1;
-  margin: 0 30px;
-  min-height: 53svh;
-
-  @media (max-width: 450px) {
-    margin: 0;
-  }
+  font-size: var(--font-size-p);
+  letter-spacing: var(--letter-spacing-card-text);
+  font-weight: 500;
 }
 
 img {
@@ -144,19 +140,10 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+nav {
+  font-weight: bold;
+  font-size: var(--font-size-button);
   font: inherit;
   color: inherit;
-}
-
-.app {
-  padding: 0 16px;
-  min-height: 100vh;
-}
-
-main {
-  margin: 0 auto;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
 }

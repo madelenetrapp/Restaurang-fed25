@@ -1,14 +1,14 @@
-// import { debugSettings } from './debugSettings.js'
+import { debugSettings } from './debugSettings.js'
 
 export default function DebugOverlay({ opacityOverride }) {
 
 
 
   return (
-    // debugSettings.debug && debugSettings.menuPage ?
-    <div className='debug-overlay'>
-      <img className='debug-img' data-debug={opacityOverride ?? ''} src='./src/assets/mobileMenuDebug.png' />
-    </div>
+    debugSettings.debug & debugSettings.menuPage === true ?
+      <div className='debug-overlay'>
+        <img className='debug-img' data-debug={opacityOverride ?? ''} src='./src/assets/mobileMenuDebug.png' />
+      </div> : ''
 
     //medium
 
