@@ -9,7 +9,6 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className='footer-background'></div>
       {/* Logo */}
       <img className="footer-logo" src={logo} alt="Lyan logo" />
 
