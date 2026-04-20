@@ -1,4 +1,4 @@
-export default function LoginInput({ id, label, type, placeholder, value, onChange, error, onKeyDown }) {
+export default function LoginInput({ id, label, type, value, onChange, error, onKeyDown }) {
 
 	//TODO ta bort placeholder
 
@@ -8,7 +8,6 @@ export default function LoginInput({ id, label, type, placeholder, value, onChan
 			<input
 				type={type}
 				id={id}
-				placeholder={placeholder}
 				className={`login-input ${error ? 'input-error' : ''}`}
 				value={value}
 				onChange={onChange}
