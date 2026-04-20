@@ -11,19 +11,28 @@ export const cartStore = create(
     // 2. ADD ITEM
     addToCart: (item) => {
       set(s => {
-        if (!s.cart.find(i => i.name === item.name)) {
-          s.cart.push(item) 
-        //   Add price to total price
-        totalPrice = totalPrice + item.price 
+        const existing = s.cart.find(i => i.name === item.name);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            s.cart.push({...item, quantity: 1 });
         }
-      })
+        s.totalPrice += item.price;
+      });
     },
 
     // 3. REMOVE ITEM
     removeItem: (name) => {
         set(s => {
-            // Remove price from total price
-            s.cart = s.cart.filter((item) => item.name !== name)
+            const existing = s.cart.find(i => i.name === name);
+            if (!existing) return;
+
+            if (existing.quantity > 1) {
+                existing.quantity -= 1;
+            } else {
+                s.cart = s.cart.filter(i => i.name !== name);
+            }
+            s.totalPrice -= existing.price
     })
     },
 
@@ -35,3 +44,7 @@ export const cartStore = create(
     }
   }))
 )
+
+// getItemByName: (name) => {
+//     return get().cart.find(item => item.name === name);
+// }
