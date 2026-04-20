@@ -1,9 +1,16 @@
+import { cartStore } from '../store/cartStore.js'
 import DietaryIcons from './DietaryIcons.jsx'
 
 export default function MenuItem({ item }) {
 
+  const { addToCart } = cartStore()
+
+  const add = () => {
+    addToCart(item)
+  }
+
   return (
-    <div className="card-container" key={item.name}>
+    <div className="card-container" key={item.name} onClick={add}>
       <div className='item-name-and-icons'>
         <DietaryIcons tags={item.tags} />
         <h3 className="card-header">{item.name}</h3>

@@ -3,21 +3,12 @@ import MenuItem from '../components/MenuItem.jsx'
 import DebugOverlay from '../debug/DebugOverlay.jsx';
 // import { useInitMenu } from '../hooks/useInitMenu.js';
 import { useLoaderData } from 'react-router';
+import { useTypeSort } from '../hooks/useTypeSort.js';
 
 export default function MenuPage() {
 
-
-
-
-  //TODO byt från att använda menuList till att använda menu i menuStore
-
-  const menuTypeOrder = ["Starter", "Main", "Dessert"];
-
-
-  const menuList = useLoaderData()
-
-  const menuTypes = menuTypeOrder.filter(type =>
-    menuList.some(item => item.type === type));
+  const menu = useLoaderData()
+  const menuTypes = useTypeSort(menu)
 
   return (
 
@@ -29,7 +20,7 @@ export default function MenuPage() {
           <div key={type} className='type-box' >
 
             <h2> {type} </h2>
-            {menuList.filter(s => s.type === type).map(item => (
+            {menu.filter(s => s.type === type).map(item => (
               <MenuItem key={item.name} item={item} />
             ))}
           </div>
