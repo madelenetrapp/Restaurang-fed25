@@ -22,7 +22,7 @@ export default function MenuPage() {
   return (
 
     <>
-      <DebugOverlay></DebugOverlay>
+      <DebugOverlay />
       <h1>Menu</h1>
       <div className='grid-box'>
         {menuTypes.map(type => (

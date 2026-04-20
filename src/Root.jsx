@@ -21,6 +21,7 @@ export default function App() {
           : (<Outlet />)
         }
       </main>
+      {/* TODO ta bort footer i cart page? */}
       <Footer />
     </div>
 
