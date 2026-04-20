@@ -5,6 +5,7 @@ import { menuStore } from '../store/menuStore.js'
 export async function menuLoader() {
 
   await new Promise(r => setTimeout(r, 800)) // 👈 force delay
+  //TODO remove setTimeout or possibly move it into only happening during API fetching
 
   const state = menuStore.getState()
 
