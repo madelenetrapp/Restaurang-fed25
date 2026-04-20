@@ -9,9 +9,10 @@ footer {
   padding: 130px 20px 40px;
 
   text-align: center;
-  height: 600px;
+  min-height: 600px;
 
-  /* width: 100%; */
+  gap:20px;
+
   &:before {
     content: "";
     position: absolute;
@@ -31,7 +32,7 @@ footer {
 
   /* LOGO  */
 .footer-logo {
-  height: clamp(150px, 30vw, 300px);
+  height: clamp(200px, 30vw, 300px);
 
   position: absolute;
   top: 10%;
@@ -41,11 +42,6 @@ footer {
 
 /* TEXT GROUPS */
 
-	.footer-address,
-	.footer-contact {
-	margin-bottom: 20px;
-	}
-
 	.footer-address p,
 	.footer-contact p {
 	margin: 4px 0;
@@ -54,7 +50,7 @@ footer {
 
 	/* ADMIN LINK */
 	.footer-admin {
-	/* margin-top: 10px; */
+
 	cursor: pointer;
 	opacity: 0.8;
 	}
@@ -68,9 +64,11 @@ footer {
   footer {
     padding: 240px 30px 40px;
 
-	  .footer-admin{
+	.navlink-button {
 		margin-top: 20px;
-	}
+	  }
+
+
   }
 }
 
@@ -81,6 +79,7 @@ footer {
     justify-content: space-between;
     padding: 150px 40px 40px;
 	height: 500px;
+	min-height: 360px;
 
 	.footer-address,
 	.footer-contact,
