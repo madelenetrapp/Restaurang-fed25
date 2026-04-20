@@ -22,6 +22,7 @@
 	box-shadow:0 0 12px 0.5px var(--text-col);
 	text-align: center;
 	margin: 1em;
+	font-family: var(--font-style-pro);
 }
 .login-input{
 	background-color: #111;
@@ -30,6 +31,7 @@
 	padding: 10px 14px;
 	font-size: 16px;
 	color: var(--text-col);
+	font-family: var(--font-style-pro);
 }
 .input-error{
 	border-color:#e05555;
@@ -40,6 +42,7 @@
 	border-radius: 4px;
 	font-size: 17px;
 	margin: 0;
+	font-family: var(--font-style-pro);
 }
 .login-btn{
 	background-color: var(--red-accent-light);

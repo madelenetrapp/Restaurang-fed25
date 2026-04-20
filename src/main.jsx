@@ -4,6 +4,10 @@ import { createHashRouter } from 'react-router'
 import { RouterProvider } from 'react-router'
 import { routing } from './routing/routing.js'
 import './styles/index.css'
+import { saveMenu } from "./api/api.js";
+
+saveMenu().then(console.log);
+
 //TODO: init store här?
 const projectRouter = createHashRouter(routing)
 

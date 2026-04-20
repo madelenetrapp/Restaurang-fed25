@@ -20,7 +20,6 @@
 }
 
 
-
 export const menuList = [
   {
     name: "Garlic Bread",
@@ -157,4 +156,4 @@ export const menuList = [
     }
   },
 
-]
+];
