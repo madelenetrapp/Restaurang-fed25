@@ -25,9 +25,9 @@ export const menuList = [
     name: "Garlic Bread",
     type: "Starter",
 
-    price: 49,
+    price: 90,
 
-    description: "Toasted garlic bread with a golden crust, generously brushed with herb butter made from fresh parsley, garlic, and a hint of lemon a flavorful classic elevated with wheat flour, butter, and aromatic garlic",
+    description: "Toasted garlic bread with a golden crust, brushed with herb butter of parsley, garlic, and a hint of lemon – a classic made with wheat flour, butter, and aromatic garlic",
 
     tags: {
       vegan: false,
@@ -39,9 +39,9 @@ export const menuList = [
     name: "Cheeze Sticks",
     type: "Starter",
 
-    price: 56,
+    price: 90,
 
-    description: "Crispy golden cheese sticks made from seasoned wheat flour dough, filled with rich, melted mozzarella and lightly seasoned with a touch of herbs. Crunchy on the outside, irresistibly gooey on the inside – a refined take on a classic comfort favorite",
+    description: "Crispy, golden cheese sticks made from seasoned wheat dough, filled with melted mozzarella and a hint of herbs – crunchy on the outside, soft and creamy on the inside",
 
     tags: {
       vegan: false,
@@ -53,9 +53,9 @@ export const menuList = [
     name: "Buffalo wings",
     type: "Starter",
 
-    price: 62,
+    price: 162,
 
-    description: "Honey-glazed Buffalo wings, crafted from tender chicken and infused with garlic, spices, and tomato purée. Finished with a bold blend of oil, white wine vinegar, Tabasco, Worcestershire sauce, and a touch of honey – delivering a refined balance of heat, tang, and subtle sweetness",
+    description: "Honey-glazed Buffalo wings made from tender chicken, seasoned with garlic, spices, and tomato, with a kick of Tabasco, vinegar, and a hint of sweetness",
 
     tags: {
       vegan: false,
@@ -69,7 +69,7 @@ export const menuList = [
 
     price: 298,
 
-    description: "Andreas’ Spicy Smashed Burger – a bold, flame-seared smashed patty with crispy edges, layered with melted cheese and a fiery house-made chili sauce. Served in a toasted bun with carefully selected toppings – an intense, heat-forward experience with deep, savory character",
+    description: "Andreas’ Spicy Smashed Burger – a flame-seared patty with crispy edges, melted cheese, and a bold chili sauce in a toasted bun – rich, savory, and spicy. Served with french fries and garlic aioli dip",
 
 
     tags: {
@@ -84,7 +84,7 @@ export const menuList = [
 
     price: 210,
 
-    description: "Antoninas’ plant-based patty with a perfectly seared crust, layered with dairy-free cheese and a vibrant, slightly spicy herb dressing. Served in a toasted bun with fresh, crisp toppings – a modern, flavor-driven vegan option with depth and balance",
+    description: "Antonina’s plant-based burger – a seared patty with dairy-free cheese and a light spicy herb dressing in a toasted bun – fresh, balanced, and full of flavor. Served with french fries and vegan ranch dip",
 
 
     tags: {
@@ -100,7 +100,7 @@ export const menuList = [
 
     price: 267,
 
-    description: "Maddes’ tender, juicy chicken fillet, perfectly seasoned and grilled to a golden finish, layered with melted cheese and a delicate herb-infused dressing. Served in a toasted brioche bun with crisp, fresh toppings – a refined balance of flavor and texture.",
+    description: "Maddes’ grilled chicken burger – a juicy, seasoned fillet with melted cheese and a light herb dressing in a toasted brioche bun – fresh, balanced, and flavorful. Served with french fries and honey mustard dip",
 
     tags: {
       vegan: false,
@@ -114,7 +114,7 @@ export const menuList = [
 
     price: 298,
 
-    description: "Valentinos’ premium beef patty, expertly smashed and seared for a deep caramelized crust, layered with aged cheese and a rich, savory house dressing. Served in a toasted brioche bun with carefully selected toppings – a bold yet refined expression of the classic beef burger.",
+    description: "Valentinos’ smashed beef burger – a caramelized patty with aged cheese and rich house dressing in a toasted brioche bun – bold, savory, and refined. Served with french fries and truffle mayo dip",
 
 
     tags: {
@@ -130,7 +130,7 @@ export const menuList = [
 
     price: 298,
 
-    description: "Henriks’ a finely ground prime beef patty, seared to a rich, caramelized finish and layered with melted aged cheese. Finished with a smooth, house-crafted dressing and served in a lightly toasted brioche bun with crisp, balanced toppings – a modern, elevated take on the classic burger.",
+    description: "Henriks’ prime beef burger – a seared patty with aged cheese and smooth house dressing in a toasted brioche bun – rich, balanced, and refined. Served with french fries and garlic aioli dip",
 
 
     tags: {
@@ -146,12 +146,149 @@ export const menuList = [
 
     price: 298,
 
-    description: "Arnors’ a premium beef patty, expertly seared for a rich caramelized crust and layered with melted cheese. Served in a soft gluten-free bun with fresh, carefully selected toppings and a refined house dressing – a balanced, full-flavor experience without compromise.",
+    description: "Arnors’ beef burger – a seared patty with melted cheese and house dressing in a soft gluten-free bun – rich, balanced, and full of flavor. Served with french fries and BBQ sauce dip",
 
 
     tags: {
       vegan: false,
       glutenFree: true,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Caramel Crème Brûlée",
+    type: "Dessert",
+
+    price: 125,
+
+    description: "A silky vanilla custard topped with a crisp, caramelized sugar crust – smooth, rich, and delicately sweet",
+
+    tags: {
+      vegan: true,
+      glutenFree: true,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Chocolate Mousse",
+    type: "Dessert",
+
+    price: 115,
+
+    description: "Smooth, airy chocolate dessert with a rich cocoa depth – light, creamy, and indulgent",
+
+    tags: {
+      vegan: true,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+
+  {
+    name: "Cheese Board",
+    type: "Dessert",
+
+    price: 190,
+
+    description: "Curated selection of fine cheeses served with crisp crackers and seasonal accompaniments – rich, balanced, and flavorful",
+
+    tags: {
+      vegan: true,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+
+  {
+    name: "Stigbergets Amazing Haze",
+    type: "Beer & Cider",
+
+    price: 115,
+
+    description: "(Hazy, citrus) 6.5% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Beerbliotek A Moment of Clarity",
+    type: "Beer & Cider",
+
+    price: 105,
+
+    description: "(Crisp, hoppy) 5.0% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Briska Päron",
+    type: "Beer & Cider",
+
+    price: 85,
+
+    description: "(Sweet, fruity) 4.5% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+    {
+    name: "Göteborgs Nya Fresh Lemon",
+    type: "Beer & Cider",
+
+    price: 85,
+
+    description: "(Fresh, citrus) 4.5% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Beerbliotek “404 Alcohol Not Found",
+    type: "Beer & Cider",
+
+    price: 75,
+
+    description: "(Hoppy, citrus) 0.5% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
+      spicy: 0
+    }
+  },
+
+  {
+    name: "Ahlafors Apple Cider",
+    type: "Beer & Cider",
+
+    price: 65,
+
+    description: "(Fresh, apple) 0.0% 33cl",
+
+    tags: {
+      vegan: false,
+      glutenFree: false,
       spicy: 0
     }
   },

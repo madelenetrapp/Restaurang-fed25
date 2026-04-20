@@ -11,7 +11,7 @@ export default function MenuPage() {
 
   //TODO byt från att använda menuList till att använda menu i menuStore
 
-  const menuTypeOrder = ["Starter", "Main", "Dessert"];
+  const menuTypeOrder = ["Starter", "Main", "Dessert", "Beer & Cider"];
 
 
   const menuList = useLoaderData()

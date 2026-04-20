@@ -7,10 +7,10 @@ async function loadMenu() {
   try {
     const response = await fetch(`${API_URL}?method=load&key=${KEY}`);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data ?? [];
   } catch (error) {
-    console.error("någit gick fel:", error);
+    // console.error("någit gick fel:", error);
     return [];
   }
 }
@@ -31,9 +31,11 @@ async function saveMenu() {
     console.log("save ok:", response.ok);
     return response.ok
   } catch (error) {
-    console.error("Kunde inte spara:", error);
+    // console.error("Kunde inte spara:", error);
     return false;
   }
+
+  
 }
 export { saveMenu, loadMenu }
 
