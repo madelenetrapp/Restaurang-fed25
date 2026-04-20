@@ -1,49 +1,65 @@
+@import './debug.css';
+@import './pages.css';
 @import './header.css';
-@import 'buttons.css';
+@import './footer.css';
+@import './buttons.css';
+@import './menu.css';
 /* Alla imports här är globala */
 
 :root {
 
   /* Alla färger, styleguide stuff! */
 
-  --primary-text-col: #F0DDC6;
-  --primary-buttons-col: #8B3C00;
-  --primary-background-col: #141111;
+  --text-col: #F0DDC6;
+  --buttons-col: #8B3C00;
+  --bg-col: #141111;
   --card-highlight-col: #574E43;
+
   --red-accent-light: #3E0001;
   --red-accent-dark: #240000;
 
+
+  --red-accent-light-opacity: #3e000135;
+  --red-accent-dark-opacity: #240000d5;
+
   --red-gradient: linear-gradient(135deg, var(--red-accent-light), var(--red-accent-dark));
 
-  --text-style-pro: 'Zen Antique';
-  --text-style-artistic: 'inconsolata';
+  --font-style-pro: 'Zen Antique', serif;
+  --font-style-artistic: 'inconsolata', monospace;
 
-  /* Byt ut mot bestämd font! */
-  /* --sans: system-ui, 'Segoe UI' */
-  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
-  /* --mono: ui-monospace, Consolas, monospace; */
+  --font-size-page-header: 50px;
+  --font-size-category-header: 30px;
+  --font-size-card-header: 24px;
+  --font-size-phone: 24px;
+  --font-size-p: 20px;
+  --font-size-price: 22px;
+  --font-size-button: 24px;
+
+  --font-size-footer: 20px;
+
+  --letter-spacing-card-text: 4%;
+  --letter-spacing-price: 4%;
+  --letter-spacing-phone: 0;
+  --letter-spacing-p: 4%;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
 }
 
 html {
-  /* Använd bestämd default size! */
-  font-size: 18px;
   scroll-behavior: smooth;
+  /* overflow-x: clip; */
+  /* safety net */
 }
 
 body {
-  margin: 0;
-  font-family: var(--sans);
-  line-height: 1.45;
-  letter-spacing: 0.18px;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
+  font-family: var(--font-style-pro);
+  color: var(--text-col);
+  background: var(--bg-col);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,47 +71,63 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: var(--primary-background-col);
 }
 
-p,
-h1,
-h2,
-h3,
-h4 {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-
-  /* @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  } */
-}
-
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-
-  /* @media (max-width: 1024px) {
-    font-size: 20px;
-  } */
+.app {
+  min-height: 100vh;
 }
 
 main {
   flex: 1;
+  min-height: 53svh;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  @media (max-width: 450px) {
+    margin: 0;
+  }
+}
+
+h1 {
+  font-family: var(--font-style-pro);
+  font-size: var(--font-size-page-header);
+  font-weight: normal;
+
+  margin-left: clamp(0px, 10vw, 60px);
+  margin-bottom: 20px;
+
+  @media (max-width: 900px) {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+h2 {
+  font-size: var(--font-size-category-header);
+  background: var(--red-accent-light);
+  font-family: var(--font-style-pro);
+  font-weight: normal;
+  height: 50px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+}
+
+h3 {
+  font-family: var(--font-style-artistic);
+  margin-bottom: 0;
+  font-size: var(--font-size-card-header);
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: var(--font-style-artistic);
+  color: var(--text-col);
+  font-size: var(--font-size-p);
+  letter-spacing: var(--letter-spacing-card-text);
+  font-weight: 500;
 }
 
 img {
@@ -108,13 +140,10 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+nav {
+  font-weight: bold;
+  font-size: var(--font-size-button);
   font: inherit;
   color: inherit;
-}
-
-.app {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 16px;
 }

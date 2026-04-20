@@ -1,58 +1,40 @@
-import { menuList } from '../api/menuList.js'
+// import { menuList } from '../api/menuList.js'
 import MenuItem from '../components/MenuItem.jsx'
-import { Fragment } from 'react'
+import DebugOverlay from '../debug/DebugOverlay.jsx';
+// import { useInitMenu } from '../hooks/useInitMenu.js';
+import { useLoaderData } from 'react-router';
 
 export default function MenuPage() {
 
+
+
+
   //TODO byt från att använda menuList till att använda menu i menuStore
-  const menuTypes = ["Starter", "Main"]
 
-  // const starters = menuList.filter(s => s.type === "Starter")
-  // const mains = menuList.filter(s => s.type === "Main")
-  // const desserts = menuList.filter(s => s.type === "Dessert")
+  const menuTypeOrder = ["Starter", "Main", "Dessert"];
 
 
-  // const groupedMenuList = menuList.reduce((newList, item) => {
-  //   if (!newList[item.type]) {
-  //     newList[item.type] = []
-  //   }
-  //   newList[item.type].push(item)
-  //   return newList
-  // }, {})
+  const menuList = useLoaderData()
 
-  // const types = Object.keys(groupedMenuList)
+  const menuTypes = menuTypeOrder.filter(type =>
+    menuList.some(item => item.type === type));
 
   return (
+
     <>
-      <h1 className='menu-header'>Menu</h1>
+      <DebugOverlay></DebugOverlay>
+      <h1>Menu</h1>
+      <div className='grid-box'>
+        {menuTypes.map(type => (
+          <div key={type} className='type-box' >
 
-      {menuTypes.map(type => (
-
-        <Fragment key={type} >
-          <h1 className='category-header'> {type} </h1>
-
-          {menuList.filter(s => s.type === type).map(item => (
-            <MenuItem key={item.name} item={item}></MenuItem>
-          ))}
-
-        </Fragment>
-
-
-      ))}
-
-
-
-      {/* {types.map(type => (
-        <div className='type-of-card-container' key={type}>
-          <h1 className='category-header'> {type} </h1>
-
-          {groupedMenuList[type].map(item => (
-            <MenuItem item={item}></MenuItem>
-          ))}
-        </div >
-      ))
-      } */}
+            <h2> {type} </h2>
+            {menuList.filter(s => s.type === type).map(item => (
+              <MenuItem key={item.name} item={item} />
+            ))}
+          </div>
+        ))}
+      </div>
     </>
-
   )
 }

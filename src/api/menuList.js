@@ -20,15 +20,14 @@
 }
 
 
-
 export const menuList = [
   {
-    name: "Vitlöksbröd",
+    name: "Garlic Bread",
     type: "Starter",
 
     price: 49,
 
-    description: "Toasted garlic bread with a golden crust, generously brushed with herb butter made from fresh parsley, garlic, and a hint of lemon. Crisp on the outside, soft on the inside – a flavorful classic elevated with wheat flour, butter, and aromatic garlic",
+    description: "Toasted garlic bread with a golden crust, generously brushed with herb butter made from fresh parsley, garlic, and a hint of lemon a flavorful classic elevated with wheat flour, butter, and aromatic garlic",
 
     tags: {
       vegan: false,
@@ -57,7 +56,6 @@ export const menuList = [
     price: 62,
 
     description: "Honey-glazed Buffalo wings, crafted from tender chicken and infused with garlic, spices, and tomato purée. Finished with a bold blend of oil, white wine vinegar, Tabasco, Worcestershire sauce, and a touch of honey – delivering a refined balance of heat, tang, and subtle sweetness",
-    // ingredients: ["kyckling", "vitlök", "kryddor", "tomatpure", "olja", "vitvinsvinäger", "honung", "tabasco", "worcestershiresås"],
 
     tags: {
       vegan: false,
@@ -81,13 +79,13 @@ export const menuList = [
     }
   },
   {
-    name: "Antoninas Green Ember Vegan Burger",
-    type: "main",
+    name: "Green Ember Vegan Burger",
+    type: "Main",
 
     price: 210,
 
-    description: "– a plant-based patty with a perfectly seared crust, layered with dairy-free cheese and a vibrant, slightly spicy herb dressing. Served in a toasted bun with fresh, crisp toppings – a modern, flavor-driven vegan option with depth and balance",
-   
+    description: "Antoninas’ plant-based patty with a perfectly seared crust, layered with dairy-free cheese and a vibrant, slightly spicy herb dressing. Served in a toasted bun with fresh, crisp toppings – a modern, flavor-driven vegan option with depth and balance",
+
 
     tags: {
       vegan: true,
@@ -96,14 +94,13 @@ export const menuList = [
     }
   },
 
-    {
-    name: "Maddes Golden Herb Chicken Burger",
-    type: "main",
+  {
+    name: "Golden Herb Chicken Burger",
+    type: "Main",
 
     price: 267,
 
-    description: "– a tender, juicy chicken fillet, perfectly seasoned and grilled to a golden finish, layered with melted cheese and a delicate herb-infused dressing. Served in a toasted brioche bun with crisp, fresh toppings – a refined balance of flavor and texture.",
-    // ingredients: tbh?
+    description: "Maddes’ tender, juicy chicken fillet, perfectly seasoned and grilled to a golden finish, layered with melted cheese and a delicate herb-infused dressing. Served in a toasted brioche bun with crisp, fresh toppings – a refined balance of flavor and texture.",
 
     tags: {
       vegan: false,
@@ -111,13 +108,13 @@ export const menuList = [
       spicy: 0
     }
   },
-    {
-    name: "Valentinos Midnight Reserve Beef Burger",
-    type: "main",
+  {
+    name: "Midnight Reserve Beef Burger",
+    type: "Main",
 
     price: 298,
 
-    description: "– a premium beef patty, expertly smashed and seared for a deep caramelized crust, layered with aged cheese and a rich, savory house dressing. Served in a toasted brioche bun with carefully selected toppings – a bold yet refined expression of the classic beef burger.",
+    description: "Valentinos’ premium beef patty, expertly smashed and seared for a deep caramelized crust, layered with aged cheese and a rich, savory house dressing. Served in a toasted brioche bun with carefully selected toppings – a bold yet refined expression of the classic beef burger.",
 
 
     tags: {
@@ -127,13 +124,13 @@ export const menuList = [
     }
   },
 
-      {
-    name: "Henriks Signature Prime Beef Burger",
-    type: "main",
+  {
+    name: "Signature Prime Beef Burger",
+    type: "Main",
 
     price: 298,
 
-    description: "– a finely ground prime beef patty, seared to a rich, caramelized finish and layered with melted aged cheese. Finished with a smooth, house-crafted dressing and served in a lightly toasted brioche bun with crisp, balanced toppings – a modern, elevated take on the classic burger.",
+    description: "Henriks’ a finely ground prime beef patty, seared to a rich, caramelized finish and layered with melted aged cheese. Finished with a smooth, house-crafted dressing and served in a lightly toasted brioche bun with crisp, balanced toppings – a modern, elevated take on the classic burger.",
 
 
     tags: {
@@ -143,13 +140,13 @@ export const menuList = [
     }
   },
 
-        {
-    name: "Arnors Pure Craft Gluten-Free Burger",
-    type: "main",
+  {
+    name: " Pure Craft Gluten-Free Burger",
+    type: "Main",
 
     price: 298,
 
-    description: "– a premium beef patty, expertly seared for a rich caramelized crust and layered with melted cheese. Served in a soft gluten-free bun with fresh, carefully selected toppings and a refined house dressing – a balanced, full-flavor experience without compromise.",
+    description: "Arnors’ a premium beef patty, expertly seared for a rich caramelized crust and layered with melted cheese. Served in a soft gluten-free bun with fresh, carefully selected toppings and a refined house dressing – a balanced, full-flavor experience without compromise.",
 
 
     tags: {
@@ -159,4 +156,4 @@ export const menuList = [
     }
   },
 
-]
+];
