@@ -5,6 +5,7 @@
 @import './menu.css';
 @import './login-page.css';
 @import './cart-page.css';
+@import './front-page.css';
 /* Alla imports här är globala */
 
 :root {
@@ -13,6 +14,8 @@
 
   --text-col: #F0DDC6;
   --buttons-col: #8B3C00;
+
+  --button-hover-col: #b45a16;
   --bg-col: #141111;
   --card-highlight-col: #574E43;
 

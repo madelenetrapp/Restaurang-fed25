@@ -4,6 +4,8 @@ import CartItem from '../components/CartItem.jsx'
 import { NavLink } from 'react-router'
 
 import { useState } from 'react'
+import PriceOrEmptyDisplay from '../components/PriceOrEmptyDisplay.jsx'
+import CartOverlay from '../components/CartOverlay.jsx'
 export default function CartPage() {
 
 
@@ -22,7 +24,8 @@ export default function CartPage() {
 
     <>
       {/* TODO move this out of CartPage into its own overlay component */}
-      <div className='anchor' data-show={paid ? 'displayed' : 'hidden'}>HELLO
+      <div className='anchor' data-show={paid ? 'displayed' : 'hidden'}>
+        <CartOverlay />
       </div>
 
       <div className='anchor' data-show={paid ? 'hidden' : 'displayed'}>
@@ -40,20 +43,7 @@ export default function CartPage() {
           ))}
         </div>
 
-        {cart.length !== 0
-          ? (
-            <>
-              <h1>TOTAL: {totalPrice} SEK</h1>
-              <button onClick={handlePayment}>Auto pay?</button>
-            </>
-          )
-          : (
-            <>
-              <h1> Back to Menu? </h1>
-              <NavLink to='/menu' className='navlink-button'>Menu</NavLink>
-            </>
-          )
-        }
+        <PriceOrEmptyDisplay totalPrice={totalPrice} cart={cart} handlePayment={handlePayment} />
       </div>
     </>
 

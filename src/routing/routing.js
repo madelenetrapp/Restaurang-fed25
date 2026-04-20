@@ -3,6 +3,7 @@ import FrontPage from '../pages/FrontPage.jsx'
 import MenuPage from '../pages/MenuPage.jsx'
 import CartPage from '../pages/CartPage.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
+import AdminPage from '../pages/AdminPage.jsx'
 import { menuLoader } from '../api/menuLoader.js'
 
 export const routing = [
@@ -23,7 +24,11 @@ export const routing = [
 
       { path: '/login', Component: LoginPage },
 
-      //config page? adminConfigPage?
+      {
+        path: '/admin',
+        loader: menuLoader,
+        Component: AdminPage
+      }
     ]
   }
 ]

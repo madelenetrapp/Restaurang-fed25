@@ -1,4 +1,4 @@
-import Header from './components/header.jsx'
+import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { Outlet, useNavigation } from 'react-router'
 import LoadingPage from './pages/LoadingPage.jsx'

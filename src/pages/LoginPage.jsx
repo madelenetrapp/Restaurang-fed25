@@ -1,8 +1,8 @@
 import Joi from "joi";
 import { useState } from "react";
-import { useNavigate } from "react-router";
-import { useAuthStore } from "../store/authStore";
+import { useNavigate, Navigate } from "react-router";
 import LoginInput from "../components/LoginInput";
+import { useAuthStore } from '../hooks/useAuthStore';
 
 const schema = Joi.object({
   username: Joi.string().valid('admin').required().messages({
@@ -22,8 +22,9 @@ export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({})
-  const login = useAuthStore((state) => state.login)
+  const { login, isLoggedIn } = useAuthStore()
   const navigate = useNavigate()
+
   //TODO behöver komma till admin page
 
   const handleSubmit = () => {
@@ -41,6 +42,7 @@ export default function LoginPage() {
 
   const handleKeyDown = (e) => e.key === 'Enter' && handleSubmit()
 
+  if (isLoggedIn) return <Navigate to="/admin" replace />
   return (
     <div className="login-page">
 
@@ -63,7 +65,7 @@ export default function LoginPage() {
         onKeyDown={handleKeyDown}
       />
 
-      <button className="login-btn" onClick={handleSubmit}>Log in</button>
+      <button className="button" onClick={handleSubmit}>Log in</button>
 
     </div>
   )

@@ -1,7 +1,5 @@
-// import { menuList } from '../api/menuList.js'
 import MenuItem from '../components/MenuItem.jsx'
 import DebugOverlay from '../debug/DebugOverlay.jsx';
-// import { useInitMenu } from '../hooks/useInitMenu.js';
 import { useLoaderData } from 'react-router';
 import { useTypeSort } from '../hooks/useTypeSort.js';
 
@@ -12,9 +10,12 @@ export default function MenuPage() {
 
   return (
 
-    <>
+    <div className='menu-background'>
       <DebugOverlay />
+
       <h1>Menu</h1>
+
+
       <div className='grid-box'>
         {menuTypes.map(type => (
           <div key={type} className='type-box' >
@@ -26,6 +27,6 @@ export default function MenuPage() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   )
 }
