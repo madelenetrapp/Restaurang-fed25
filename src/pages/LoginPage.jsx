@@ -9,9 +9,12 @@ const schema = Joi.object({
     'any.only': 'Wrong username',
     'string.empty': 'Username is required'
   }),
+  //TODO ska alla användarnamn vara okej? DAVID
+
   password: Joi.string().valid('mums').required().messages({
     'string.empty': 'Password is required',
     'any.only': 'Wrong password'
+    //TODO ska det vara till lower case?
   })
 })
 
@@ -21,6 +24,7 @@ export default function LoginPage() {
   const [errors, setErrors] = useState({})
   const login = useAuthStore((state) => state.login)
   const navigate = useNavigate()
+  //TODO behöver komma till admin page
 
   const handleSubmit = () => {
     const { error } = schema.validate({ username, password }, { abortEarly: false })
