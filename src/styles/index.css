@@ -1,9 +1,10 @@
 @import './debug.css';
-@import './pages.css';
 @import './header.css';
 @import './footer.css';
 @import './buttons.css';
 @import './menu.css';
+@import './login-page.css';
+@import './cart-page.css';
 /* Alla imports här är globala */
 
 :root {
@@ -103,7 +104,8 @@ h1 {
   }
 }
 
-h2 {
+h2,
+label {
   font-size: var(--font-size-category-header);
   background: var(--red-accent-light);
   font-family: var(--font-style-pro);

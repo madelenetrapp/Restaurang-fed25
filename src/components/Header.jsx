@@ -15,7 +15,7 @@ export default function Header() {
 
       <div className='phone-and-nav-box'>
         <p>0123 456 789</p>
-        <nav className='header-nav'>
+        <nav>
           <NavLink to='/menu' className={navLinkClass("navlink-button")}>Menu</NavLink>
           <NavLink to='/cart' className={navLinkClass("navlink-button")}>Cart</NavLink>
         </nav>

@@ -33,7 +33,7 @@ export default function Footer() {
       </NavLink>
 
       {/* Admin */}
-      <span className="footer-admin">Admin</span>
+      <NavLink to="/login" className="footer-admin">Admin</NavLink>
     </footer>
   );
 }
