@@ -48,7 +48,6 @@ export default function LoginPage() {
         id="username"
         label="Username"
         type="text"
-        placeholder="Enter username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         error={errors.username}
@@ -58,7 +57,6 @@ export default function LoginPage() {
         id="password"
         label="Password"
         type="password"
-        placeholder="Enter password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         error={errors.password}

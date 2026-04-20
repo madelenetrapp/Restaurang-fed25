@@ -16,15 +16,7 @@
 }
 
 .login-label {
-	/* background-color: var(--red-accent-light); */
-	/* width: 158px; */
-	/* border-radius: 4px; */
-	/* padding: 10px 14px; */
-	/* font-size: 24px; */
-	/* box-shadow:0 0 12px 0.5px var(--text-col); */
-	/* text-align: center; */
 	margin: 1em;
-	/* font-family: var(--font-style-pro); */
 }
 
 .login-input {
@@ -56,12 +48,17 @@
 	font-family: var(--font-style-pro);
 	font-weight: normal;
 	height: 50px;
+	width: 158px;
 	text-align: center;
 	border-radius: 10px;
 	box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
 	border: 0;
+	margin-top: 1em;
 
 	&:hover {
 		background-color: #9a2a2a;
+		cursor: pointer;
+		transform: scale(1.06);
+		transition: transform 0.1s ease-in-out;
 	}
 }
