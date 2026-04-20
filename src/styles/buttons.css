@@ -1,4 +1,4 @@
-.navlink-button {
+.button {
   background: var(--buttons-col);
   width: 140px;
   height: 55px;
@@ -9,4 +9,12 @@
   border-radius: 10px;
   font-size: var(--font-size-button);
   box-shadow: inset -2px -2px 4px var(--red-accent-dark-opacity);
+  border: 0;
+
+  &:hover {
+    background-color: var(--button-hover-col);
+    cursor: pointer;
+    transform: scale(1.06);
+    transition: transform 0.1s ease-in-out;
+  }
 }

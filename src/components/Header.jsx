@@ -10,14 +10,14 @@ export default function Header() {
   return (
     <header>
       <NavLink to='/' className={navLinkClass("header-navlink-logo")}>
-        <img className="header-logo" src="./src/assets/lyan-header.webp" alt="test" />
+        <img className="header-logo" src="./src/assets/lyan-header.webp" alt="logo" />
       </NavLink>
 
       <div className='phone-and-nav-box'>
         <p>0123 456 789</p>
         <nav>
-          <NavLink to='/menu' className={navLinkClass("navlink-button")}>Menu</NavLink>
-          <NavLink to='/cart' className={navLinkClass("navlink-button")}>Cart</NavLink>
+          <NavLink to='/menu' className={navLinkClass("button")}>Menu</NavLink>
+          <NavLink to='/cart' className={navLinkClass("button")}>Cart</NavLink>
         </nav>
       </div>
     </header>

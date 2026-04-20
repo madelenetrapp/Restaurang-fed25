@@ -18,9 +18,6 @@ export default function CartItem({ item }) {
       <p> {item.quantity}</p>
       <button onClick={add}>+</button>
       <button onClick={subtract}>-</button>
-
-      {/* </div> */}
-
     </div>
   )
 }

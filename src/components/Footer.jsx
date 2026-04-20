@@ -1,12 +1,18 @@
 import { NavLink } from "react-router";
 import logo from "../assets/lyan-footer.webp";
+import { useAuthStore } from '../hooks/useAuthStore';
 
 export default function Footer() {
+
+
+	const { isLoggedIn } = useAuthStore()
+
+
 	const navLinkClass =
 		(base) =>
-		({ isActive }) =>
-			isActive ? `${base} active` : base;
-
+			({ isActive }) =>
+				isActive ? `${base} active` : base;
+	//TODO do we need navLinkClass here?
 	return (
 		<footer>
 			{/* Logo */}
@@ -28,14 +34,16 @@ export default function Footer() {
 			</div>
 
 			{/* Menu */}
-			<NavLink to="/menu" className={navLinkClass("navlink-button")}>
+			<NavLink to="/menu" className={navLinkClass("button")}>
 				Menu
 			</NavLink>
 
 			{/* Admin */}
+
 			<NavLink to="/login" className="footer-admin">
-				Admin
+				{isLoggedIn ? 'admin' : 'log in'}
 			</NavLink>
+
 		</footer>
-	);
+	)
 }
