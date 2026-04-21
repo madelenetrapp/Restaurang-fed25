@@ -2,12 +2,14 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import { Outlet, useNavigation } from 'react-router'
 import LoadingPage from './pages/LoadingPage.jsx'
+import { useLocation } from 'react-router'
 
 export default function App() {
 
   const navigation = useNavigation()
-
   const isLoading = navigation.state === 'loading'
+
+  const location = useLocation();
 
   return (
 
@@ -21,8 +23,7 @@ export default function App() {
           : (<Outlet />)
         }
       </main>
-      {/* TODO ta bort footer i cart page! */}
-      <Footer />
+      {location.pathname !== '/cart' && <Footer />}
     </div>
 
   )

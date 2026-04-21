@@ -9,7 +9,7 @@ export const cartStore = create(
     totalPrice: 0,
 
     // 2. ADD ITEM
-    addToCart: (item) => {
+    addCartItem: (item) => {
       set(s => {
         const existing = s.cart.find(i => i.name === item.name);
         if (existing) {
@@ -20,13 +20,13 @@ export const cartStore = create(
         }
         s.totalPrice += item.price;
         console.log(s.cart)
-      });
+      })
     },
 
     //TODO rename to removeCartItem
 
     // 3. REMOVE ITEM
-    removeItem: (name) => {
+    removeCartItem: (name) => {
       set(s => {
         const existing = s.cart.find(i => i.name === name);
         if (!existing) return;
@@ -43,12 +43,8 @@ export const cartStore = create(
 
     // OPTIONAL: get an item with id as key
     //Användbar för att skapa cart beställningen
-    getItemByName: (name) => {
+    getCartItemByName: (name) => {
       return get().menu.find((item) => item.name === name);
     }
   }))
 )
-
-// getItemByName: (name) => {
-//     return get().cart.find(item => item.name === name);
-// }

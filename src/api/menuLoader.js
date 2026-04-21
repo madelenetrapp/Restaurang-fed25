@@ -1,29 +1,34 @@
-import { loadMenu, saveMenu } from '../api/api.js'
+import { loadMenuFromApi, saveMenuToApi } from '../api/api.js'
 import { menuList } from '../api/menuList.js'
 import { menuStore } from '../store/menuStore.js'
 
 export function delayMenuLoader() {
-  setTimeout(menuLoader, 800)
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(menuLoader())
+    }, 2000)
+  })
 }
+
 export async function menuLoader() {
 
-  const state = menuStore.getState() //rename state to store TODO
+  const store = menuStore.getState()
 
   //does zustand have a menu in store? return it
-  if (state.menu.length > 0) {
-    return state.menu
+  if (store.menu.length > 0) {
+    return store.menu
   }
 
-  const storedMenu = await loadMenu()
+  const storedMenu = await loadMenuFromApi()
 
   //does the API have a menu? save and return it
   if (storedMenu?.length) {
-    state.initMenu(storedMenu) //set menu istället för init
+    store.setMenu(storedMenu)
     return storedMenu
   }
 
   //nothing found, therefor save default in API and in store and return it.
-  saveMenu(menuList) //TODO rename to saveMenuToApi
-  state.initMenu(menuList) //TODO rename to setMenu
+  saveMenuToApi(menuList)
+  store.setMenu(menuList)
   return menuList
 }
