@@ -4,6 +4,8 @@ import { NavLink } from 'react-router'
 
 
 export default function Header() {
+
+  //TODO lägg till en kommentar här :D
   const navLinkClass = (base) => ({ isActive }) =>
     isActive ? `${base} active` : base;
 

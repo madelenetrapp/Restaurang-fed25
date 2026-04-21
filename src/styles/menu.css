@@ -10,6 +10,7 @@
 			position: absolute;
 			inset: 0;
 			justify-self: center;
+			/* TODO funker inte i firefox */
 			margin-top: 90px;
 			background-color: rgba(255, 255, 255, 0.251);
 			width: 1px;

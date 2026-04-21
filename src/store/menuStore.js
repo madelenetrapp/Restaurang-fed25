@@ -19,8 +19,8 @@ export const menuStore = create(
           s.menu.push(item)
         }
       })
-    },
-
+    }, //TODO rename to one name covention.. 
+    //TODO rename to removeMenuItem
     // 3. REMOVE ITEM
     removeItem: (name) => {
       set(s => {

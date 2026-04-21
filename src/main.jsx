@@ -6,9 +6,9 @@ import { routing } from './routing/routing.js'
 import './styles/index.css'
 import { saveMenu } from "./api/api.js";
 
+//TODO remove..? borde göras när en anställd gör en ändring
 saveMenu().then(console.log);
 
-//TODO: init store här?
 const projectRouter = createHashRouter(routing)
 
 createRoot(document.getElementById('root')).render(

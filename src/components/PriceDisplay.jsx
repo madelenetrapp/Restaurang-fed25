@@ -1,5 +1,5 @@
 import { NavLink, Navigate } from 'react-router'
-export default function PriceOrEmptyDisplay({ totalPrice, cart, handlePayment }) {
+export default function PriceDisplay({ totalPrice, cart, handlePayment }) {
 
   // if (cart.length === 0) return <Navigate to="/menu" replace />
 
