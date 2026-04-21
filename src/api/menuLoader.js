@@ -1,26 +1,34 @@
-import { loadMenu, saveMenu } from '../api/api.js'
+import { loadMenuFromApi, saveMenuToApi } from '../api/api.js'
 import { menuList } from '../api/menuList.js'
 import { menuStore } from '../store/menuStore.js'
 
+export function delayMenuLoader() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(menuLoader())
+    }, 2000)
+  })
+}
+
 export async function menuLoader() {
 
-  await new Promise(r => setTimeout(r, 800))
-  //TODO remove setTimeout or possibly move it into only happening during API fetching
+  const store = menuStore.getState()
 
-  const state = menuStore.getState()
-
-  if (state.menu.length > 0) {
-    return state.menu
+  //does zustand have a menu in store? return it
+  if (store.menu.length > 0) {
+    return store.menu
   }
 
-  const storedMenu = loadMenu()
+  const storedMenu = await loadMenuFromApi()
 
+  //does the API have a menu? save and return it
   if (storedMenu?.length) {
-    state.initMenu(storedMenu)
+    store.setMenu(storedMenu)
     return storedMenu
   }
 
-  saveMenu(menuList)
-  state.initMenu(menuList)
+  //nothing found, therefor save default in API and in store and return it.
+  saveMenuToApi(menuList)
+  store.setMenu(menuList)
   return menuList
 }

@@ -18,6 +18,8 @@ const schema = Joi.object({
   })
 })
 
+//TODO wrong username or password istället för att reagera individuellt
+//båda behöver hänga ihop... läs JOI docs.
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -64,7 +66,7 @@ export default function LoginPage() {
         error={errors.password}
         onKeyDown={handleKeyDown}
       />
-
+      {/* TODO min-height på taggen som visar felmedelandet. Knappen hoppar. */}
       <button className="button" onClick={handleSubmit}>Log in</button>
 
     </div>
