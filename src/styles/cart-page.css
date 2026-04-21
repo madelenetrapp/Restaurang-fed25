@@ -1,0 +1,15 @@
+.anchor {
+  --display-overlay: flex;
+  flex-direction: column;
+  display: var(--display-overlay);
+}
+
+
+[data-show='hidden'] {
+  --display-overlay: none;
+}
+
+[data-show='displayed'] {
+  --display-overlay: flex;
+  height: 100vh;
+}
