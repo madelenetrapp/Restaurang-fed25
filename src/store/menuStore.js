@@ -1,39 +1,45 @@
 import { create } from 'zustand';
+import { immer } from 'zustand/middleware/immer';
 
-export const useMenuStore = create((set, get) => ({
-  //HA MED IMMER? UNDERLÄTTAR FÖR MUTERING
-  menu: [],
+export const menuStore = create(
+  immer((set, get) => ({
 
-  // 1. INIT (replace full list from API)
-  initMenu: (ApiList) =>
-    set(() => ({
-      menu: ApiList
-    })),
+    // 1. SETS MENU (sets full list in store)
+    menu: [],
+    setMenu: (list) => {
+      set(s => {
+        s.menu = list
+      })
+    },
 
+    // 2. ADD ITEM
+    addMenuItem: (item) => {
+      set(s => {
+        if (!s.menu.find(i => i.name === item.name)) {
+          s.menu.push(item)
+        }
+      })
+    },
 
-  // 2. ADD ITEM
-  addToMenu: (item) =>
-    set((state) => ({
-      menu: [...state.menu, item]
-    })),
+    // 3. REMOVE ITEM
+    removeMenuItem: (name) => {
+      set(s => {
+        s.menu = s.menu.filter((item) => item.name !== name)
+      })
+    },
 
-  // 3. REMOVE ITEM
-  removeItem: (id) =>
-    set((state) => ({
-      menu: state.menu.filter((item) => item.id !== id),
-    })),
-
-  // 4. EDIT ITEM
-  editItem: (id, updatedData) =>
-    set((state) => ({
-      menu: state.menu.map((item) =>
-        item.id === id ? { ...item, ...updatedData } : item)
-    })),
-
-  // OPTIONAL: get an item with id as key
-  //Användbar för att skapa cart beställningen
-  getItemById: (id) => {
-    return get().menu.find((item) => item.id === id);
-  },
-})
+    // 4. EDIT ITEM
+    editMenuItem: (newItem) => {
+      set(s => {
+        s.menu = s.menu.map((item) =>
+          item.name === newItem.name ? newItem : item
+        )
+      })
+    },
+    // OPTIONAL: get an item with id as key
+    //Användbar för att skapa cart beställningen
+    getMenuItemByName: (name) => {
+      return get().menu.find((item) => item.name === name);
+    }
+  }))
 )

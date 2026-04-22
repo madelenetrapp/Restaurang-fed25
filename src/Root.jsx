@@ -1,24 +1,30 @@
-import { NavLink, Outlet } from 'react-router'
+import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
+import { Outlet, useNavigation } from 'react-router'
+import LoadingPage from './pages/LoadingPage.jsx'
+import { useLocation } from 'react-router'
 
 export default function App() {
 
-  const navLinkClass = (base) => ({ isActive }) =>
-    isActive ? `${base} active` : base;
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
+
+  const location = useLocation();
 
   return (
+
     <div className='app'>
-      <header className='header'>
-        <nav className='header-nav'>
-          <NavLink to='/' className={navLinkClass("header-nav-link")}> Home</NavLink>
-          {/* <div>spacer?</div> */}
-          <NavLink to='/menu' className={navLinkClass("header-nav-link")}>Menu</NavLink>
-          <NavLink to='/cart' className={navLinkClass("header-nav-link")}>Cart</NavLink>
-        </nav>
-      </header>
+      <Header />
+
 
       <main>
-        <Outlet />
+        {isLoading
+          ? (<LoadingPage />)
+          : (<Outlet />)
+        }
       </main>
+      {location.pathname !== '/cart' && <Footer />}
     </div>
+
   )
 }
