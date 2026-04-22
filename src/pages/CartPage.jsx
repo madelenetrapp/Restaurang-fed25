@@ -28,7 +28,7 @@ export default function CartPage() {
       <div className='anchor' data-show={paid ? 'hidden' : 'displayed'}>
         <h1>Cart</h1>
 
-        <div className='grid-box'>
+        <div className='cart-grid-box'>
           {menuTypes.map(type => (
             <div key={type} className='type-box' >
 
