@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useCartStore } from '../hooks/useCartStore.js'
 import { useTypeSort } from '../hooks/useTypeSort.js'
-import CartItem from '../components/CartItem.jsx'
-import PriceDisplay from '../components/PriceDisplay.jsx'
-import CartOverlay from '../components/CartOverlay.jsx'
+import CartItem from '../components/cart/CartItem.jsx'
+import PriceDisplay from '../components/cart/PriceDisplay.jsx'
+import CartOverlay from '../components/cart/CartOverlay.jsx'
 
 export default function CartPage() {
 

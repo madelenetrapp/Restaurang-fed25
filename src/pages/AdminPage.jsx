@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 import { useTypeSort } from "../hooks/useTypeSort";
 import { NavLink } from "react-router";
 import { useAuthStore } from "../hooks/useAuthStore";
-import AdminItem from "../components/AdminItem"
+import AdminMenuItem from "../components/menu/AdminMenuItem"
 import { useMenuStore } from "../hooks/useMenuStore";
 
 export default function AdminPage() {
@@ -31,7 +31,7 @@ export default function AdminPage() {
 							{menu
 								.filter((s) => s.type === type)
 								.map((item) => (
-									<AdminItem
+									<AdminMenuItem
 										key={item.name}
 										item={item}
 										removeMenuItem={removeMenuItem}

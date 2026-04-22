@@ -1,5 +1,4 @@
-import MenuItem from '../components/MenuItem.jsx'
-import DebugOverlay from '../debug/DebugOverlay.jsx';
+import MenuItem from '../components/menu/MenuItem.jsx'
 import { useLoaderData } from 'react-router';
 import { useTypeSort } from '../hooks/useTypeSort.js';
 import burger1 from '../assets/burger1.svg'
@@ -19,12 +18,7 @@ export default function MenuPage() {
         <img src={burger1} className="burger left" />
       </div>
 
-
-      <DebugOverlay />
-      {/* TODO remove debugOverlay in prod! */}
-
       <h1>Menu</h1>
-
 
       <div className='grid-box'>
         {menuTypes.map(type => (

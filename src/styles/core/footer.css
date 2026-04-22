@@ -23,7 +23,7 @@ footer {
     background-image:
       linear-gradient(var(--red-accent-dark-opacity),
         var(--red-accent-light-opacity)),
-      url("../assets/dark-brown-wood-texture-background-with-design-space.jpg");
+      url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
 
     background-repeat: repeat;
   }
@@ -45,11 +45,11 @@ footer {
     margin: 4px 0;
   }
 
-  .footer-button-and-admin{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 20px;
+  .footer-button-and-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
 
@@ -75,10 +75,10 @@ footer {
     } */
 
 
-.button-footer-desktop {
-	display:none;
+    .button-footer-desktop {
+      display: none;
 
-}
+    }
   }
 }
 
@@ -93,17 +93,14 @@ footer {
 
     .footer-address,
     .footer-contact,
-	.footer-button-and-admin
-
-
-    {
+    .footer-button-and-admin {
       margin-top: 120px;
     }
 
-	.button-footer-mobile {
-		display:none;
+    .button-footer-mobile {
+      display: none;
 
-	}
+    }
   }
 }
 
