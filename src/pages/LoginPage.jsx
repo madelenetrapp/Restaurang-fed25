@@ -59,28 +59,6 @@ export default function LoginPage() {
     {error && <p className="error-message">{error}</p>}
 
     <button className="button" onClick={handleSubmit}>Log in</button>
-{/*     
-      <LoginInput
-        id="username"
-        label="Username"
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        error={errors.username}
-      />
-
-      <LoginInput
-        id="password"
-        label="Password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        error={errors.password}
-        onKeyDown={handleKeyDown}
-      /> */}
-      {/* TODO min-height på taggen som visar felmedelandet. Knappen hoppar. */}
-      {/* <button className="button" onClick={handleSubmit}>Log in</button> */}
-
     </div>
   )
 }
