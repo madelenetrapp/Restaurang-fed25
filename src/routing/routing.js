@@ -10,7 +10,7 @@ export const routing = [
   {
     path: '/',
     Component: Root,
-
+    HydrateFallback: () => null,
     children: [
       { index: true, Component: FrontPage },
 
