@@ -53,6 +53,7 @@ footer {
   }
 
 
+
   /* ADMIN LINK */
   .footer-admin {
 
@@ -74,6 +75,10 @@ footer {
     } */
 
 
+.button-footer-desktop {
+	display:none;
+
+}
   }
 }
 
@@ -94,6 +99,11 @@ footer {
     {
       margin-top: 120px;
     }
+
+	.button-footer-mobile {
+		display:none;
+
+	}
   }
 }
 

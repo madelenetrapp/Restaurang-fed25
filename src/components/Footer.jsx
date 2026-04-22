@@ -10,6 +10,10 @@ export default function Footer() {
 			{/* Logo */}
 			<img className="footer-logo" src={logo} alt="Lyan logo" />
 
+			<NavLink to="/menu" className="button button-footer-mobile">
+				Menu
+			</NavLink>
+
 			{/* Address */}
 			<div className="footer-address">
 				<p>Sjöviksgatan 14B</p>
@@ -27,7 +31,7 @@ export default function Footer() {
 
 			<div className="footer-button-and-admin">
 				{/* Menu */}
-				<NavLink to="/menu" className="button">
+				<NavLink to="/menu" className="button button-footer-desktop">
 					Menu
 				</NavLink>
 
