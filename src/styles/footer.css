@@ -45,6 +45,13 @@ footer {
     margin: 4px 0;
   }
 
+  .footer-button-and-admin{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+  }
+
 
   /* ADMIN LINK */
   .footer-admin {
@@ -62,9 +69,9 @@ footer {
   footer {
     padding: 240px 30px 40px;
 
-    .button {
+    /* .button {
       margin-top: 20px;
-    }
+    } */
 
 
   }
@@ -81,8 +88,10 @@ footer {
 
     .footer-address,
     .footer-contact,
-    .button,
-    .footer-admin {
+	.footer-button-and-admin
+
+
+    {
       margin-top: 120px;
     }
   }
