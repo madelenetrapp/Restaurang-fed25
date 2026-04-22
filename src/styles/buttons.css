@@ -9,7 +9,6 @@
   border-radius: 10px;
   font-size: var(--font-size-button);
   box-shadow: inset -2px -2px 4px var(--red-accent-dark-opacity);
-  border: 0;
 
   &:hover {
     background-color: var(--button-hover-col);

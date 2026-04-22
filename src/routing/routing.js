@@ -4,7 +4,7 @@ import MenuPage from '../pages/MenuPage.jsx'
 import CartPage from '../pages/CartPage.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
 import AdminPage from '../pages/AdminPage.jsx'
-import { menuLoader } from '../api/menuLoader.js'
+import { delayMenuLoader } from '../api/menuLoader.js'
 
 export const routing = [
   {
@@ -16,7 +16,7 @@ export const routing = [
 
       {
         path: '/menu',
-        loader: menuLoader,
+        loader: delayMenuLoader,
         Component: MenuPage
       },
 
@@ -26,7 +26,7 @@ export const routing = [
 
       {
         path: '/admin',
-        loader: menuLoader,
+        loader: delayMenuLoader,
         Component: AdminPage
       }
     ]

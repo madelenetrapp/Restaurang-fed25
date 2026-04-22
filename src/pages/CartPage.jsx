@@ -1,29 +1,26 @@
+import { useState } from 'react'
 import { useCartStore } from '../hooks/useCartStore.js'
 import { useTypeSort } from '../hooks/useTypeSort.js'
 import CartItem from '../components/CartItem.jsx'
-import { NavLink } from 'react-router'
-
-import { useState } from 'react'
-import PriceOrEmptyDisplay from '../components/PriceOrEmptyDisplay.jsx'
+import PriceDisplay from '../components/PriceDisplay.jsx'
 import CartOverlay from '../components/CartOverlay.jsx'
-export default function CartPage() {
 
+export default function CartPage() {
 
   const { cart, totalPrice } = useCartStore()
 
   const menuTypes = useTypeSort(cart)
 
-
   const [paid, setPaid] = useState(false)
+
 
   const handlePayment = () => {
     setPaid(true)
   }
 
   return (
-
     <>
-      {/* TODO move this out of CartPage into its own overlay component */}
+      {/* Use conditional rendering instead of CSS to show overlay.. and make it into a true overlay... */}
       <div className='anchor' data-show={paid ? 'displayed' : 'hidden'}>
         <CartOverlay />
       </div>
@@ -43,7 +40,7 @@ export default function CartPage() {
           ))}
         </div>
 
-        <PriceOrEmptyDisplay totalPrice={totalPrice} cart={cart} handlePayment={handlePayment} />
+        <PriceDisplay totalPrice={totalPrice} cart={cart} handlePayment={handlePayment} />
       </div>
     </>
 
