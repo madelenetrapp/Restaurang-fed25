@@ -3,8 +3,8 @@ import DebugOverlay from '../debug/DebugOverlay.jsx';
 import { useLoaderData } from 'react-router';
 import { useTypeSort } from '../hooks/useTypeSort.js';
 import burger1 from '../assets/burger1.svg'
-import burger2 from '../assets/burger2.svg'
-import burger3 from '../assets/burger3.svg'
+// import burger2 from '../assets/burger2.svg'
+// import burger3 from '../assets/burger3.svg'
 
 export default function MenuPage() {
 
@@ -23,7 +23,6 @@ export default function MenuPage() {
       <DebugOverlay />
       {/* TODO remove debugOverlay in prod! */}
 
-      {/* NY importerar bilder placering i css */}
       <h1>Menu</h1>
 
 
