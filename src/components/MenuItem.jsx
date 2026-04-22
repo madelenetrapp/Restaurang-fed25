@@ -11,6 +11,7 @@ export default function MenuItem({ item }) {
 
   return (
     <div className="card-container" key={item.name} onClick={add}>
+      
       <div className='item-name-and-icons'>
         <DietaryIcons tags={item.tags} />
         <h3 className="card-header">{item.name}</h3>
