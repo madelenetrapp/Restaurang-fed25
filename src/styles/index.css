@@ -6,6 +6,7 @@
 @import './login-page.css';
 @import './cart-page.css';
 @import './front-page.css';
+@import './admin-page.css';
 /* Alla imports här är globala */
 
 :root {

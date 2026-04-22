@@ -98,22 +98,21 @@
 }
 
 .dietary-icons {
-	/* position: absolute;
-  right: 20px; */
-
+	position: absolute;
+	right: 20px;
+	top: 20px;
 	display: flex;
 	gap: 3px;
 
-
 	/* item-name followed by svg */
-	order: 1;
+	/* order: 1; */
 
 	/* svg sizes: */
-	.icon-vegan{
-		height: 1.4em;
+	.icon-vegan {
+		height: 1.5em;
 	}
 
-	.icon-gluten-free{
+	.icon-gluten-free {
 		height: 1.4em;
 	}
 
@@ -141,7 +140,7 @@
 }
 
 .burger.left {
-		width: 420px;
+	width: 420px;
 }
 
 /* .menu-layout-wrapper2 {
