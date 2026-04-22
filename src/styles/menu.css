@@ -102,13 +102,24 @@
   right: 20px; */
 
 	display: flex;
-	gap: 2px;
+	gap: 3px;
 
-	/* svg size: */
-	height: 16px;
 
 	/* item-name followed by svg */
 	order: 1;
+
+	/* svg sizes: */
+	.icon-vegan{
+		height: 1.4em;
+	}
+
+	.icon-gluten-free{
+		height: 1.4em;
+	}
+
+	.icon-spicy {
+		height: 1.3em;
+	}
 }
 
 .price {
