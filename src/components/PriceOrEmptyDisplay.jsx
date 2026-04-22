@@ -8,7 +8,7 @@ export default function PriceOrEmptyDisplay({ totalPrice, cart, handlePayment })
       ? (
         <>
           <h1>TOTAL: {totalPrice} SEK</h1>
-          <button className='login-btn' onClick={handlePayment}>Auto pay?</button>
+          <button className='button' onClick={handlePayment}>Auto pay?</button>
         </>
       )
       : (
