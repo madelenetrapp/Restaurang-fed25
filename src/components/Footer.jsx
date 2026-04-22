@@ -1,10 +1,9 @@
 import { NavLink } from "react-router";
 import logo from "../assets/lyan-footer.webp";
-import { useAuthStore } from '../hooks/useAuthStore';
+import { useAuthStore } from "../hooks/useAuthStore";
 
 export default function Footer() {
-
-	const { isLoggedIn } = useAuthStore()
+	const { isLoggedIn } = useAuthStore();
 
 	return (
 		<footer>
@@ -26,17 +25,18 @@ export default function Footer() {
 				<p>lyan@gmail.com</p>
 			</div>
 
-			{/* Menu */}
-			<NavLink to="/menu" className="button">
-				Menu
-			</NavLink>
+			<div className="footer-button-and-admin">
+				{/* Menu */}
+				<NavLink to="/menu" className="button">
+					Menu
+				</NavLink>
 
-			{/* Admin */}
+				{/* Admin */}
 
-			<NavLink to="/login" className="footer-admin">
-				{isLoggedIn ? 'admin' : 'log in'}
-			</NavLink>
-
+				<NavLink to="/login" className="footer-admin">
+					{isLoggedIn ? "admin" : "log in"}
+				</NavLink>
+			</div>
 		</footer>
-	)
+	);
 }
