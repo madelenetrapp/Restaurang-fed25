@@ -1,7 +1,5 @@
 export default function LoginInput({ id, label, type, value, onChange, error, onKeyDown }) {
 
-	//TODO ta bort placeholder
-
 	return (
 		<div className="login-field">
 			<label htmlFor={id} className="login-label">{label}</label>

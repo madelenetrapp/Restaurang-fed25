@@ -145,10 +145,13 @@ a {
   text-decoration: none;
 }
 
+/* inherit säger att elementen ska använda sin förräöders värden */
+
 button,
 nav {
   font-weight: bold;
   font-size: var(--font-size-button);
   font: inherit;
   color: inherit;
+  border: none;
 }

@@ -12,9 +12,9 @@ export default function MenuPage() {
 
     <div className='menu-background'>
       <DebugOverlay />
+      {/* TODO remove debugOverlay in prod! */}
 
       <h1>Menu</h1>
-
 
       <div className='grid-box'>
         {menuTypes.map(type => (

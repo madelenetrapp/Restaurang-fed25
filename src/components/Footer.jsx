@@ -4,15 +4,8 @@ import { useAuthStore } from '../hooks/useAuthStore';
 
 export default function Footer() {
 
-
 	const { isLoggedIn } = useAuthStore()
 
-
-	const navLinkClass =
-		(base) =>
-			({ isActive }) =>
-				isActive ? `${base} active` : base;
-	//TODO do we need navLinkClass here?
 	return (
 		<footer>
 			{/* Logo */}
@@ -34,7 +27,7 @@ export default function Footer() {
 			</div>
 
 			{/* Menu */}
-			<NavLink to="/menu" className={navLinkClass("button")}>
+			<NavLink to="/menu" className="button">
 				Menu
 			</NavLink>
 

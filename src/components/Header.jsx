@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router'
 
-
-
-
 export default function Header() {
+
+  // NavLinks has an ability to accept a function to resolve if a NavLink is active or not.
   const navLinkClass = (base) => ({ isActive }) =>
     isActive ? `${base} active` : base;
 

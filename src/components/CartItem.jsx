@@ -3,10 +3,10 @@ import { useCartStore } from '../hooks/useCartStore'
 export default function CartItem({ item }) {
 
 
-  const { addToCart, removeItem } = useCartStore()
+  const { addCartItem, removeCartItem } = useCartStore()
 
-  const add = () => { addToCart(item) }
-  const subtract = () => { removeItem(item.name) }
+  const add = () => { addCartItem(item) }
+  const subtract = () => { removeCartItem(item.name) }
 
   return (
     <div className="card-container" key={item.name}>
