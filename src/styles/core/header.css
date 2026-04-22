@@ -24,11 +24,9 @@ header {
 		height: 200px;
 
 		background-image:
-			linear-gradient(
-				var(--red-accent-light-opacity),
-				var(--red-accent-dark-opacity)
-			),
-			url("../assets/dark-brown-wood-texture-background-with-design-space.jpg");
+			linear-gradient(var(--red-accent-light-opacity),
+				var(--red-accent-dark-opacity)),
+			url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
 		background-repeat: repeat;
 
 		@media (max-width: 450px) {

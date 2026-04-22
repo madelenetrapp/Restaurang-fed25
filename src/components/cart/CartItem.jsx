@@ -1,4 +1,4 @@
-import { useCartStore } from '../hooks/useCartStore'
+import { useCartStore } from '../../hooks/useCartStore'
 
 export default function CartItem({ item }) {
 

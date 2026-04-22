@@ -16,7 +16,7 @@
     z-index: -2000;
     /* width: 100vw; */
     background-image:
-      url('../assets/hero.png');
+      url('../../assets/hero.png');
     background-size: cover;
     background-position: center;
     /* margin-top: 12em; */

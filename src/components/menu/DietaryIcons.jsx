@@ -1,10 +1,10 @@
-import glutenFreeIcon from '../assets/icon-gluten-free.svg';
-import veganIcon from '../assets/icon-vegan.svg';
-import spicyIcon from '../assets/icon-spicy.svg';
+import glutenFreeIcon from '../../assets/icon-gluten-free.svg';
+import veganIcon from '../../assets/icon-vegan.svg';
+import spicyIcon from '../../assets/icon-spicy.svg';
 
 export default function DietaryIcons({ tags }) {
 
-  return (
+	return (
 		<div className="dietary-icons">
 			{tags.glutenFree && (
 				<img
@@ -28,5 +28,5 @@ export default function DietaryIcons({ tags }) {
 				/>
 			))}
 		</div>
-  );
+	);
 }
