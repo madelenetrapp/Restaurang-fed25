@@ -132,3 +132,28 @@
 	align-self: flex-end;
 	white-space: nowrap;
 }
+
+.menu-layout-wrapper1 {
+	position: absolute;
+	left: -5%;
+	top: -30px;
+	transform: translateX(-50%);
+}
+
+.burger.left {
+		width: 420px;
+}
+
+/* .menu-layout-wrapper2 {
+	position: absolute;
+	left: 40%;
+	top: 320px;
+	transform: translateX(-50%);
+} */
+
+/* .menu-layout-wrapper3 {
+	position: absolute;
+	left: 40%;
+	top: 320px;
+	transform: translateX(-50%);
+} */
