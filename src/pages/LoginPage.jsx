@@ -5,7 +5,7 @@ import LoginInput from "../components/LoginInput";
 import { useAuthStore } from '../hooks/useAuthStore';
 
 const schema = Joi.object({
-  username: Joi.string().valid('admin').required(),
+  username: Joi.string().valid('admin').insensitive().required(),
   password: Joi.string().valid('mums').required()
 })
 
@@ -22,7 +22,7 @@ export default function LoginPage() {
     const { error: validationError } = schema.validate({ username, password }, { abortEarly: false })
     if (validationError) {
       const isEmpty = username === '' || password === ''
-      return setError(isEmpty ? 'Username and password is required' : 'Wrong username or password')
+      return setError(isEmpty ? 'Username and password are required' : 'Wrong username or password')
     }
     login()
     navigate('/admin')

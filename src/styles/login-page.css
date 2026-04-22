@@ -27,6 +27,16 @@
 	font-size: 16px;
 	color: var(--text-col);
 	font-family: var(--font-style-pro);
+
+	&:hover{
+		box-shadow: 0 0 5px greenyellow;
+
+	}
+
+	&:focus {
+		border-color: hotpink;
+		outline: none;
+	}
 }
 
 .input-error {
@@ -40,4 +50,9 @@
 	font-size: 17px;
 	margin: 0;
 	font-family: var(--font-style-pro);
+	text-align: center;
+
+	@media (max-width: 600px){
+		max-width: 26ch;
+	}
 }
