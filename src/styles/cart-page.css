@@ -1,9 +1,188 @@
+
+/* ── Cart layout ───────────────────────────── */
+.cart-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media (min-width: 745px) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: 1095px) {
+    padding: 0 40px;
+  }
+}
+
+.cart-grid-box {
+  column-count: 1;
+  padding: 0 10px;
+  margin-bottom: 14em;    
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+
+  @media (min-width: 745px) {
+    max-width: 700px;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 1095px) {
+    max-width: 900px;
+    padding: 0;
+  }
+}
+/* ── Cart item card ─────────────────────────── */
+.cart-card {
+  background: var(--red-gradient);
+  border-radius: 24px;
+  box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--font-style-artistic);
+  width: 100%;
+  margin: 30px 0;
+  break-inside: avoid;
+}
+
+/* top row: name + price */
+.cart-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-item-name {
+  font-size: var(--font-size-card-header);
+  font-weight: bold;
+  font-family: var(--font-style-artistic);
+}
+
+.cart-item-price {
+  font-size: var(--font-size-price);
+  font-weight: bold;
+  white-space: nowrap;
+  letter-spacing: var(--letter-spacing-price);
+}
+
+/* bottom row: − | quantity | + */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-btn {
+  background: var(--buttons-col);
+  color: var(--text-col);
+  border: none;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: inset -2px -2px 4px var(--red-accent-dark-opacity);
+
+  &:hover {
+    background-color: var(--button-hover-col);
+    transform: scale(1.06);
+    transition: transform 0.1s ease-in-out;
+  }
+
+  @media (min-width: 745px) {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+.item-quantity {
+  font-size: 16px;
+  color: var(--text-col);
+  font-family: var(--font-style-artistic);
+
+  @media (min-width: 745px) {
+    font-size: 18px;
+  }
+}
+
+/* ── Total + Pay section ────────────────────── */
+.price-display {
+  background: var(--red-accent-light);
+  border-radius: 12px;
+  padding: 14px 20px;
+  text-align: center;
+  margin: 30px 16px 50px;
+  box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+
+  @media (min-width: 745px) {
+    margin: 24px auto 0;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  @media (min-width: 1095px) {
+    max-width: 900px;
+  }
+}
+
+.total-text {
+  font-size: 26px;
+  font-family: var(--font-style-pro);
+  letter-spacing: 2px;
+
+  @media (min-width: 745px) {
+    font-size: 32px;
+  }
+}
+
+.pay-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+.button {
+  white-space: nowrap;  
+  padding: 16px 32px;    
+  font-size: 22px;      
+  border-radius: 8px; 
+}
+
+/* ── anchor / overlay ───────────────────────── */
 .anchor {
   --display-overlay: flex;
   flex-direction: column;
   display: var(--display-overlay);
+  position: relative;
+  flex: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px;
+
+  @media (min-width: 745px) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: 1095px) {
+    padding: 0;
+  }
 }
 
+.anchor h1 {
+  text-align: center;
+  margin-left: 0;
+}
 
 [data-show='hidden'] {
   --display-overlay: none;
@@ -11,5 +190,7 @@
 
 [data-show='displayed'] {
   --display-overlay: flex;
-  height: 100vh;
+  height: auto;
 }
+
+
