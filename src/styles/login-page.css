@@ -27,6 +27,16 @@
 	font-size: 16px;
 	color: var(--text-col);
 	font-family: var(--font-style-pro);
+
+	&:hover{
+		box-shadow: 0 0 5px greenyellow;
+
+	}
+
+	&:focus {
+		border-color: hotpink;
+		outline: none;
+	}
 }
 
 .input-error {
@@ -40,25 +50,9 @@
 	font-size: 17px;
 	margin: 0;
 	font-family: var(--font-style-pro);
-}
-
-/* .login-btn {
-	font-size: var(--font-size-category-header);
-	background: var(--red-accent-light);
-	font-family: var(--font-style-pro);
-	font-weight: normal;
-	height: 50px;
-	width: 158px;
 	text-align: center;
-	border-radius: 10px;
-	box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
-	border: 0;
-	margin-top: 1em; */
 
-/* &:hover {
-		background-color: #9a2a2a;
-		cursor: pointer;
-		transform: scale(1.06);
-		transition: transform 0.1s ease-in-out;
+	@media (max-width: 600px){
+		max-width: 26ch;
 	}
-} */
+}
