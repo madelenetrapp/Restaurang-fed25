@@ -29,10 +29,10 @@ export const menuStore = create(
     },
 
     // 4. EDIT ITEM
-    editMenuItem: (newItem) => {
+    editMenuItem: (originalName, newItem) => {
       set(s => {
         s.menu = s.menu.map((item) =>
-          item.name === newItem.name ? newItem : item
+          item.name === originalName ? newItem : item
         )
       })
     },
