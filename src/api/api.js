@@ -1,4 +1,4 @@
-import { menuList } from "./menuList";
+import { defaultMenuList } from "./defaultMenuList";
 
 const API_URL = 'https://forverkliga.se/JavaScript/api/jsonStore.php'
 const KEY = 'mums'
@@ -15,6 +15,14 @@ async function loadMenuFromApi() {
   }
 }
 
+
+// @Madde från Andreas. När man sparar ändrigar som admin, behöver man ha en liknande funktion eller en prop som skickas till saveMenuToApi som istället använder den.
+
+// Om man använder prop så kollar man om den är tom. Om inte använd den annars använd default.
+
+
+// Detta är alltså istället för value: defaultMenuList så använder man proppen (eller en ny funktion)
+
 async function saveMenuToApi() {
   try {
     const response = await fetch(`${API_URL}?method=save`, {
@@ -25,7 +33,7 @@ async function saveMenuToApi() {
       },
       body: JSON.stringify({
         key: KEY,
-        value: menuList
+        value: defaultMenuList
       })
     })
     console.log("save ok:", response.ok);

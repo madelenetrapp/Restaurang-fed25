@@ -25,7 +25,7 @@ export default function Footer() {
 			{/* Contact */}
 			<div className="footer-contact">
 				<p>Contact us:</p>
-				<p>070 123 45 67</p>
+				<p>0123 456 789</p>
 				<p>lyan@gmail.com</p>
 			</div>
 

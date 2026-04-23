@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { immer } from 'zustand/middleware/immer';
+import { saveMenuToApi } from '../api/api';
 
 export const menuStore = create(
   immer((set, get) => ({
@@ -40,6 +41,11 @@ export const menuStore = create(
     //Användbar för att skapa cart beställningen
     getMenuItemByName: (name) => {
       return get().menu.find((item) => item.name === name);
+    },
+
+    saveZustandMenuToApi: () => {
+      const editedMenuList = get().menu
+      saveMenuToApi(editedMenuList)
     }
   }))
 )

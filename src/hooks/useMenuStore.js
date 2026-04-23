@@ -10,6 +10,7 @@ export const useMenuStore = () => {
       removeMenuItem: s.removeMenuItem,
       editMenuItem: s.editMenuItem,
       getMenuItemByName: s.getMenuItemByName,
+      saveZustandMenuToApi: s.saveZustandMenuToApi
     }))
   )
 }
