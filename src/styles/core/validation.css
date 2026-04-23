@@ -1,0 +1,57 @@
+.label {
+  margin: 1em;
+}
+
+.input {
+  background-color: #111;
+  border: 1px solid var(--buttons-col);
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: var(--text-col);
+  font-family: var(--font-style-pro);
+
+  &:hover {
+    box-shadow: 0 0 5px var(--text-col);
+  }
+
+  &:focus {
+    border-color: var(--text-col);
+    box-shadow: 0 0 5px var(--text-col);
+    outline: none;
+  }
+}
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #111 inset;
+  -webkit-text-fill-color: var(--text-col);
+}
+
+.input-error {
+  border-color: #e05555;
+}
+
+.error-message {
+  background-color: var(--red-accent-light);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 17px;
+  margin: 0;
+  font-family: var(--font-style-pro);
+  text-align: center;
+  pointer-events: none;
+
+  @media (max-width: 600px) {
+    max-width: 26ch;
+  }
+}
+
+.error-message-admin {
+  background: rgb(5, 5, 5);
+  /* max-width: 30ch; */
+}
+
+.error-tethering {
+  min-height: 40px;
+  pointer-events: none;
+}

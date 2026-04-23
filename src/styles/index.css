@@ -1,6 +1,7 @@
 @import './core/header.css';
 @import './core/footer.css';
 @import './core/buttons.css';
+@import './core/validation.css';
 @import './pages/menu-page.css';
 @import './pages/login-page.css';
 @import './pages/cart-page.css';
@@ -98,7 +99,7 @@ h1 {
   font-size: var(--font-size-page-header);
   font-weight: normal;
 
-  margin-left: clamp(0px, 10vw, 60px);
+  text-align: center;
   margin-bottom: 20px;
 
   @media (max-width: 900px) {
@@ -154,9 +155,4 @@ nav {
   font: inherit;
   color: inherit;
   border: none;
-}
-
-.login-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px #111 inset;
-  -webkit-text-fill-color: var(--text-col);
 }

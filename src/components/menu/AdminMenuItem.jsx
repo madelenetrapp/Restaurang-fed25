@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import DietaryIcons from './DietaryIcons.jsx'
 import { useMenuStore } from '../../hooks/useMenuStore.js'
-import { validateMenuItem,checkDuplicateName } from '../../utils/validation.js'
+import EditingMenuItem from './editingMenuItem.jsx'
 
 export default function AdminMenuItem({ item }) {
 
+  const { removeMenuItem } = useMenuStore()
   const [isEditing, setIsEditing] = useState(false)
-  const [errors, setErrors] = useState({})
-
-  const { saveZustandMenuToApi, getMenuItemByName, editMenuItem, removeMenuItem } = useMenuStore()
 
   const handleRemoveItem = () => {
 
@@ -16,73 +14,15 @@ export default function AdminMenuItem({ item }) {
     // Är du säker popup? //TODO extra jobb :D
     //om ingen validering kör inline () => removeMenuItem(item.name)
     removeMenuItem(item.name)
-
-  }
-
-  const [draft, setDraft] = useState({
-    name: item.name,
-    type: item.type,
-    price: item.price,
-    description: item.description,
-    tags: { ...item.tags }
-  })
-
-  const handleSaveUpdate = () => {
-    const fieldErrors = validateMenuItem(draft)
-
-    const duplicateNameError = checkDuplicateName(draft, item, getMenuItemByName)
-    if (duplicateNameError) {
-      fieldErrors.name = duplicateNameError
-    }
-  
-      if (Object.keys(fieldErrors).length > 0) {
-        return setErrors(fieldErrors)
-  }
-
-    setErrors({})
-    setIsEditing(false)
-    editMenuItem(item.name, draft)
-    saveZustandMenuToApi()
   }
 
   return (
-    <div className="card-container" key={item.name}>
+    <div className={`card-container ${isEditing ? "card-editing-col" : ''}`} key={item.name}>
       <button className='button admin-remove' onClick={(handleRemoveItem)}>X</button>
 
-      {isEditing
-        ? <>
-          <div className='item-name-and-icons'>
-            {/* <DietaryIcons tags={item.tags} /> */}
 
-            {/* TODO dietaryEditing */}
-            <input className="login-input"
-              value={draft.name}
-              onChange={e => setDraft(prev =>
-                ({ ...prev, name: e.target.value }))}></input>
-          </div>
-
-          <div className='bread-text-area'>
-            <textarea className="description"
-              value={draft.description}
-              onChange={e => setDraft(prev =>
-                ({ ...prev, description: e.target.value }))}>
-            </textarea>
-              {errors.name && <p className='error-message'>{errors.name}</p>}
-              {errors.description && <p className='error-message'>{errors.description}</p>}
-              {errors.price && <p className='error-message'>{errors.price}</p>}
-            <div className='cost-and-edit'>
-              <button className='button edit-save-button'
-                onClick={handleSaveUpdate}>Save</button>
-              <input className="login-input"
-                value={draft.price}
-                onChange={e => setDraft(prev =>
-                  ({ ...prev, price: e.target.value })
-                )}
-              ></input>
-            </div>
-          </div>
-        </>
-        : <>
+      {isEditing ? <EditingMenuItem item={item} setIsEditing={setIsEditing} /> :
+        <>
           <div className='item-name-and-icons'>
             <DietaryIcons tags={item.tags} />
             <h3 className="h3-header">{item.name}</h3>
@@ -98,10 +38,6 @@ export default function AdminMenuItem({ item }) {
           </div>
         </>
       }
-
-
-
-
     </div >
   )
 }

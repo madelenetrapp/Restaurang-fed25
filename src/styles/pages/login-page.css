@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1.5em;
+	gap: 10px;
 	padding: 2em 1em;
 	min-height: 100svh;
 }
@@ -15,45 +15,8 @@
 	max-width: 300px;
 }
 
-.login-label {
-	margin: 1em;
-}
-
-.login-input {
-	background-color: #111;
-	border: 1px solid var(--buttons-col);
-	border-radius: 4px;
-	padding: 10px 14px;
-	font-size: 16px;
-	color: var(--text-col);
-	font-family: var(--font-style-pro);
-
-	&:hover{
-		box-shadow: 0 0 5px var(--text-col);
-
-	}
-
-	&:focus {
-		border-color: var(--text-col);
-		box-shadow: 0 0 5px var(--text-col);
-		outline: none;
-	}
-}
-
-.input-error {
-	border-color: #e05555;
-}
-
-.error-message {
-	background-color: var(--red-accent-light);
-	padding: 8px 12px;
-	border-radius: 4px;
-	font-size: 17px;
-	margin: 0;
-	font-family: var(--font-style-pro);
-	text-align: center;
-
-	@media (max-width: 600px){
-		max-width: 26ch;
-	}
-}
+/* 
+/////////////////////////////
+moved stuff to shared validation.css file inside of core.
+////////////////////////////
+*/
