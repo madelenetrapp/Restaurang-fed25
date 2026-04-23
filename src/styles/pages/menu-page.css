@@ -48,7 +48,7 @@
 }
 
 .h3-header {
-	max-width: 25ch;
+	max-width: 16ch;
 }
 
 .bread-text-area {
@@ -104,10 +104,6 @@
 	display: flex;
 	gap: 3px;
 
-	/* item-name followed by svg */
-	/* order: 1; */
-
-	/* svg sizes: */
 	.icon-vegan {
 		height: 1.5em;
 	}
@@ -120,6 +116,7 @@
 		height: 1.3em;
 	}
 }
+
 
 .price {
 	font-size: var(--font-size-price);
