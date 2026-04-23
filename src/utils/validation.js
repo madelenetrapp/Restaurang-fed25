@@ -5,6 +5,7 @@ export const menuItemSchema = Joi.object({
 	.min(3)
 	.max(30)
 	.required()
+	.trim()
 	.messages({
 		'any.required': 'Name is required',
 		'string.empty': 'Name cannot be empty',
@@ -28,6 +29,26 @@ export const menuItemSchema = Joi.object({
 	.required()
 	.messages({
 		'any.required': 'Price is required',
-		'number.positive': 'Price must be greater than 0'
+		'number.positive': 'Price must be greater than 0',
+		'number.base': 'Price must be a number'
 	})
 })
+
+export const validateMenuItem = (draft) => {
+	const { error } = menuItemSchema.validate(
+		{ name: draft.name, 
+			description: draft.description, 
+			price: draft.price },
+		{ abortEarly: false }
+	)
+		if (!error) return {}
+		return Object.fromEntries(error.details.map((d) => [d.path[0], d.message]))
+}
+
+export const checkDuplicateName = (draft, item, getMenuItemByName) => {
+	const checkName = getMenuItemByName(draft.name)
+    if (checkName && checkName.name === draft.name && draft.name !== item.name){
+    return 'A menu item with this name already exists'
+    }
+	return null
+}

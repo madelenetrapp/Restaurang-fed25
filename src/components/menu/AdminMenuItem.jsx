@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import DietaryIcons from './DietaryIcons.jsx'
 import { useMenuStore } from '../../hooks/useMenuStore.js'
+import { validateMenuItem,checkDuplicateName } from '../../utils/validation.js'
 
 export default function AdminMenuItem({ item, removeMenuItem }) {
 
   const [isEditing, setIsEditing] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const { getMenuItemByName, editMenuItem } = useMenuStore()
 
@@ -24,12 +26,18 @@ export default function AdminMenuItem({ item, removeMenuItem }) {
   })
 
   const handleSaveUpdate = () => {
+    const fieldErrors = validateMenuItem(draft)
 
-    //validering behövs här!
+    const duplicateNameError = checkDuplicateName(draft, item, getMenuItemByName)
+    if (duplicateNameError) {
+      fieldErrors.name = duplicateNameError
+    }
+  
+      if (Object.keys(fieldErrors).length > 0) {
+        return setErrors(fieldErrors)
+  }
 
-    const checkName = getMenuItemByName(draft.name) //får inte vara samma som draft.name
-    if (checkName === draft.name) return 'invalidInput'
-
+    setErrors({})
     setIsEditing(false)
     editMenuItem(item.name, draft)
   }
@@ -56,7 +64,9 @@ export default function AdminMenuItem({ item, removeMenuItem }) {
               onChange={e => setDraft(prev =>
                 ({ ...prev, description: e.target.value }))}>
             </textarea>
-
+              {errors.name && <p className='error-message'>{errors.name}</p>}
+              {errors.description && <p className='error-message'>{errors.description}</p>}
+              {errors.price && <p className='error-message'>{errors.price}</p>}
             <div className='cost-and-edit'>
               <button className='button edit-save-button'
                 onClick={handleSaveUpdate}>Save</button>

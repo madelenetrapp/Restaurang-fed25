@@ -1,13 +1,9 @@
-import Joi from "joi";
 import { useState } from "react";
 import { useNavigate, Navigate } from "react-router";
 import LoginInput from "../components/LoginInput";
 import { useAuthStore } from '../hooks/useAuthStore';
+import { loginSchema } from '../utils/loginValidation'
 
-const schema = Joi.object({
-  username: Joi.string().valid('admin').insensitive().required(),
-  password: Joi.string().valid('mums').required()
-})
 
 export default function LoginPage() {
   const [username, setUsername] = useState('')
@@ -19,7 +15,7 @@ export default function LoginPage() {
   
   const handleSubmit = () => {
     //abortEarly: false so both fields are validated even if the first one is wrong
-    const { error: validationError } = schema.validate({ username, password }, { abortEarly: false })
+    const { error: validationError } = loginSchema.validate({ username, password }, { abortEarly: false })
     if (validationError) {
       const isEmpty = username === '' || password === ''
       return setError(isEmpty ? 'Username and password are required' : 'Wrong username or password')
