@@ -2,11 +2,11 @@ export default function LoginInput({ id, label, type, value, onChange, error, on
 
 	return (
 		<div className="login-field">
-			<label htmlFor={id} className="login-label">{label}</label>
+			<label htmlFor={id} className="label">{label}</label>
 			<input
-				type={type}
 				id={id}
-				className={`login-input ${error ? 'input-error' : ''}`}
+				type={type}
+				className={`input ${error ? 'input-error' : ''}`}
 				value={value}
 				onChange={onChange}
 				onKeyDown={onKeyDown}

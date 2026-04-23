@@ -18,7 +18,7 @@ async function loadMenuFromApi() {
 
 // @Madde från Andreas. När man sparar ändrigar som admin, behöver man ha en liknande funktion eller en prop som skickas till saveMenuToApi som istället använder den.
 
-// Om man använder prop så kollar man om den är tom. Om inte använd den annars använd default.
+// Om man använder prop så kollar man om den är tom. Om inte använd den. annars default.
 
 
 // Detta är alltså istället för value: defaultMenuList så använder man proppen (eller en ny funktion)

@@ -9,7 +9,7 @@ import { NavLink } from 'react-router';
 
 export default function MenuLayout({ isAdmin }) {
 
-  const { handleLogout } = useAuthStore();
+  const { logout } = useAuthStore();
   const { menu } = useMenuStore();
   const menuTypes = useTypeSort(menu);
 
@@ -18,14 +18,14 @@ export default function MenuLayout({ isAdmin }) {
   return (
     <>
       {isAdmin
-        ? <NavLink to="/" onClick={handleLogout} className="button">Log out</NavLink>
+        ? <NavLink to="/" onClick={logout} className="button">Log out</NavLink>
         : ''}
 
 
       <img src={burgerTall} alt="" />
       <div className="menu-background">
 
-        <h1>Menu</h1>
+        <h1>{isAdmin && "Admin "}Menu</h1>
 
         <div className='grid-box'>
           {menuTypes.map(type => (
