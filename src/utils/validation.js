@@ -5,6 +5,7 @@ export const menuItemSchema = Joi.object({
 	.min(3)
 	.max(30)
 	.required()
+	.trim()
 	.messages({
 		'any.required': 'Name is required',
 		'string.empty': 'Name cannot be empty',
@@ -28,6 +29,7 @@ export const menuItemSchema = Joi.object({
 	.required()
 	.messages({
 		'any.required': 'Price is required',
-		'number.positive': 'Price must be greater than 0'
+		'number.positive': 'Price must be greater than 0',
+		'number.base': 'Price must be a number'
 	})
 })
