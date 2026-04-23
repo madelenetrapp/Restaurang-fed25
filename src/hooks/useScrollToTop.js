@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router";
 import { useNavigation } from "react-router";
 
-export default function ScrollToTop() {
+export default function useScrollToTop() {
 	const location = useLocation();
 	const navigation = useNavigation();
 

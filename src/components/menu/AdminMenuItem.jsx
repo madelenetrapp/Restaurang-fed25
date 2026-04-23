@@ -3,18 +3,20 @@ import DietaryIcons from './DietaryIcons.jsx'
 import { useMenuStore } from '../../hooks/useMenuStore.js'
 import { validateMenuItem,checkDuplicateName } from '../../utils/validation.js'
 
-export default function AdminMenuItem({ item, removeMenuItem }) {
+export default function AdminMenuItem({ item }) {
 
   const [isEditing, setIsEditing] = useState(false)
   const [errors, setErrors] = useState({})
 
-  const { getMenuItemByName, editMenuItem } = useMenuStore()
+  const { saveZustandMenuToApi, getMenuItemByName, editMenuItem, removeMenuItem } = useMenuStore()
 
   const handleRemoveItem = () => {
-    removeMenuItem(item.name)
 
     //validerings medelande att spara innan man vill ta bort?
     // Är du säker popup? //TODO extra jobb :D
+    //om ingen validering kör inline () => removeMenuItem(item.name)
+    removeMenuItem(item.name)
+
   }
 
   const [draft, setDraft] = useState({
@@ -40,11 +42,12 @@ export default function AdminMenuItem({ item, removeMenuItem }) {
     setErrors({})
     setIsEditing(false)
     editMenuItem(item.name, draft)
+    saveZustandMenuToApi()
   }
 
   return (
     <div className="card-container" key={item.name}>
-      <button className='button admin-remove' onClick={handleRemoveItem}>X</button>
+      <button className='button admin-remove' onClick={(handleRemoveItem)}>X</button>
 
       {isEditing
         ? <>
@@ -52,7 +55,7 @@ export default function AdminMenuItem({ item, removeMenuItem }) {
             {/* <DietaryIcons tags={item.tags} /> */}
 
             {/* TODO dietaryEditing */}
-            <input className="h3-header"
+            <input className="login-input"
               value={draft.name}
               onChange={e => setDraft(prev =>
                 ({ ...prev, name: e.target.value }))}></input>
@@ -70,7 +73,7 @@ export default function AdminMenuItem({ item, removeMenuItem }) {
             <div className='cost-and-edit'>
               <button className='button edit-save-button'
                 onClick={handleSaveUpdate}>Save</button>
-              <input className="price"
+              <input className="login-input"
                 value={draft.price}
                 onChange={e => setDraft(prev =>
                   ({ ...prev, price: e.target.value })

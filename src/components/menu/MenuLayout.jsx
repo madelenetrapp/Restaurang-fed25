@@ -1,0 +1,55 @@
+import { useAuthStore } from '../../hooks/useAuthStore';
+import { useMenuStore } from '../../hooks/useMenuStore';
+import { useTypeSort } from '../../hooks/useTypeSort';
+import burgerTall from '../../assets/burger-tall.png'
+import { useLoaderData } from 'react-router';
+import MenuItem from './MenuItem'
+import AdminMenuItem from './AdminMenuItem'
+import { NavLink } from 'react-router';
+
+export default function MenuLayout({ isAdmin }) {
+
+  const { handleLogout } = useAuthStore();
+  const { menu } = useMenuStore();
+  const menuTypes = useTypeSort(menu);
+
+  useLoaderData()
+
+  return (
+    <>
+      {isAdmin
+        ? <NavLink to="/" onClick={handleLogout} className="button">Log out</NavLink>
+        : ''}
+
+
+      <img src={burgerTall} alt="" />
+      <div className="menu-background">
+
+        <h1>Menu</h1>
+
+        <div className='grid-box'>
+          {menuTypes.map(type => (
+            <div key={type} className='type-box' >
+
+              <h2> {type} </h2>
+
+
+              {isAdmin
+                ? menu.filter((s) => s.type === type)
+                  .map((item) => (
+                    <AdminMenuItem
+                      key={item.name}
+                      item={item}
+                    />
+                  ))
+
+                : menu.filter(s => s.type === type).map(item => (
+                  <MenuItem key={item.name} item={item} />
+                ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  )
+}

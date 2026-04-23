@@ -20,7 +20,7 @@
 }
 
 
-export const menuList = [
+export const defaultMenuList = [
   {
     name: "Garlic Bread",
     type: "Starter",
@@ -248,7 +248,7 @@ export const menuList = [
     }
   },
 
-    {
+  {
     name: "Göteborgs Nya Fresh Lemon",
     type: "Beer & Cider",
 

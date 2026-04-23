@@ -16,7 +16,7 @@ export default function MenuItem({ item }) {
         <DietaryIcons tags={item.tags} />
         <h3 className="h3-header">{item.name}</h3>
         {/* TODO remove the testing length and when to wrap h3 element */}
-        {/* <h3 className='item-name'>T E S T I N G L E N G T H A N D W H E N T O W R A P</h3> */}
+        {/* <h3 className=''>T E S T I N G L E N G T H A N D W H E N T O W R A P</h3> */}
       </div>
 
       <div className='bread-text-area'>

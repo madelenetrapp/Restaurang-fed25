@@ -3,21 +3,24 @@ import Footer from "./components/Footer.jsx";
 import { Outlet, useNavigation } from "react-router";
 import LoadingPage from "./pages/LoadingPage.jsx";
 import { useLocation } from "react-router";
-import ScrollToTop from "./components/ScrollToTop.jsx";
+import useScrollToTop from './hooks/useScrollToTop.js';
 
 export default function App() {
 	const navigation = useNavigation();
 	const isLoading = navigation.state === "loading";
 
 	const location = useLocation();
+	useScrollToTop()
 
 	return (
 		<div className="app">
-			<ScrollToTop />
+
 			<Header />
 
 			<main>{isLoading ? <LoadingPage /> : <Outlet />}</main>
+
 			{location.pathname !== "/cart" && <Footer />}
+
 		</div>
 	);
 }
