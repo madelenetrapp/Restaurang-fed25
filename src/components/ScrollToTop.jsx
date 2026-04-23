@@ -1,17 +1,23 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
+import { useNavigation } from "react-router";
 
 export default function ScrollToTop() {
 	const location = useLocation();
+	const navigation = useNavigation();
 
+	// scroll on navigation start
 	useEffect(() => {
-		console.log("SCROLL TRIGGERED", location.pathname);
 		// window.scrollTo(0, 0);
-		window.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
-	}, [location.pathname]);
+		if (navigation.state === "loading") {
+			window.scrollTo(0, 0)
+		}
+	}, [navigation.state])
+
+	//for safety reasons: also scroll when route changes
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [location.pathname])
 
 	return null;
 }
