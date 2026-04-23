@@ -134,8 +134,8 @@
 
 .menu-layout-wrapper1 {
 	position: absolute;
-	left: 12%;
-	top: -5px;
+	left: 15%;
+	top: -20px;
 	transform: translateX(-50%);
 	/* padding-top: 0,8em; */
 }
@@ -152,8 +152,8 @@
 
 .menu-layout-wrapper2 {
 	position: absolute;
-	right: -5%;
-	top: 10px;
+	right: -7%;
+	top: -8px;
 	transform: translateX(-50%);
 	/* padding-top: 0,8em; */
 }
@@ -170,14 +170,14 @@
 
 .menu-layout-wrapper3 {
 	position: absolute;
-	left: 40%;
-	top: 1100px;
+	left: 41%;
+	top: 1075px;
 	transform: translateX(-50%);
 	/* padding-top: 0,8em; */
 }
 
 .burger.middle {
-	width: 250px;
+	width: 255px;
 }
 
 @media (max-width: 900px) {
