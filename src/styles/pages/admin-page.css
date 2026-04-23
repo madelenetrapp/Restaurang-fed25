@@ -13,3 +13,21 @@
 		opacity: 100%;
 	}
 }
+
+.edit-save-button {
+	width: 70px;
+	height: 40px;
+	padding: 0;
+	margin: 8px;
+	z-index: 100;
+	opacity: 50%;
+
+	&:hover {
+		opacity: 100%;
+	}
+}
+
+.cost-and-edit {
+	display: flex;
+	justify-content: space-between;
+}

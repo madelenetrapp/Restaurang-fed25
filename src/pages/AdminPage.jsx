@@ -36,6 +36,7 @@ export default function AdminPage() {
 										item={item}
 										removeMenuItem={removeMenuItem}
 										isLoggedIn={isLoggedIn}
+										menu={menu}
 									/>
 								))}
 						</div>
@@ -43,5 +44,5 @@ export default function AdminPage() {
 				</div>
 			</div>
 		</>
-	);
+	)
 }
