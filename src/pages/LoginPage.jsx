@@ -9,8 +9,6 @@ const schema = Joi.object({
   password: Joi.string().valid('mums').required()
 })
 
-//TODO wrong username or password istället för att reagera individuellt
-//båda behöver hänga ihop... läs JOI docs.
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -52,7 +50,6 @@ export default function LoginPage() {
       type="password"
       value={password}
       onChange={(e) => setPassword(e.target.value)}
-      
       onKeyDown={handleKeyDown}
     />
     

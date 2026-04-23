@@ -29,12 +29,13 @@
 	font-family: var(--font-style-pro);
 
 	&:hover{
-		box-shadow: 0 0 5px greenyellow;
+		box-shadow: 0 0 5px var(--text-col);
 
 	}
 
 	&:focus {
-		border-color: hotpink;
+		border-color: var(--text-col);
+		box-shadow: 0 0 5px var(--text-col);
 		outline: none;
 	}
 }
