@@ -183,6 +183,14 @@
   padding: 16px 32px;
   font-size: 22px;
   border-radius: 8px;
+  background: var(--buttons-col);
+  color: var(--text-col);
+
+  &:hover {
+	background-color: var(--button-hover-col);
+	transform: scale(1.06);
+	transition: transform 0.1s ease-in-out;
+  }
 }
 
 /* ── anchor / overlay ───────────────────────── */
