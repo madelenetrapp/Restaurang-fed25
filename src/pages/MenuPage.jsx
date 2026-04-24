@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+// import { useLoaderData } from "react-router";
 import MenuLayout from '../components/menu/MenuLayout';
 
 function MenuPage() {
