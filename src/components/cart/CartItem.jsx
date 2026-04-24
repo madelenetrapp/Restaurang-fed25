@@ -1,5 +1,7 @@
 import { useCartStore } from '../../hooks/useCartStore'
-
+import spicyIcon from '../../assets/icon-spicy.svg'
+import veganIcon from '../../assets/icon-vegan.svg'
+import glutenFreeIcon from '../../assets/icon-gluten-free.svg'
 export default function CartItem({ item }) {
 
 
@@ -8,23 +10,19 @@ export default function CartItem({ item }) {
   const add = () => { addCartItem(item) }
   const subtract = () => { removeCartItem(item.name) }
 
-  // return (
-  //   <div className="card-container" key={item.name}>
-  //     <div className='item-name-and-icons'>
-  //       <h3 className="h3-header">{item.name}</h3>
-  //       <h3 className='item-name'>T E S T I N G L E N G T H A N D W H E N T O W R A P</h3>
-  //     </div>
-  //     <p className="price"> {item.price} SEK</p>
-  //     <p> {item.quantity}</p>
-  //     <button onClick={subtract}>-</button>
-  //     <button onClick={add}>+</button>
-  //   </div>
-  // )
-
   return (
     <div className='cart-card'>
       <div className='cart-card-top'>
         <span className='cart-item-name'>{item.name}</span>
+        <div className='cart-item-right'>
+          <div className='dietary-icons'>
+             {item.tags.vegan && <img src={veganIcon} alt="vegan" />}
+            {item.tags.glutenFree && <img src={glutenFreeIcon} alt="gluten free" />}
+            {item.tags.spicy > 0 && Array.from({ length: item.tags.spicy }).map((_, i) => (
+              <img key={i} src={spicyIcon} alt="spicy" />
+            ))}
+          </div>   
+        </div>
         <span className='cart-item-price'>{item.price} SEK</span>
       </div>
       <div className='quantity-controls'>
