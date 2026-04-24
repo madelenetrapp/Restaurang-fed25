@@ -7,10 +7,10 @@ async function loadMenuFromApi() {
   try {
     const response = await fetch(`${API_URL}?method=load&key=${KEY}`);
     const data = await response.json();
-    // console.log(data);
+
     return data ?? [];
-  } catch (error) { //TODO ta bort console.logs och error i catch om de inte ens används.. @madde from Andreas
-    // console.error("någit gick fel:", error);
+  } catch (error) {
+
     return [];
   }
 }
@@ -39,7 +39,7 @@ async function saveMenuToApi() {
     console.log("save ok:", response.ok);
     return response.ok
   } catch (error) {
-    // console.error("Kunde inte spara:", error);
+
     return false;
   }
 
