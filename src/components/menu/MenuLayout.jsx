@@ -1,8 +1,8 @@
 import { useAuthStore } from '../../hooks/useAuthStore';
 import { useMenuStore } from '../../hooks/useMenuStore';
 import { useTypeSort } from '../../hooks/useTypeSort';
-import burgerTall from '../../assets/burger-tall.png'
-import { useLoaderData } from 'react-router';
+import burgerTallRight from '../../assets/burger-tall.png'
+import burgerTallLeft from '../../assets/burger-tall.png'
 import UserMenu from './UserMenu'
 import AdminMenu from './AdminMenu'
 import { NavLink } from 'react-router';
@@ -22,16 +22,20 @@ export default function MenuLayout({ isAdmin }) {
         : ''}
 
 
-      <img src={burgerTall} alt="" />
+      <img src={burgerTallRight} alt="" className="burger-tall-right" />
+      <img src={burgerTallLeft} alt="" className="burger-tall-left" />
       <div className="menu-background">
+{/* 
+      <img src={burgerTall} alt="" />
+      <div className="menu-background"> */}
 
-        <h1>{isAdmin && "Admin "}Menu</h1>
+      <h1>{isAdmin && "Admin "}Menu</h1>
 
-        <div className='grid-box'>
-          {menuTypes.map(type => (
-            <div key={type} className='type-box' >
+      <div className='grid-box'>
+        {menuTypes.map(type => (
+          <div key={type} className='type-box' >
 
-              <h2> {type} </h2>
+            <h2> {type} </h2>
 
 
               {isAdmin
@@ -50,6 +54,7 @@ export default function MenuLayout({ isAdmin }) {
           ))}
         </div>
       </div>
+    {/* </div > */}
     </>
   )
 }
