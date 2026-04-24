@@ -2,7 +2,7 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import { useMenuStore } from '../../hooks/useMenuStore';
 import { useTypeSort } from '../../hooks/useTypeSort';
 import burgerTall from '../../assets/burger-tall.png'
-import { useLoaderData } from 'react-router';
+// import { useLoaderData } from 'react-router';
 import MenuItem from './MenuItem'
 import AdminMenuItem from './AdminMenuItem'
 import { NavLink } from 'react-router';
@@ -13,7 +13,7 @@ export default function MenuLayout({ isAdmin }) {
   const { menu } = useMenuStore();
   const menuTypes = useTypeSort(menu);
 
-  useLoaderData()
+  // useLoaderData()
 
   return (
     <>

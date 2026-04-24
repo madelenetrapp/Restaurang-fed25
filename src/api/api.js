@@ -7,23 +7,15 @@ async function loadMenuFromApi() {
   try {
     const response = await fetch(`${API_URL}?method=load&key=${KEY}`);
     const data = await response.json();
-    // console.log(data);
+
     return data ?? [];
-  } catch (error) { //TODO ta bort console.logs och error i catch om de inte ens används.. @madde from Andreas
-    // console.error("någit gick fel:", error);
+  } catch (error) {
+
     return [];
   }
 }
 
-
-// @Madde från Andreas. När man sparar ändrigar som admin, behöver man ha en liknande funktion eller en prop som skickas till saveMenuToApi som istället använder den.
-
-// Om man använder prop så kollar man om den är tom. Om inte använd den. annars default.
-
-
-// Detta är alltså istället för value: defaultMenuList så använder man proppen (eller en ny funktion)
-
-async function saveMenuToApi() {
+async function saveMenuToApi(menu) {
   try {
     const response = await fetch(`${API_URL}?method=save`, {
       method: 'POST',
@@ -33,13 +25,14 @@ async function saveMenuToApi() {
       },
       body: JSON.stringify({
         key: KEY,
-        value: defaultMenuList
+        value: menu ?? defaultMenuList
       })
-    })
+    });
+    
     console.log("save ok:", response.ok);
     return response.ok
   } catch (error) {
-    // console.error("Kunde inte spara:", error);
+
     return false;
   }
 
