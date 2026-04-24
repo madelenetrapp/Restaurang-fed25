@@ -24,11 +24,13 @@ export async function menuLoader() {
   //does the API have a menu? save and return it
   if (storedMenu?.length) {
     store.setMenu(storedMenu)
+    store.setMenuTypes(storedMenu)
     return storedMenu
   }
 
   //nothing found, therefor save default in API and in store and return it.
   saveMenuToApi(defaultMenuList)
   store.setMenu(defaultMenuList)
+  store.setMenuTypes(defaultMenuList)
   return defaultMenuList
 }

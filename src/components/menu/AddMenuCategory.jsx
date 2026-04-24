@@ -5,7 +5,7 @@ import { newMenuEntry } from '../../utils/newMenuEntry'
 
 export default function AddMenuCategory() {
 
-  const { addMenuItem, getMenuItemByType, saveZustandMenuToApi } = useMenuStore()
+  const { addMenuType, addMenuItem, getMenuItemByType, saveZustandMenuToApi } = useMenuStore()
   const [isAdding, setIsAdding] = useState(false)
   const [errors, setErrors] = useState({})
   const [draft, setDraft] = useState(newMenuEntry)
@@ -19,6 +19,7 @@ export default function AddMenuCategory() {
     }
 
     setErrors({})
+    addMenuType(draft.type)
     setIsAdding(false)
     addMenuItem(draft)
     saveZustandMenuToApi()

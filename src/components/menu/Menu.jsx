@@ -1,14 +1,15 @@
 import { useAuthStore } from '../../hooks/useAuthStore';
 import { useMenuStore } from '../../hooks/useMenuStore';
 import { useTypeSort } from '../../hooks/useTypeSort';
-import burgerTall from '../../assets/burger-tall.png'
+import burgerTallRight from '../../assets/burger-tall.png'
+import burgerTallLeft from '../../assets/burger-tall.png'
 import UserMenu from './UserMenu'
 import AdminMenu from './AdminMenu'
 import { NavLink } from 'react-router';
 import AddMenuItem from './AddMenuItem';
 import AddMenuCategory from './AddMenuCategory';
 
-export default function MenuLayout({ isAdmin }) {
+export default function Menu({ isAdmin }) {
 
   const { logout } = useAuthStore();
   const { menu, saveZustandMenuToApi } = useMenuStore();
@@ -21,7 +22,10 @@ export default function MenuLayout({ isAdmin }) {
 
   return (
     <>
-      <img src={burgerTall} alt="" />
+      <div className='overflow-wrapper'>
+        <img src={burgerTallRight} alt="" className="burger-tall-right" />
+        <img src={burgerTallLeft} alt="" className="burger-tall-left" />
+      </div>
       <div className="menu-background">
 
         <h1>{isAdmin && "Admin "}Menu</h1>
