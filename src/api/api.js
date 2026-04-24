@@ -1,4 +1,4 @@
-import { defaultMenuList } from "./defaultMenuList";
+import { defaultMenuList } from "../utils/defaultMenuList";
 
 const API_URL = 'https://forverkliga.se/JavaScript/api/jsonStore.php'
 const KEY = 'mums'
@@ -28,7 +28,7 @@ async function saveMenuToApi(menu) {
         value: menu ?? defaultMenuList
       })
     });
-    
+
     console.log("save ok:", response.ok);
     return response.ok
   } catch (error) {

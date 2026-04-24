@@ -251,3 +251,8 @@ input[type="checkbox"]:checked::after {
 		opacity: 100%;
 	}
 }
+
+.wide-button {
+	width: auto;
+	padding: 30px 20px 40px 20px;
+}

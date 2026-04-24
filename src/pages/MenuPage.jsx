@@ -1,8 +1,5 @@
-// import { useLoaderData } from "react-router";
-import MenuLayout from '../components/menu/MenuLayout';
+import Menu from '../components/menu/Menu';
 
-function MenuPage() {
-  return <MenuLayout isAdmin={false} />;
+export default function MenuPage() {
+  return <Menu isAdmin={false} />;
 }
-
-export default MenuPage;
