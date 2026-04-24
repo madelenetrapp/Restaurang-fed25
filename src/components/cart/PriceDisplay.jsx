@@ -15,9 +15,11 @@ export default function PriceDisplay({ totalPrice, cart, handlePayment }) {
       )
       : (
         <div className='price-display'>
-          <h2>Empty</h2>
-          <h3> Back to Menu? </h3>
-          <NavLink to='/menu' className='button'>Menu</NavLink>
+          <h2> Your cart is empty</h2>
+          <h3> Add something delicious to get started </h3>
+          <div className='pay-btn-wrapper'>
+          <NavLink to='/menu' className='button'> View Menu</NavLink>
+          </div>
         </div>
       )
   )
