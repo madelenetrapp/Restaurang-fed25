@@ -8,10 +8,10 @@ export const menuItemSchema = Joi.object({
 		.required()
 		.trim()
 		.messages({
-			'any.required': 'Name is required',
-			'string.empty': 'Name cannot be empty',
-			'string.min': 'Name must be at least 3 characters',
-			'string.max': 'Name must be at most 30 characters'
+			'any.required': 'Dish name is required',
+			'string.empty': 'Dish name cannot be empty',
+			'string.min': 'Dish name must be at least 3 characters',
+			'string.max': 'Dish name must be at most 30 characters'
 		}),
 
 	description: Joi.string()
@@ -30,11 +30,12 @@ export const menuItemSchema = Joi.object({
 		.required()
 		.messages({
 			'any.required': 'Price is required',
-			'number.positive': 'Price must be greater than 0',
+			'number.positive': 'The price must be a positive number greater than 0 SEK',
 			'number.base': 'Price must be a number'
 		})
 })
 
+//Validates name, description and price of a menu item, returns an object with error messages for each field if there are any, otherwise returns an empty object
 export const validateMenuItem = (draft) => {
 	const { error } = menuItemSchema.validate(
 		{
@@ -47,7 +48,7 @@ export const validateMenuItem = (draft) => {
 	if (!error) return {}
 	return Object.fromEntries(error.details.map((d) => [d.path[0], d.message]))
 }
-
+//Checks if the name of the menu item already exists, if it does, returns an error message, otherwise returns null
 export const checkDuplicateName = (draft, item, getMenuItemByName) => {
 	const checkName = getMenuItemByName(draft.name)
 	if (checkName && checkName.name === draft.name && draft.name !== item.name) {
