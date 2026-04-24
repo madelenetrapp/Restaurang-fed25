@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import DietaryIcons from './DietaryIcons.jsx'
 import { useMenuStore } from '../../hooks/useMenuStore.js'
-import EditingMenuItem from './editingMenuItem.jsx'
+import EditingMenuItem from './EditingMenu.jsx'
 
-export default function AdminMenuItem({ item }) {
+export default function AdminMenu({ item }) {
 
   const { removeMenuItem } = useMenuStore()
   const [isEditing, setIsEditing] = useState(false)
@@ -22,17 +22,17 @@ export default function AdminMenuItem({ item }) {
   }
 
   return (
-    <div className={`card-container ${isEditing ? "card-editing-col" : ''}`} key={item.name}>
+    <div className={`card-container ${isEditing ? "card-editing" : ''}`} key={item.name}>
       <button className='button admin-remove' onClick={(handleRemoveItem)}>X</button>
 
       {showConfirm && (
         <div className='confirm-popup'>
           <p>Are you sure you want to remove this {item.type === 'Beer & Cider' ? 'drink' : 'dish'} from the menu?</p>
-            <div className='confirm-popup-buttons'>
-              <button className='button confirm-button' onClick={handelConfirmRemove}>Yes</button>
-              <button className='button cancel-button' onClick={() => setShowConfirm(false)}>No</button>
-          
-            </div>
+          <div className='confirm-popup-buttons'>
+            <button className='button confirm-button' onClick={handelConfirmRemove}>Yes</button>
+            <button className='button cancel-button' onClick={() => setShowConfirm(false)}>No</button>
+
+          </div>
         </div>
       )}
 

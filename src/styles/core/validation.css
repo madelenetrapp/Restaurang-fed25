@@ -46,12 +46,15 @@
   }
 }
 
-.error-message-admin {
-  background: rgb(5, 5, 5);
-  /* max-width: 30ch; */
-}
-
 .error-tethering {
   min-height: 40px;
   pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-message-admin {
+  background: rgb(5, 5, 5);
 }

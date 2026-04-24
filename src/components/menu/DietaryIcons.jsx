@@ -19,14 +19,10 @@ export default function DietaryIcons({ tags }) {
 			)}
 
 			{/* TODO needs to be reworked and simplified */}
-			{[...Array(tags.spicy || 0)].map((_, i) => (
-				<img
-					key={i}
-					src={spicyIcon}
-					alt="Chili icon"
-					className="icon-spicy"
-				/>
-			))}
+			{Array.from({ length: tags.spicy },
+				(_, i) => (
+					<img key={i} src={spicyIcon} alt="Chili icon" className="icon-spicy" />
+				))}
 		</div>
 	);
 }

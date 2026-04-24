@@ -2,9 +2,9 @@ import { useAuthStore } from '../../hooks/useAuthStore';
 import { useMenuStore } from '../../hooks/useMenuStore';
 import { useTypeSort } from '../../hooks/useTypeSort';
 import burgerTall from '../../assets/burger-tall.png'
-// import { useLoaderData } from 'react-router';
-import MenuItem from './MenuItem'
-import AdminMenuItem from './AdminMenuItem'
+import { useLoaderData } from 'react-router';
+import UserMenu from './UserMenu'
+import AdminMenu from './AdminMenu'
 import { NavLink } from 'react-router';
 
 export default function MenuLayout({ isAdmin }) {
@@ -37,14 +37,14 @@ export default function MenuLayout({ isAdmin }) {
               {isAdmin
                 ? menu.filter((s) => s.type === type)
                   .map((item) => (
-                    <AdminMenuItem
+                    <AdminMenu
                       key={item.name}
                       item={item}
                     />
                   ))
 
                 : menu.filter(s => s.type === type).map(item => (
-                  <MenuItem key={item.name} item={item} />
+                  <UserMenu key={item.name} item={item} />
                 ))}
             </div>
           ))}

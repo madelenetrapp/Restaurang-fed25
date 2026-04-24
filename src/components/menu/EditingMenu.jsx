@@ -1,6 +1,7 @@
-import { useMenuStore } from '../../hooks/useMenuStore'
+import { useMenuStore } from '../../hooks/useMenuStore.js'
 import { useState } from 'react'
 import { validateMenuItem, checkDuplicateName } from '../../utils/validation.js'
+import EditDietaryIcons from './EditDietaryIcons.jsx'
 
 export default function EditingMenuItem({ item, setIsEditing }) {
   const { saveZustandMenuToApi,
@@ -13,7 +14,11 @@ export default function EditingMenuItem({ item, setIsEditing }) {
     type: item.type,
     price: item.price,
     description: item.description,
-    tags: { ...item.tags }
+    tags: {
+      vegan: item.tags.vegan,
+      glutenFree: item.tags.glutenFree,
+      spicy: item.tags.spicy
+    }
   })
 
   const handleSaveUpdate = () => {
@@ -39,25 +44,24 @@ export default function EditingMenuItem({ item, setIsEditing }) {
   const handleKeyDown = (e) => e.key === 'Enter'
   return (
     <form onSubmit={e => e.preventDefault()}>
-      <div className='item-name-and-icons'>
-        {/* <DietaryIcons tags={item.tags} /> */}
-
-        {/* TODO dietaryEditing */}
-        <label htmlFor={item.name} className='hidden'></label>
-        <input
-          id={item.name}
-          type="text"
-          className="input admin-card-title"
-          value={draft.name}
-          onChange={e =>
-            setDraft(prev =>
-              ({ ...prev, name: e.target.value }))}
-          onKeyDown={handleKeyDown}
-        ></input>
-      </div>
+      <label htmlFor={item.name} className='hidden'></label>
+      <input
+        id={item.name}
+        type="text"
+        className="input admin-card-title"
+        value={draft.name}
+        onChange={e =>
+          setDraft(prev =>
+            ({ ...prev, name: e.target.value }))}
+        onKeyDown={handleKeyDown}
+      ></input>
       <div className="error-tethering">
         {errors.name && <p className='error-message error-message-admin'>{errors.name}</p>}
       </div>
+      <EditDietaryIcons
+        tags={draft.tags}
+        setTags={tags =>
+          setDraft(prev => ({ ...prev, tags }))} />
 
       <div className='bread-text-area'>
         <label htmlFor={item.description} className='hidden'></label>
@@ -72,7 +76,6 @@ export default function EditingMenuItem({ item, setIsEditing }) {
         <div className='error-tethering'>
           {errors.description && <p className='error-message error-message-admin'>{errors.description}</p>}
         </div>
-
         <div className='save-and-price-admin'>
           <div className='admin-price-adjust'>
             <label htmlFor={`${item.name}-price`} className='hidden'></label>
@@ -96,6 +99,6 @@ export default function EditingMenuItem({ item, setIsEditing }) {
             <p className='error-message error-message-admin'>{errors.price}</p>}
         </div>
       </div>
-    </form>
+    </form >
   )
 }
