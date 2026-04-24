@@ -7,9 +7,21 @@ export const menuStore = create(
 
     // 1. SETS MENU (sets full list in store)
     menu: [],
+
+    menuTypes: ["Starter", "Main", "Dessert", "Beer & Cider"],
+
     setMenu: (list) => {
       set(s => {
         s.menu = list.filter(i => i.name && i.type)
+      })
+    },
+
+    setMenuTypes: (list) => {
+      set(s => {
+        const allTypes = list.map(i => i.type)
+        const uniqueTypes = allTypes.filter((type, index) =>
+          allTypes.indexOf(type) === index)
+        s.menuTypes = uniqueTypes
       })
     },
 
@@ -19,6 +31,15 @@ export const menuStore = create(
         if (!item.name || !item.type) return
         if (!s.menu.find(i => i.name === item.name)) {
           s.menu.push(item)
+        }
+      })
+    },
+
+    addMenuType: (type) => {
+      set(s => {
+        if (!type) return
+        if (!s.menuTypes.find(i => i.type === type)) {
+          s.menuTypes.push(type)
         }
       })
     },
@@ -39,8 +60,7 @@ export const menuStore = create(
         )
       })
     },
-    // OPTIONAL: get an item with id as key
-    //Användbar för att skapa cart beställningen
+
     getMenuItemByName: (name) => {
       return get().menu.find((item) => item.name === name);
     },
