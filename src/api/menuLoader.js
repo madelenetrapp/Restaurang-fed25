@@ -1,5 +1,5 @@
 import { loadMenuFromApi, saveMenuToApi } from '../api/api.js'
-import { defaultMenuList } from '../api/defaultMenuList.js'
+import { defaultMenuList } from '../utils/defaultMenuList.js'
 import { menuStore } from '../store/menuStore.js'
 
 export function delayMenuLoader() {

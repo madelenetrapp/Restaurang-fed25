@@ -9,17 +9,7 @@ export default function EditingMenuItem({ item, setIsEditing }) {
     editMenuItem } = useMenuStore()
 
   const [errors, setErrors] = useState({})
-  const [draft, setDraft] = useState({
-    name: item.name,
-    type: item.type,
-    price: item.price,
-    description: item.description,
-    tags: {
-      vegan: item.tags.vegan,
-      glutenFree: item.tags.glutenFree,
-      spicy: item.tags.spicy
-    }
-  })
+  const [draft, setDraft] = useState(item)
 
   const handleSaveUpdate = () => {
 
@@ -64,9 +54,9 @@ export default function EditingMenuItem({ item, setIsEditing }) {
           setDraft(prev => ({ ...prev, tags }))} />
 
       <div className='bread-text-area'>
-        <label htmlFor={item.description} className='hidden'></label>
+        <label htmlFor={"item-description"} className='hidden'></label>
         <textarea
-          id={item.description}
+          id={"item.description"}
           className="description admin-text-area"
           spellCheck="true"
           value={draft.description}

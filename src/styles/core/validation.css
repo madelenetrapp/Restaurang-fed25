@@ -55,6 +55,11 @@
   align-items: center;
 }
 
+.error-tethering-double {
+  min-height: 63px;
+}
+
+
 .error-message-admin {
   background: rgb(5, 5, 5);
 }

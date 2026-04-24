@@ -9,13 +9,14 @@ export const menuStore = create(
     menu: [],
     setMenu: (list) => {
       set(s => {
-        s.menu = list
+        s.menu = list.filter(i => i.name && i.type)
       })
     },
 
     // 2. ADD ITEM
     addMenuItem: (item) => {
       set(s => {
+        if (!item.name || !item.type) return
         if (!s.menu.find(i => i.name === item.name)) {
           s.menu.push(item)
         }
@@ -32,6 +33,7 @@ export const menuStore = create(
     // 4. EDIT ITEM
     editMenuItem: (originalName, newItem) => {
       set(s => {
+        if (!newItem.name || !newItem.type) return
         s.menu = s.menu.map((item) =>
           item.name === originalName ? newItem : item
         )
@@ -41,6 +43,9 @@ export const menuStore = create(
     //Användbar för att skapa cart beställningen
     getMenuItemByName: (name) => {
       return get().menu.find((item) => item.name === name);
+    },
+    getMenuItemByType: (type) => {
+      return get().menu.find((item) => item.type === type);
     },
 
     saveZustandMenuToApi: () => {
