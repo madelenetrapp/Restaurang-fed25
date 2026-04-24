@@ -27,7 +27,7 @@ export default function AdminMenuItem({ item }) {
 
       {showConfirm && (
         <div className='confirm-popup'>
-          <p>Are you sure you want to remove this dish?</p>
+          <p>Are you sure you want to remove this {item.type === 'Beer & Cider' ? 'drink' : 'dish'} from the menu?</p>
             <div className='confirm-popup-buttons'>
               <button className='button confirm-button' onClick={handelConfirmRemove}>Yes</button>
               <button className='button cancel-button' onClick={() => setShowConfirm(false)}>No</button>
