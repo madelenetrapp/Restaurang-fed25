@@ -1,53 +1,5 @@
 import Joi from "joi";
 
-//david tycker att man kanske borde vara mer descreptiv. Lite mer anpassade, personlig och specifik :) @henrik
-export const menuItemSchema = Joi.object({
-	name: Joi.string()
-		.min(3)
-		.max(30)
-		.required()
-		.trim()
-		.messages({
-			'any.required': 'Dish name is required',
-			'string.empty': 'Dish name cannot be empty',
-			'string.min': 'Dish name must be at least 3 characters',
-			'string.max': 'Dish name must be at most 30 characters'
-		}),
-
-	description: Joi.string()
-		.min(10)
-		.max(200)
-		.required()
-		.messages({
-			'any.required': 'Description is required',
-			'string.empty': 'Description cannot be empty',
-			'string.min': 'Description must be at least 10 characters',
-			'string.max': 'Description must be at most 200 characters'
-		}),
-
-	price: Joi.number()
-		.positive()
-		.required()
-		.messages({
-			'any.required': 'Price is required',
-			'number.positive': 'The price must be a positive number greater than 0 SEK',
-			'number.base': 'Price must be a number'
-		})
-})
-
-//Validates name, description and price of a menu item, returns an object with error messages for each field if there are any, otherwise returns an empty object
-export const validateMenuItem = (draft) => {
-	const { error } = menuItemSchema.validate(
-		{
-			name: draft.name,
-			description: draft.description,
-			price: draft.price
-		},
-		{ abortEarly: false }
-	)
-	if (!error) return {}
-	return Object.fromEntries(error.details.map((d) => [d.path[0], d.message]))
-}
 //Checks if the name of the menu item already exists, if it does, returns an error message, otherwise returns null
 export const checkDuplicateName = (draft, item, getMenuItemByName) => {
 	const checkName = getMenuItemByName(draft.name)
@@ -55,4 +7,47 @@ export const checkDuplicateName = (draft, item, getMenuItemByName) => {
 		return 'A menu item with this name already exists'
 	}
 	return null
+}
+//Validates name, description and price of a menu item, returns an object with error messages for each field if there are any, otherwise returns an empty object
+export const validateMenuItem = (draft) => {
+	const itemType = draft.type === 'Beer & Cider'? 'drink' : 'dish'
+
+	const menuItemSchema = Joi.object({
+		name: Joi.string()
+		.min(3)
+		.max(40)
+		.required()
+		.trim()
+		.messages({
+			'string.empty': `The ${itemType} name cannot be empty - please enter a name for the ${itemType}`,
+			'string.min': `The ${itemType} name is too short - at least 3 characters are required`,
+			'string.max': `The ${itemType} name is too long - at most 40 characters are allowed`
+		}), 
+		
+		description: Joi.string()
+		.min(10)
+		.max(200)
+		.required()
+		.messages({
+			'string.empty': `The ${itemType} description cannot be empty - please enter a description for the ${itemType}`,
+			'string.min': `The ${itemType} description is too short - please write at least 10 characters`,
+			'string.max': `The ${itemType} description is too long - maximum 200 characters are allowed`
+		}),
+
+		price: Joi.number()
+		.positive()
+		.required()
+		.messages({
+			'any.required': 'Please enter a price',
+			'number.positive': 'The price must be greater than 0 SEK',
+			'number.base': `Please enter a price for the ${itemType} - please enter digits only`
+		})
+	})
+
+	const { error } = menuItemSchema.validate(
+		{name: draft.name, description: draft.description, price: draft.price},
+		{abortEarly: false}
+	)
+	if (!error) return{}
+	return Object.fromEntries(error.details.map(detail => [detail.path[0], detail.message]))
 }

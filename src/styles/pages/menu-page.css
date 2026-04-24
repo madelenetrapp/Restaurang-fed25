@@ -50,6 +50,23 @@
 	border-radius: 24px;
 	box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
 	margin: 30px 0;
+
+	&:hover {
+		transform: scale(1.02);
+		transition: transform 0.4s ease-in-out;
+	}
+
+	&:focus-within {
+		transform: scale(0.98);
+		transition: transform 0.4s ease-in-out;
+		filter: var(--active-shadow);
+	}
+
+	&:active {
+		transform: scale(0.98);
+		transition: transform 0.2s ease-in-out;
+		filter: var(--active-shadow);
+	}
 }
 
 .h3-header {
@@ -134,14 +151,15 @@
 
 .menu-layout-wrapper1 {
 	position: absolute;
-	left: 15%;
+	left: 2%;
 	top: -20px;
 	transform: translateX(-50%);
 	/* padding-top: 0,8em; */
 }
 
 .burger.left {
-	width: 250px;
+	width: 1250px;
+	height: 100%;
 }
 
 @media (max-width: 900px) {
@@ -152,14 +170,14 @@
 
 .menu-layout-wrapper2 {
 	position: absolute;
-	right: -7%;
+	right: -140%;
 	top: -8px;
 	transform: translateX(-50%);
 	/* padding-top: 0,8em; */
 }
 
 .burger.right {
-	width: 150px;
+	width: 1150px;
 }
 
 @media (max-width: 900px) {

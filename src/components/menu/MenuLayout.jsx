@@ -13,7 +13,7 @@ export default function MenuLayout({ isAdmin }) {
   const { menu } = useMenuStore();
   const menuTypes = useTypeSort(menu);
 
-  useLoaderData()
+  // useLoaderData()
 
   return (
     <>
