@@ -29,6 +29,8 @@
 
   --red-gradient: linear-gradient(135deg, var(--red-accent-light), var(--red-accent-dark));
 
+  --active-shadow: drop-shadow(0px 2px 3px rgb(255, 208, 0));
+
   --font-style-pro: 'Zen Antique', serif;
   --font-style-artistic: 'inconsolata', monospace;
 
@@ -118,6 +120,8 @@ label {
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+  width: 100%;
+  max-width: 400px;
 }
 
 h3 {
@@ -126,6 +130,7 @@ h3 {
   font-size: var(--font-size-card-header);
   font-weight: bolder;
   margin-bottom: 20px;
+
 }
 
 p {
@@ -155,4 +160,8 @@ nav {
   font: inherit;
   color: inherit;
   border: none;
+}
+
+.active {
+  filter: drop-shadow(0px 2px 3px rgb(255, 208, 0));
 }

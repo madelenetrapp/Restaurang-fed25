@@ -3,9 +3,8 @@ import { useMenuStore } from '../../hooks/useMenuStore';
 import { useTypeSort } from '../../hooks/useTypeSort';
 import burgerTallRight from '../../assets/burger-tall.png'
 import burgerTallLeft from '../../assets/burger-tall.png'
-// import { useLoaderData } from 'react-router';
-import MenuItem from './MenuItem'
-import AdminMenuItem from './AdminMenuItem'
+import UserMenu from './UserMenu'
+import AdminMenu from './AdminMenu'
 import { NavLink } from 'react-router';
 
 export default function MenuLayout({ isAdmin }) {
@@ -39,22 +38,23 @@ export default function MenuLayout({ isAdmin }) {
             <h2> {type} </h2>
 
 
-            {isAdmin
-              ? menu.filter((s) => s.type === type)
-                .map((item) => (
-                  <AdminMenuItem
-                    key={item.name}
-                    item={item}
-                  />
-                ))
+              {isAdmin
+                ? menu.filter((s) => s.type === type)
+                  .map((item) => (
+                    <AdminMenu
+                      key={item.name}
+                      item={item}
+                    />
+                  ))
 
-              : menu.filter(s => s.type === type).map(item => (
-                <MenuItem key={item.name} item={item} />
-              ))}
-          </div>
-        ))}
+                : menu.filter(s => s.type === type).map(item => (
+                  <UserMenu key={item.name} item={item} />
+                ))}
+            </div>
+          ))}
+        </div>
       </div>
-    </div >
+    {/* </div > */}
     </>
   )
 }

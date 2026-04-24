@@ -1,7 +1,7 @@
 import { cartStore } from '../../store/cartStore.js'
 import DietaryIcons from './DietaryIcons.jsx'
 
-export default function MenuItem({ item }) {
+export default function UserMenu({ item }) {
 
   const { addCartItem } = cartStore()
 
