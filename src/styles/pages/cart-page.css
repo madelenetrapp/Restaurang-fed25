@@ -6,7 +6,7 @@
   padding: 0 16px;
   width: 100%;
   margin: 0 auto;
-  
+
 
   @media (min-width: 745px) {
     padding: 0 24px;
@@ -21,8 +21,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 80%;               
-  max-width: 600px;         
+  width: 80%;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   overflow-y: auto;
@@ -70,7 +70,7 @@
   width: 100%;
   margin: 10px 0;
   break-inside: avoid;
-  
+
 }
 
 /* top row: name + price */
@@ -178,7 +178,7 @@
   margin-bottom: 20px;
 }
 
-.button {
+.button-place-order {
   white-space: nowrap;
   padding: 16px 32px;
   font-size: 22px;
