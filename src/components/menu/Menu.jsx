@@ -4,16 +4,22 @@ import { useTypeSort } from '../../hooks/useTypeSort';
 import burgerTallRight from '../../assets/burger-tall.png'
 import burgerTallLeft from '../../assets/burger-tall.png'
 import UserMenu from './UserMenu'
-import AdminMenu from './AdminMenu'
+import AdminMenu from './adminOnly/AdminMenu'
 import { NavLink } from 'react-router';
-import AddMenuItem from './AddMenuItem';
-import AddMenuCategory from './AddMenuCategory';
+import AddMenuItem from './adminOnly/AddMenuItem';
+import AddMenuCategory from './adminOnly/AddMenuCategory';
+import { defaultMenuList } from '../../utils/defaultMenuList';
 
 export default function Menu({ isAdmin }) {
 
   const { logout } = useAuthStore();
-  const { menu, saveZustandMenuToApi } = useMenuStore();
-  const menuTypes = useTypeSort(menu);
+  const { menuTypes,
+    reOrderMenuType,
+    menu,
+    saveZustandMenuToApi,
+    setMenu } = useMenuStore();
+
+  const sortedMenuTypes = useTypeSort(menu, menuTypes);
 
   const handleLogout = () => {
     logout()
@@ -28,20 +34,28 @@ export default function Menu({ isAdmin }) {
       </div>
       <div className="menu-background">
 
+        {isAdmin && <div className='top-admin-buttons'>
+          <NavLink to="/" onClick={handleLogout} className="button">Log out</NavLink> <button className='button wide-button' onClick={() => setMenu(defaultMenuList)}>Reset Menu</button>
+        </div>}
+
         <h1>{isAdmin && "Admin "}Menu</h1>
-        {isAdmin &&
-          <div>
-            <NavLink to="/" onClick={handleLogout} className="button logout-button">Log out</NavLink>
-            <AddMenuCategory />
-          </div>
-        }
+
+        {isAdmin && <AddMenuCategory />}
 
         <div className='grid-box'>
-          {menuTypes.map(type => (
+          {sortedMenuTypes.map((type, index) => (
             <div key={type} className='type-box' >
 
-              <h2> {type} </h2>
+              <div className={`header-box ${isAdmin && 'remove-margin'}`}>
+                {isAdmin && index !== 0 &&
+                  <button className='up-down'
+                    onClick={() => reOrderMenuType(type, 'up')}>▲</button>}
 
+                <h2> {type} </h2>
+
+                {isAdmin && index !== sortedMenuTypes.length - 1 && <button className='up-down'
+                  onClick={() => reOrderMenuType(type, 'down')}>▼</button>}
+              </div>
               {isAdmin
                 ?
                 <>

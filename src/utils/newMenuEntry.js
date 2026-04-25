@@ -1,8 +1,8 @@
 
 export const newMenuEntry = {
-  name: "NEW ENTRY",
-  type: 'TYPE NAME',
-  price: '?',
+  name: "",
+  type: '',
+  price: '0',
   description: "Enter a flavourful ingredient description",
   tags: {
     vegan: false,

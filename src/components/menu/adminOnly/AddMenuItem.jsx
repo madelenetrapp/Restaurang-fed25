@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useMenuStore } from '../../hooks/useMenuStore'
-import { newMenuEntry } from '../../utils/newMenuEntry'
+import { useMenuStore } from '../../../hooks/useMenuStore'
+import { newMenuEntry } from '../../../utils/newMenuEntry'
 export default function AddMenuItem({ type }) {
 
   const { addMenuItem, getMenuItemByName } = useMenuStore()
@@ -13,15 +13,13 @@ export default function AddMenuItem({ type }) {
       name: `NEW ${type} ENTRY`,
       type: type
     }
+    //TODO missing proper validation
     const exists = getMenuItemByName(`NEW ${type} ENTRY`)
     if (exists !== undefined) {
       setIsWarned(true)
       setTimeout(() => setIsWarned(false), 5000)
-
-      console.log(exists, "set to true")
     }
     else {
-      console.log(exists, "set to false")
       setIsWarned(false)
       addMenuItem(newEntry)
     }

@@ -10,12 +10,15 @@ export const menuStore = create(
 
     menuTypes: ["Starter", "Main", "Dessert", "Beer & Cider"],
 
+    // 1. sets a full menu in the store
     setMenu: (list) => {
       set(s => {
         s.menu = list.filter(i => i.name && i.type)
+        get().setMenuTypes(list)
       })
     },
 
+    //2. sets the menuTypes in the store
     setMenuTypes: (list) => {
       set(s => {
         const allTypes = list.map(i => i.type)
@@ -25,7 +28,19 @@ export const menuStore = create(
       })
     },
 
-    // 2. ADD ITEM
+    //3. reorders menuTypes. takes a type and 'up' or 'down' parameter
+    reOrderMenuType: (type, direction) => {
+      set(s => {
+        const index = s.menuTypes.indexOf(type)
+        if (index === -1) return
+        const newIndex = direction === 'up' ? index - 1 : index + 1
+        if (newIndex < 0 || newIndex >= s.menuTypes.length) return
+          // swap 
+          ;[s.menuTypes[index], s.menuTypes[newIndex]] = [s.menuTypes[newIndex], s.menuTypes[index]]
+      })
+    },
+
+    // 4. ADD ITEM
     addMenuItem: (item) => {
       set(s => {
         if (!item.name || !item.type) return
@@ -35,6 +50,7 @@ export const menuStore = create(
       })
     },
 
+    // 5. ADD TYPE
     addMenuType: (type) => {
       set(s => {
         if (!type) return
@@ -44,14 +60,14 @@ export const menuStore = create(
       })
     },
 
-    // 3. REMOVE ITEM
+    // 6. REMOVE ITEM
     removeMenuItem: (name) => {
       set(s => {
         s.menu = s.menu.filter((item) => item.name !== name)
       })
     },
 
-    // 4. EDIT ITEM
+    // 7. EDIT ITEM
     editMenuItem: (originalName, newItem) => {
       set(s => {
         if (!newItem.name || !newItem.type) return
@@ -61,6 +77,7 @@ export const menuStore = create(
       })
     },
 
+    // 8. 9. gets a menu item using name param
     getMenuItemByName: (name) => {
       return get().menu.find((item) => item.name === name);
     },
@@ -68,6 +85,7 @@ export const menuStore = create(
       return get().menu.find((item) => item.type === type);
     },
 
+    //10. saves zustand
     saveZustandMenuToApi: () => {
       const editedMenuList = get().menu
       saveMenuToApi(editedMenuList)

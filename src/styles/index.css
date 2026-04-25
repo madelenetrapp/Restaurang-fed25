@@ -116,12 +116,13 @@ label {
   background: var(--red-accent-light);
   font-family: var(--font-style-pro);
   font-weight: normal;
-  height: 50px;
+  height: auto;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
   width: 100%;
   max-width: 400px;
+  overflow-wrap: break-word;
 }
 
 h3 {
@@ -164,4 +165,8 @@ nav {
 
 .active {
   filter: drop-shadow(0px 2px 3px rgb(255, 208, 0));
+}
+
+.remove-margin {
+  margin: 0;
 }

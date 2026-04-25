@@ -10,11 +10,11 @@
   white-space: nowrap;
   font-size: var(--font-size-button);
   box-shadow: inset -2px -2px 4px var(--red-accent-dark-opacity);
+  transition: transform 0.1s ease-in-out;
 
   &:hover {
     background-color: var(--button-hover-col);
     cursor: pointer;
     transform: scale(1.06);
-    transition: transform 0.1s ease-in-out;
   }
 }

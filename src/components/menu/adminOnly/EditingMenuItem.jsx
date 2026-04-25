@@ -1,6 +1,6 @@
-import { useMenuStore } from '../../hooks/useMenuStore.js'
+import { useMenuStore } from '../../../hooks/useMenuStore.js'
 import { useState } from 'react'
-import { validateMenuItem, checkDuplicateName } from '../../utils/validation.js'
+import { validateMenuItem, checkDuplicateName } from '../../../utils/validation.js'
 import EditDietaryIcons from './EditDietaryIcons.jsx'
 
 export default function EditingMenuItem({ item, setIsEditing }) {
@@ -8,7 +8,7 @@ export default function EditingMenuItem({ item, setIsEditing }) {
     getMenuItemByName,
     editMenuItem } = useMenuStore()
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState('')
   const [draft, setDraft] = useState(item)
 
   const handleSaveUpdate = () => {
@@ -24,14 +24,17 @@ export default function EditingMenuItem({ item, setIsEditing }) {
       return setErrors(fieldErrors)
     }
 
-    setErrors({})
+    setErrors('')
     setIsEditing(false)
     editMenuItem(item.name, draft)
     saveZustandMenuToApi()
   }
 
   //TODO work as a tab
-  const handleKeyDown = (e) => e.key === 'Enter'
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') e.target.blur()
+  }
+
   return (
     <form onSubmit={e => e.preventDefault()}>
       <label htmlFor={item.name} className='hidden'></label>
@@ -56,7 +59,7 @@ export default function EditingMenuItem({ item, setIsEditing }) {
       <div className='bread-text-area'>
         <label htmlFor={"item-description"} className='hidden'></label>
         <textarea
-          id={"item.description"}
+          id={"item-description"}
           className="description admin-text-area"
           spellCheck="true"
           value={draft.description}
@@ -76,7 +79,8 @@ export default function EditingMenuItem({ item, setIsEditing }) {
               onChange={e => setDraft(prev =>
                 ({ ...prev, price: e.target.value })
               )}
-            ></input>
+              onKeyDown={handleKeyDown}
+            />
 
             <p className='price admin-sek-adjust'>SEK</p>
           </div>
