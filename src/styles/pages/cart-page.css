@@ -1,5 +1,5 @@
 /* ── Cart layout ───────────────────────────── */
-.cart-grid {
+/* .cart-grid {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -15,13 +15,15 @@
   @media (min-width: 1095px) {
     padding: 0 40px;
   }
-}
+} */
+
+/* above class is never used */
 
 .cart-grid-box {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -32,16 +34,20 @@
   padding-left: 10px;
   padding-right: 10px;
 
+  h2 {
+    margin-top: 10px;
+  }
+
   @media (min-width: 745px) {
     width: 100%;
     max-width: 700px;
     padding: 0 20px;
   }
 
-  @media (min-width: 1095px) {
+  /* @media (min-width: 1095px) {
     max-width: 900px;
     padding: 0;
-  }
+  } */
 }
 
 .type-box {
@@ -114,11 +120,11 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: inset -2px -2px 4px var(--red-accent-dark-opacity);
+  transition: transform 0.1s ease-in-out;
 
   &:hover {
     background-color: var(--button-hover-col);
     transform: scale(1.06);
-    transition: transform 0.1s ease-in-out;
   }
 
   @media (min-width: 745px) {
@@ -190,6 +196,14 @@
     background-color: var(--button-hover-col);
     transform: scale(1.06);
     transition: transform 0.1s ease-in-out;
+  }
+}
+
+.extra-space {
+  height: 100px;
+
+  @media (max-width: 745px) {
+    height: 0px;
   }
 }
 

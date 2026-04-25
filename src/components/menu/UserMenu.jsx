@@ -12,8 +12,8 @@ export default function UserMenu({ item }) {
   return (
     <div className="card-container" key={item.name} onClick={add}>
       <div className='item-name-and-icons'>
-        <DietaryIcons tags={item.tags} />
         <h3 className="h3-header">{item.name}</h3>
+        <DietaryIcons tags={item.tags} />
       </div>
 
       <div className='bread-text-area'>

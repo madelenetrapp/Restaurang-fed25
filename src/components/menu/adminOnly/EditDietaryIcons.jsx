@@ -1,6 +1,6 @@
-import glutenFreeIcon from '../../assets/icon-gluten-free.svg';
-import veganIcon from '../../assets/icon-vegan.svg';
-import spicyIcon from '../../assets/icon-spicy.svg';
+import glutenFreeIcon from '../../../assets/icon-gluten-free.svg';
+import veganIcon from '../../../assets/icon-vegan.svg';
+import spicyIcon from '../../../assets/icon-spicy.svg';
 
 export default function EditDietaryIcons({ tags, setTags }) {
 

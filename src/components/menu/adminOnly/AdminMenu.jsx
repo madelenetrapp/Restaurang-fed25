@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import DietaryIcons from './DietaryIcons.jsx'
-import { useMenuStore } from '../../hooks/useMenuStore.js'
+import DietaryIcons from '../DietaryIcons.jsx'
+import { useMenuStore } from '../../../hooks/useMenuStore.js'
 import EditingMenuItem from './EditingMenuItem.jsx'
 
 export default function AdminMenu({ item }) {
@@ -23,8 +23,8 @@ export default function AdminMenu({ item }) {
         <div className='confirm-popup'>
           <p>Are you sure you want to remove this {item.type === 'Beer & Cider' ? 'drink' : 'dish'} from the menu?</p>
           <div className='confirm-popup-buttons'>
-            <button className='button confirm-button' onClick={handleConfirmedRemoval}>Yes</button>
-            <button className='button cancel-button' onClick={() => setShowConfirm(false)}>No</button>
+            <button className='button' onClick={handleConfirmedRemoval}>Yes</button>
+            <button className='button' onClick={() => setShowConfirm(false)}>No</button>
 
           </div>
         </div>
@@ -37,8 +37,8 @@ export default function AdminMenu({ item }) {
         :
         <>
           <div className='item-name-and-icons'>
-            <DietaryIcons tags={item.tags} />
             <h3 className="h3-header">{item.name}</h3>
+            <DietaryIcons tags={item.tags} />
           </div>
 
           <div className='bread-text-area'>
