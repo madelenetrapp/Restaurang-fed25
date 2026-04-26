@@ -24,10 +24,11 @@ export default function CartPage() {
     clearCart()
   }
 
+  const totalPriceRounded = Math.round(totalPrice)
+
   return (
+
     <>
-      {paid &&
-        <CartOverlay onDismiss={handleDismiss} />}
 
       <h1>Cart</h1>
 
@@ -43,9 +44,16 @@ export default function CartPage() {
         ))}
       </div>
 
-      <PriceDisplay totalPrice={totalPrice} cart={cart} handlePayment={handlePayment} />
+      <PriceDisplay totalPrice={totalPriceRounded} cart={cart} handlePayment={handlePayment} />
 
       <div className='extra-space'></div>
+      {paid &&
+        <>
+          <div className='not-paid-dark'>
+            <CartOverlay onDismiss={handleDismiss} />
+          </div>
+        </>}
     </>
+
   )
 }

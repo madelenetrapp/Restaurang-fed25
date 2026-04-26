@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import LoadingPage from '../../pages/LoadingPage.jsx'
+import { NavLink } from 'react-router'
 
-export default function CartOverlay() {
+export default function CartOverlay({ onDismiss }) {
 
 
   const [isLoading, setLoading] = useState(true)
@@ -9,16 +11,21 @@ export default function CartOverlay() {
 
   setTimeout(() => {
     setLoading(false)
-  }, 4000)
+  }, 2000)
 
   return (
+    <div className='cart-page-relative-wrapper'>
+      <div className='cart-overlay'>
+        {isLoading === true
+          ? <LoadingPage />
 
-    <div>
-      {isLoading === true
-        ? <p>loading</p>
-        : <p> done!</p>}
+
+          : <>
+            <h1>Success</h1>
+            <NavLink to="/" className='button' onClick={() => onDismiss()}>Home</NavLink>
+          </>
+        }
+      </div>
     </div>
-
-
   )
 }

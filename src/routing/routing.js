@@ -5,6 +5,7 @@ import CartPage from '../pages/CartPage.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
 import AdminPage from '../pages/AdminPage.jsx'
 import { delayMenuLoader } from '../api/menuLoader.js'
+import LoadingPage from '../pages/LoadingPage.jsx'
 
 export const routing = [
   {
@@ -23,6 +24,8 @@ export const routing = [
       { path: '/cart', Component: CartPage },
 
       { path: '/login', Component: LoginPage },
+
+      { path: '/loading', Component: LoadingPage },
 
       {
         path: '/admin',

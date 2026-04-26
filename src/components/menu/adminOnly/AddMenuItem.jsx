@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { useMenuStore } from '../../../hooks/useMenuStore'
 import { newMenuEntry } from '../../../utils/newMenuEntry'
+import { validateMenuItem } from '../../../utils/validation.js'
 export default function AddMenuItem({ type }) {
 
   const { addMenuItem, getMenuItemByName } = useMenuStore()
 
-  const [isWarned, setIsWarned] = useState(false)
+  // const [isWarned, setIsWarned] = useState(false)
+  const { saveZustandMenuToApi } = useMenuStore()
+
+  const [errors, setErrors] = useState('')
 
   const handleAdd = () => {
     const newEntry = {
@@ -13,24 +17,29 @@ export default function AddMenuItem({ type }) {
       name: `NEW ${type} ENTRY`,
       type: type
     }
-    //TODO missing proper validation
-    const exists = getMenuItemByName(`NEW ${type} ENTRY`)
-    if (exists !== undefined) {
-      setIsWarned(true)
-      setTimeout(() => setIsWarned(false), 5000)
+    const fieldErrors = validateMenuItem(newEntry)
+
+    if (getMenuItemByName(newEntry.name)) {
+      fieldErrors.name = 'Edit the newly created item before creating more'
     }
-    else {
-      setIsWarned(false)
-      addMenuItem(newEntry)
+
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors)
+      setTimeout(() => {
+        setErrors('')
+      }, 4000)
+      return
     }
+    setErrors('')
+    addMenuItem(newEntry)
+    saveZustandMenuToApi()
   }
 
   return (
-
     <>
-      <button className='button wide-button' onClick={handleAdd}>new <br /> {type} </button>
+      <button className='button wide-button' onClick={handleAdd}>New <br /> {type} </button>
       <div className="error-tethering error-tethering-double">
-        {isWarned && <p className='error-message error-message-admin'>{`NEW ${type} ENTRY already exists.`}<br /> Edit the existing entry before creating more</p>}
+        {errors.name && <p className='error-message'>{errors.name}</p>}
       </div>
     </>
   )

@@ -10,11 +10,33 @@ export const checkDuplicateName = (draft, item, getMenuItemByName) => {
 }
 //Checks if the type of the menu item already exists, if it does, returns an error message, otherwise returns null
 export const checkDuplicateType = (draft, getMenuItemByType) => {
-	const checkType = getMenuItemByType(draft.type)
-	if (checkType) {
-		return 'A menu item with this name already exists'
+	const validateTypeSchema = Joi.object({
+		type: Joi.string()
+			.min(2)
+			.max(34)
+			.trim()
+			.messages({
+				'string.empty': 'The type is too short - please enter more than one letter',
+				'string.min': 'The type is too short - please enter more than one letter',
+				'string.max': 'The type is too long - maximum 34 characters are allowed'
+			})
+	})
+
+	// Validate first
+	const { error } = validateTypeSchema.validate(
+		{ type: draft.type }, // 👈 fixed key
+		{ abortEarly: false }
+	)
+	if (error) {
+		return Object.fromEntries(error.details.map(d => [d.path[0], d.message]))
 	}
-	return null
+
+	// Then check duplicate
+	if (getMenuItemByType(draft.type)) {
+		return { type: 'A menu item with this type already exists' } // 👈 consistent object + correct wording
+	}
+
+	return {}
 }
 //Validates name, description and price of a menu item, returns an object with error messages for each field if there are any, otherwise returns an empty object
 export const validateMenuItem = (draft) => {
@@ -44,11 +66,13 @@ export const validateMenuItem = (draft) => {
 
 		price: Joi.number()
 			.positive()
+			.integer()
 			.required()
 			.messages({
 				'any.required': 'Please enter a price',
 				'number.positive': 'The price must be greater than 0 SEK',
-				'number.base': `Please enter a price for the ${itemType} - please enter digits only`
+				'number.base': `Please enter a price for the ${itemType} - please enter whole digits only`,
+				'number.integer': 'Unfortunately only whole numbers are allowed'
 			})
 	})
 

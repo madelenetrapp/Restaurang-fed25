@@ -18,7 +18,11 @@ export default function LoginPage() {
     const { error: validationError } = loginSchema.validate({ username, password }, { abortEarly: false })
     if (validationError) {
       const isEmpty = username === '' || password === ''
-      return setError(isEmpty ? 'Username and password are required' : 'Wrong username or password')
+      setError(isEmpty ? 'Username and password are required' : 'Wrong username or password')
+      setTimeout(() => {
+        setError('')
+      }, 4000)
+      return
     }
     login()
     navigate('/admin')

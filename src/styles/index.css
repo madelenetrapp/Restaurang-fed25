@@ -7,6 +7,7 @@
 @import './pages/cart-page.css';
 @import './pages/front-page.css';
 @import './pages/admin-page.css';
+@import './pages/loading-page.css';
 /* Alla imports här är globala */
 
 :root {
@@ -102,7 +103,7 @@ h1 {
   font-weight: normal;
 
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 
   @media (max-width: 900px) {
     text-align: center;

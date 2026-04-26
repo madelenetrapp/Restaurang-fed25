@@ -26,13 +26,13 @@ header {
 			url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
 		background-repeat: repeat;
 
-		@media (max-width: 600px) {
+		/* @media (max-width: 600px) {
 			height: 200px;
 		}
 
 		@media (max-width: 440px) {
 			height: 190px;
-		}
+		} */
 	}
 }
 
@@ -40,11 +40,23 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: clamp(0px, 3vw, 70px);
+	gap: clamp(0px, 2vw, 70px);
 
 }
 
-.header-navlink-logo{
+.phone-and-nav-box .button {
+	@media (max-width: 520px) {
+		height: 48px;
+	}
+}
+
+.phone-and-nav-box .extra-home-button {
+	@media (min-width: 520px) {
+		display: none;
+	}
+}
+
+.header-navlink-logo {
 	display: flex;
 }
 
@@ -64,18 +76,12 @@ header {
 
 @media (max-width: 520px) {
 
-	header{
+	header {
 		flex-direction: column;
 
 	}
 
 	.header-navlink-logo {
-		display:none;
+		display: none;
 	}
-
-	/* button {
-
-	} */
-
-
 }
