@@ -3,7 +3,7 @@ import headerLogo from "../assets/lyan-header.webp";
 
 export default function Header() {
 
-  return (
+	return (
 		<header>
 			<NavLink to="/" className="header-navlink-logo">
 				{/* <img
@@ -23,8 +23,12 @@ export default function Header() {
 				<NavLink to="/cart" className="button">
 					Cart
 				</NavLink>
+
+				<NavLink to="/" className="button extra-home-button">
+					home
+				</NavLink>
 				{/* </nav> */}
 			</div>
 		</header>
-  );
+	);
 }

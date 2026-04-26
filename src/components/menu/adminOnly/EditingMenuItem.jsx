@@ -30,7 +30,6 @@ export default function EditingMenuItem({ item, setIsEditing }) {
     saveZustandMenuToApi()
   }
 
-  //TODO work as a tab
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') e.target.blur()
   }

@@ -4,6 +4,15 @@
 	border-radius: 35px;
 	box-shadow: 0px 0px 40px white;
 	width: 100%;
+	margin-bottom: 60px;
+}
+
+.admin-bg .menu-background {
+	@media (min-width: 920px) {
+		&:before {
+			margin-top: 270px;
+		}
+	}
 }
 
 .hidden {
@@ -11,8 +20,25 @@
 }
 
 .top-admin-buttons {
+	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
+
+	.wide-button {
+		text-wrap: nowrap;
+		padding: 0px 20px;
+	}
+
+	@media (max-width: 370px) {
+		flex-direction: column;
+		max-width: 140px;
+		margin: 20px auto 0;
+		gap: 20px;
+
+		.wide-button {
+			padding: 10px 0px;
+		}
+	}
 }
 
 .up-down {
@@ -302,5 +328,7 @@ input[type="checkbox"]:checked::after {
 
 .wide-button {
 	width: auto;
-	padding: 30px 20px 40px 20px;
+	height: auto;
+	padding: 10px 20px 20px 20px;
+	word-break: break-all;
 }

@@ -17,7 +17,8 @@ export default function App() {
 
 			<Header />
 
-			<main>{isLoading ? <LoadingPage /> : <Outlet />}</main>
+			<main className={location.pathname == "/" ? "front-page-main" : ""}>{isLoading ? <LoadingPage /> : <Outlet />}
+			</main>
 
 			{location.pathname !== "/cart" && <Footer />}
 

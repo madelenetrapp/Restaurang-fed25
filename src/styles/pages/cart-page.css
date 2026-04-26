@@ -18,6 +18,9 @@
 } */
 
 /* above class is never used */
+.cart-overlay .loading-box {
+  margin-bottom: 0;
+}
 
 .cart-grid-box {
   display: flex;
@@ -148,6 +151,9 @@
 
 /* ── Total + Pay section ────────────────────── */
 .price-display {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background: var(--red-accent-light);
   border-radius: 12px;
   padding: 14px 20px;
@@ -155,6 +161,7 @@
   text-align: center;
   margin: 30px 16px 50px;
   box-shadow: 0px 0px 6px 2px var(--card-highlight-col);
+  gap: 20px;
 
   @media (min-width: 745px) {
     margin: 24px auto 0;
@@ -164,6 +171,14 @@
 
   @media (min-width: 1095px) {
     max-width: 900px;
+  }
+
+  h2 {
+    box-shadow: none;
+  }
+
+  h3 {
+    margin: 20px 0 0 0;
   }
 }
 
@@ -184,21 +199,6 @@
   margin-bottom: 20px;
 }
 
-.button-place-order {
-  white-space: nowrap;
-  padding: 16px 32px;
-  font-size: 22px;
-  border-radius: 8px;
-  background: var(--buttons-col);
-  color: var(--text-col);
-
-  &:hover {
-    background-color: var(--button-hover-col);
-    transform: scale(1.06);
-    transition: transform 0.1s ease-in-out;
-  }
-}
-
 .extra-space {
   height: 100px;
 
@@ -207,38 +207,51 @@
   }
 }
 
-/* ── anchor / overlay ───────────────────────── */
-.anchor {
-  --display-overlay: flex;
-  flex-direction: column;
-  display: var(--display-overlay);
-  position: relative;
-  flex: 1;
-  max-width: 1100px;
-  margin: 0 auto;
+/* ── Overlay ────────────────────── */
+.not-paid-dark {
+  position: fixed;
+  inset: 0;
   width: 100%;
-  padding: 0 16px;
+  height: 100svh;
+  background: rgba(0, 0, 0, 0.676);
+  /* box-shadow: inset 0 0 100px rgb(121, 121, 121); */
+}
 
-  @media (min-width: 745px) {
-    padding: 0 24px;
+.cart-page-relative-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.cart-overlay {
+  width: 100%;
+  height: 70%;
+  max-width: 800px;
+  background: var(--red-gradient);
+  border-radius: 20px;
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 40px;
+
+  @media (max-width: 880px) {
+    height: clamp(393px, calc(52.679vw + 224.43px), 688px);
   }
 
-  @media (min-width: 1095px) {
-    padding: 0;
+  h1 {
+    /* background: var(--red-gradient); */
+    width: 70%;
+    border-radius: 10px;
+    padding-bottom: 10px;
+
+    @media (max-width:460px) {
+      width: auto;
+    }
   }
-}
-
-.anchor h1 {
-  text-align: center;
-  margin-left: 0;
-}
-
-[data-show='hidden'] {
-  --display-overlay: none;
-}
-
-[data-show='displayed'] {
-  --display-overlay: flex;
-  height: auto;
-  padding-bottom: 7em;
 }

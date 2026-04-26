@@ -11,19 +11,19 @@ export default function AddMenuCategory() {
   const [draft, setDraft] = useState(newMenuEntry)
 
   const handleAddNewCategory = () => {
+    const trimmedType = draft.type.trim()
+    const trimmedDraft = { ...draft, type: trimmedType, name: trimmedType }
 
-    const duplicateTypeError = checkDuplicateType(draft, getMenuItemByType)
-    if (duplicateTypeError) {
-      console.log(error)
-      return setError(duplicateTypeError)
+    const duplicateTypeError = checkDuplicateType(trimmedDraft, getMenuItemByType)
+    if (duplicateTypeError.type) {
+      return setError(duplicateTypeError.type)
     }
 
     setError('')
-    addMenuType(draft.type)
+    addMenuType(trimmedType)
     setIsAdding(false)
-    addMenuItem(draft)
+    addMenuItem(trimmedDraft)
     saveZustandMenuToApi()
-    console.log(draft)
   }
 
   const handleKeyDown = (e) => {

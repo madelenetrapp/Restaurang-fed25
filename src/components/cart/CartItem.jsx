@@ -8,19 +8,6 @@ export default function CartItem({ item }) {
   const add = () => { addCartItem(item) }
   const subtract = () => { removeCartItem(item.name) }
 
-  // return (
-  //   <div className="card-container" key={item.name}>
-  //     <div className='item-name-and-icons'>
-  //       <h3 className="h3-header">{item.name}</h3>
-  //       <h3 className='item-name'>T E S T I N G L E N G T H A N D W H E N T O W R A P</h3>
-  //     </div>
-  //     <p className="price"> {item.price} SEK</p>
-  //     <p> {item.quantity}</p>
-  //     <button onClick={subtract}>-</button>
-  //     <button onClick={add}>+</button>
-  //   </div>
-  // )
-
   return (
     <div className='cart-card'>
       <div className='cart-card-top'>
