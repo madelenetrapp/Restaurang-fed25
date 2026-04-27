@@ -1,23 +1,4 @@
 /* ── Cart layout ───────────────────────────── */
-/* .cart-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 0 16px;
-  width: 100%;
-  margin: 0 auto;
-
-
-  @media (min-width: 745px) {
-    padding: 0 24px;
-  }
-
-  @media (min-width: 1095px) {
-    padding: 0 40px;
-  }
-} */
-
-/* above class is never used */
 .cart-overlay .loading-box {
   margin-bottom: 0;
 }
@@ -284,4 +265,28 @@
       width: auto;
     }
   }
+}
+
+/* scrollbar */
+.cart-grid-box {
+  scrollbar-width: thin;
+  scrollbar-color: var(--red-accent-light) transparent;
+}
+
+.cart-grid-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-grid-box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cart-grid-box::-webkit-scrollbar-thumb {
+  background: var(--red-accent-light);
+  border-radius: 10px;
+  box-shadow: 0 0 4px var(--card-highlight-col);
+}
+
+.cart-grid-box::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover-col);
 }
