@@ -229,23 +229,12 @@
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
-.button {
-  white-space: nowrap;
-  padding: 16px 32px;
-  font-size: 22px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-=======
 .extra-space {
   height: 100px;
 
   @media (max-width: 745px) {
     height: 0px;
   }
->>>>>>> dev
 }
 
 /* ── Overlay ────────────────────── */
