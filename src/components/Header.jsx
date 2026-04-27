@@ -17,10 +17,10 @@ export default function Header() {
 			<div className="phone-and-nav-box">
 				<p>0123 456 789</p>
 				{/* <nav> */}
-				<NavLink to="/menu" className="button">
+				<NavLink to="/menu" role="button" className="button">
 					Menu
 				</NavLink>
-				<NavLink to="/cart" className="button">
+				<NavLink to="/cart" role="button" className="button">
 					Cart
 				</NavLink>
 

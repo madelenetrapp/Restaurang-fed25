@@ -17,7 +17,7 @@ export default function Footer() {
 					Menu
 				</NavLink> */}
 
-				<NavLink to="/menu" className="button button-footer-mobile">
+				<NavLink to="/menu" role="button" className="button button-footer-mobile">
 					Menu
 				</NavLink>
 
@@ -40,6 +40,7 @@ export default function Footer() {
 					{/* Menu */}
 					<NavLink
 						to="/menu"
+						role="button"
 						className="button button-footer-desktop"
 					>
 						Menu
@@ -47,7 +48,7 @@ export default function Footer() {
 
 					{/* Admin */}
 
-					<NavLink to="/login" className="footer-admin">
+					<NavLink to="/login" role="button"	 className="footer-admin">
 						{isLoggedIn ? "admin" : "log in"}
 					</NavLink>
 				</div>
