@@ -99,7 +99,6 @@ footer {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		/* flex-wrap: wrap; */
 		margin-top: clamp(140px, 20vw, 220px);
 
 		.button-footer-mobile {

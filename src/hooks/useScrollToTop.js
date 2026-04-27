@@ -8,7 +8,6 @@ export default function useScrollToTop() {
 
 	// scroll on navigation start
 	useEffect(() => {
-		// window.scrollTo(0, 0);
 		if (navigation.state === "loading") {
 			window.scrollTo(0, 0)
 		}

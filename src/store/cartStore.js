@@ -33,7 +33,6 @@ export const cartStore = create(
       })
     },
 
-    //TODO rename to removeCartItem
 
     // 3. REMOVE ITEM
     removeCartItem: (name) => {

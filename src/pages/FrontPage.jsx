@@ -10,7 +10,7 @@ export default function FrontPage() {
           Welcome to Lyan, where burgers are reimagined with fire and precision. Take your time, have a look around, and order something worth remembering.
         </h3>
       </div>
-      {/* TODO change to button or use role */}
+
       <NavLink to='/menu' role="button" className="button button-big">Menu</NavLink>
     </div >
   )
