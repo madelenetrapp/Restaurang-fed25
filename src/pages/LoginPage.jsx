@@ -1,42 +1,28 @@
-import Joi from "joi";
 import { useState } from "react";
 import { useNavigate, Navigate } from "react-router";
-import LoginInput from "../components/LoginInput";
-import { useAuthStore } from '../hooks/useAuthStore';
+import LoginInput from "../components/LoginInput.jsx";
+import { useAuthStore } from '../hooks/useAuthStore.js';
+import { loginSchema } from '../utils/loginValidation.js'
 
-const schema = Joi.object({
-  username: Joi.string().valid('admin').required().messages({
-    'any.only': 'Wrong username',
-    'string.empty': 'Username is required'
-  }),
-  //TODO ska alla användarnamn vara okej? DAVID
 
-  password: Joi.string().valid('mums').required().messages({
-    'string.empty': 'Password is required',
-    'any.only': 'Wrong password'
-    //TODO ska det vara till lower case?
-  })
-})
-
-//TODO wrong username or password istället för att reagera individuellt
-//båda behöver hänga ihop... läs JOI docs.
 export default function LoginPage() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState({})
+  const [error, setError] = useState('')
   const { login, isLoggedIn } = useAuthStore()
   const navigate = useNavigate()
 
-  //TODO behöver komma till admin page
 
   const handleSubmit = () => {
-    const { error } = schema.validate({ username, password }, { abortEarly: false })
-    if (error) {
-      const fieldErrors = {}
-      error.details.forEach((details) => {
-        fieldErrors[details.path[0]] = details.message
-      })
-      return setErrors(fieldErrors)
+    //abortEarly: false so both fields are validated even if the first one is wrong
+    const { error: validationError } = loginSchema.validate({ username, password }, { abortEarly: false })
+    if (validationError) {
+      const isEmpty = username === '' || password === ''
+      setError(isEmpty ? 'Username and password are required' : 'Wrong username or password')
+      setTimeout(() => {
+        setError('')
+      }, 4000)
+      return
     }
     login()
     navigate('/admin')
@@ -44,6 +30,7 @@ export default function LoginPage() {
 
   const handleKeyDown = (e) => e.key === 'Enter' && handleSubmit()
 
+  //If already logged in, redirect to admin page
   if (isLoggedIn) return <Navigate to="/admin" replace />
   return (
     <div className="login-page">
@@ -54,7 +41,7 @@ export default function LoginPage() {
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        error={errors.username}
+        onKeyDown={handleKeyDown}
       />
 
       <LoginInput
@@ -63,12 +50,14 @@ export default function LoginPage() {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        error={errors.password}
         onKeyDown={handleKeyDown}
       />
-      {/* TODO min-height på taggen som visar felmedelandet. Knappen hoppar. */}
-      <button className="button" onClick={handleSubmit}>Log in</button>
 
+      <div className='error-tethering'>
+        {error && <p className="error-message">{error}</p>}
+      </div>
+
+      <button className="button" onClick={handleSubmit}>Log in</button>
     </div>
   )
 }

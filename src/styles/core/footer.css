@@ -1,0 +1,115 @@
+footer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 20px;
+	min-height: 600px;
+	text-align: center;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1000;
+		background-image:
+			linear-gradient(var(--red-accent-dark-opacity),
+				var(--red-accent-light-opacity)),
+			url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
+		background-repeat: repeat;
+	}
+}
+
+/* Logo */
+.footer-navlink-logo {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+
+
+}
+
+.footer-logo {
+	height: clamp(160px, 25vw, 260px);
+	display: block;
+	transition: 0.2s ease-in-out, filter 0.4s ease-in-out;
+
+	&:hover {
+		transform: scale(1.1);
+		filter: var(--active-shadow)
+	}
+}
+
+
+/* 3 blocks  */
+.footer-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+
+	margin-top: clamp(180px, 28vw, 280px);
+	width: 100%;
+}
+
+/*  Text groups  */
+.footer-address p,
+.footer-contact p {
+	margin: 4px 0;
+}
+
+/* Button + admin */
+.footer-button-and-admin {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+/*  Admin  */
+.footer-admin {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.footer-admin:hover {
+	opacity: 1;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+	.footer-content {
+		.button-footer-desktop {
+			display: none;
+		}
+	}
+}
+
+
+/* Desktop  */
+@media (min-width: 700px) {
+	footer {
+		min-height: 500px;
+		padding: 40px;
+	}
+
+	.footer-content {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: clamp(140px, 20vw, 220px);
+
+		.button-footer-mobile {
+			display: none;
+		}
+	}
+}
+
+
+@media (min-width: 900px) {
+	.footer-content {
+		justify-content: space-around;
+	}
+}

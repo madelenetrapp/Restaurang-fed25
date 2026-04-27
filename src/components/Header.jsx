@@ -1,24 +1,34 @@
 import { NavLink } from 'react-router'
+import headerLogo from "../assets/lyan-header.webp";
+import { useCartStore } from '../hooks/useCartStore.js';
 
 export default function Header() {
 
-  // NavLinks has an ability to accept a function to resolve if a NavLink is active or not.
-  const navLinkClass = (base) => ({ isActive }) =>
-    isActive ? `${base} active` : base;
+	const { totalItems } = useCartStore()
 
-  return (
-    <header>
-      <NavLink to='/' className={navLinkClass("header-navlink-logo")}>
-        <img className="header-logo" src="./src/assets/lyan-header.webp" alt="logo" />
-      </NavLink>
+	return (
+		<header>
+			<NavLink to="/" className="header-navlink-logo">
+				{/* <img */}
+				<img src={headerLogo} className="header-logo" alt="logo" />
+			</NavLink>
 
-      <div className='phone-and-nav-box'>
-        <p>0123 456 789</p>
-        <nav>
-          <NavLink to='/menu' className={navLinkClass("button")}>Menu</NavLink>
-          <NavLink to='/cart' className={navLinkClass("button")}>Cart</NavLink>
-        </nav>
-      </div>
-    </header>
-  )
+			<div className="phone-and-nav-box">
+				<p>0123 456 789</p>
+				{/* <nav> */}
+				<NavLink to="/menu" role="button" className="button">
+					Menu
+				</NavLink>
+				<NavLink to="/cart" className="button relative-cart-button">
+					{totalItems > 0 && <div className='cart-counter' >{totalItems}</div>}
+					Cart
+				</NavLink>
+
+				<NavLink to="/" className="button extra-home-button">
+					Home
+				</NavLink>
+				{/* </nav> */}
+			</div>
+		</header>
+	);
 }

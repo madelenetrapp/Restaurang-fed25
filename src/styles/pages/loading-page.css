@@ -1,0 +1,91 @@
+.loading-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  max-width: 90vw;
+  aspect-ratio: 803 / 532;
+  margin-top: 300px;
+  margin: 0 auto;
+  margin-bottom: 300px;
+}
+
+@keyframes fillUp {
+  from {
+    clip-path: inset(100% 0 0% 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.burger-glow {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to top,
+      #630f0f 0%,
+      #875800 75%,
+      #ffbf00 100%);
+
+  mask-image: url('../assets/burger-filled.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('../assets/burger-filled.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  filter: blur(18px);
+  opacity: 0.6;
+  transform: scale(1.05);
+
+  animation: fillUp 2.2s infinite forwards;
+}
+
+.burger-fill {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(to top,
+      #80580d 0%,
+
+      #781c0a 25%,
+
+      #5C2200 45%,
+
+      #285c10 70%,
+
+      #6e4a07 100%);
+
+  mask-image: url('../assets/burger-filled.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('../assets/burger-filled.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  animation: fillUp 2.2s infinite forwards;
+}
+
+.burger-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--bg-col);
+
+  mask-image: url('../assets/hamburger-cutout.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-image: url('../assets/hamburger-cutout.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}

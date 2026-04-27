@@ -20,7 +20,7 @@
 }
 
 
-export const menuList = [
+export const defaultMenuList = [
   {
     name: "Garlic Bread",
     type: "Starter",
@@ -141,7 +141,7 @@ export const menuList = [
   },
 
   {
-    name: " Pure Craft Gluten-Free Burger",
+    name: "Pure Craft Gluten-Free Burger",
     type: "Main",
 
     price: 298,
@@ -248,7 +248,7 @@ export const menuList = [
     }
   },
 
-    {
+  {
     name: "Göteborgs Nya Fresh Lemon",
     type: "Beer & Cider",
 

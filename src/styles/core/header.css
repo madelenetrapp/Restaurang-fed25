@@ -1,0 +1,102 @@
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-bottom: 50px;
+	position: relative;
+	padding: 8px 0;
+
+	p {
+		font-size: var(--font-size-phone);
+		margin: 0;
+		letter-spacing: var(--letter-spacing-phone);
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1000;
+		height: 216px;
+
+		background-image:
+			linear-gradient(var(--red-accent-light-opacity),
+				var(--red-accent-dark-opacity)),
+			url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
+		background-repeat: repeat;
+
+	}
+}
+
+.phone-and-nav-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: clamp(0px, 2vw, 70px);
+
+}
+
+.phone-and-nav-box .button {
+	@media (max-width: 520px) {
+		height: 48px;
+	}
+}
+
+.phone-and-nav-box .extra-home-button {
+	@media (min-width: 520px) {
+		display: none;
+	}
+}
+
+.header-navlink-logo {
+	display: flex;
+}
+
+.header-logo {
+	height: clamp(150px, 30vw, 200px);
+
+	transition: 0.2s ease-in-out, filter 0.4s ease-in-out;
+
+	&:hover {
+		transform: scale(1.1);
+		filter: var(--active-shadow)
+	}
+}
+
+
+
+@media (max-width: 900px) {
+	.phone-and-nav-box {
+		flex-direction: column-reverse;
+	}
+}
+
+@media (max-width: 520px) {
+
+	header {
+		flex-direction: column;
+
+	}
+
+	.header-navlink-logo {
+		display: none;
+	}
+}
+
+.relative-cart-button {
+	position: relative;
+}
+
+.cart-counter {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 35px;
+	height: 35px;
+	border-radius: 13px;
+	font-size: 0.9em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--red-gradient);
+}
