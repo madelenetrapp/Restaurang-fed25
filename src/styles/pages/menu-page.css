@@ -182,7 +182,7 @@
 
 .burger-tall-left {
 	position: absolute;
-	right: -50PX;
+	right: -70PX;
 	top: 80em;
 	transform: translateY(-50%);
 	width: 550px;
@@ -197,7 +197,7 @@
 .burger-tall-right {
 	position: absolute;
 	left: -50px;
-	top: 140em;
+	top: 90em;
 	transform: translateY(-50%) scaleX(-1);
 	transform: scaleX(-1);
 	width: 550px;
@@ -209,28 +209,11 @@
 	}
 }
 
-.burger.middle {
-	width: 255px;
-}
-
-@media (max-width: 900px) {
-	.menu-layout-wrapper3 {
-		display: none;
-	}
-}
-
 .burger-tall-left,
 .burger-tall-right {
 	overflow: hidden;
-	display: none;
 
 	filter:
 		brightness(0.85) contrast(1.15) saturate(1.1) sepia(0.25) hue-rotate(-10deg);
 	opacity: 0.9;
-}
-
-.overflow-wrapper {
-	position: relative;
-	/* overflow: hidden; */
-	/* clips absolute children */
 }
