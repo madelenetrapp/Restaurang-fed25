@@ -5,7 +5,6 @@ import { saveMenuToApi } from '../api/api';
 export const menuStore = create(
   immer((set, get) => ({
 
-    // 1. SETS MENU (sets full list in store)
     menu: [],
 
     menuTypes: ["Starter", "Main", "Dessert", "Beer & Cider"],

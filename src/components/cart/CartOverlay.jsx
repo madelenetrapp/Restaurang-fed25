@@ -1,6 +1,6 @@
+import { NavLink } from 'react-router'
 import { useState } from 'react'
 import LoadingPage from '../../pages/LoadingPage.jsx'
-import { NavLink } from 'react-router'
 
 export default function CartOverlay({ onDismiss }) {
 

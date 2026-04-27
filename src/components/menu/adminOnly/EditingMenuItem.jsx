@@ -1,5 +1,5 @@
-import { useMenuStore } from '../../../hooks/useMenuStore.js'
 import { useState } from 'react'
+import { useMenuStore } from '../../../hooks/useMenuStore.js'
 import { validateMenuItem, checkDuplicateName } from '../../../utils/validation.js'
 import EditDietaryIcons from './EditDietaryIcons.jsx'
 

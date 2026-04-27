@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import logo from "../assets/lyan-footer.webp";
-import { useAuthStore } from "../hooks/useAuthStore";
+import { useAuthStore } from "../hooks/useAuthStore.js";
 
 export default function Footer() {
 	const { isLoggedIn } = useAuthStore();
@@ -45,7 +45,7 @@ export default function Footer() {
 
 					{/* Admin */}
 
-					<NavLink to="/login" role="button"	 className="footer-admin">
+					<NavLink to="/login" role="button" className="footer-admin">
 						{isLoggedIn ? "admin" : "log in"}
 					</NavLink>
 				</div>

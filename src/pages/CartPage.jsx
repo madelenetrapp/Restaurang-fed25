@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { useCartStore } from '../hooks/useCartStore.js'
-import { useTypeSort } from '../hooks/useTypeSort.js'
 import CartItem from '../components/cart/CartItem.jsx'
 import PriceDisplay from '../components/cart/PriceDisplay.jsx'
 import CartOverlay from '../components/cart/CartOverlay.jsx'
+import { useCartStore } from '../hooks/useCartStore.js'
+import { useTypeSort } from '../hooks/useTypeSort.js'
 import { useMenuStore } from '../hooks/useMenuStore.js'
 
 export default function CartPage() {

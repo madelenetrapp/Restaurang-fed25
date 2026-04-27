@@ -51,11 +51,9 @@ export const cartStore = create(
       })
     },
 
-    // OPTIONAL: get an item with id as key
     //Användbar för att skapa cart beställningen
     getCartItemByName: (name) => {
       return get().cart.find((item) => item.name === name);
     },
-
   }))
 )

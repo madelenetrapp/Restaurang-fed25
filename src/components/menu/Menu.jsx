@@ -1,14 +1,14 @@
-import { useAuthStore } from '../../hooks/useAuthStore';
-import { useMenuStore } from '../../hooks/useMenuStore';
-import { useTypeSort } from '../../hooks/useTypeSort';
+import { NavLink } from 'react-router';
 import burgerTallRight from '../../assets/burger-tall.png'
 import burgerTallLeft from '../../assets/burger-tall.png'
-import UserMenu from './UserMenu'
-import AdminMenu from './adminOnly/AdminMenu'
-import { NavLink } from 'react-router';
-import AddMenuItem from './adminOnly/AddMenuItem';
-import AddMenuCategory from './adminOnly/AddMenuCategory';
-import { defaultMenuList } from '../../utils/defaultMenuList';
+import { useAuthStore } from '../../hooks/useAuthStore.js';
+import { useMenuStore } from '../../hooks/useMenuStore.js';
+import { useTypeSort } from '../../hooks/useTypeSort.js';
+import { defaultMenuList } from '../../utils/defaultMenuList.js';
+import UserMenu from './UserMenu.jsx'
+import AdminMenu from './adminOnly/AdminMenu.jsx'
+import AddMenuItem from './adminOnly/AddMenuItem.jsx';
+import AddMenuCategory from './adminOnly/AddMenuCategory.jsx';
 
 export default function Menu({ isAdmin }) {
 

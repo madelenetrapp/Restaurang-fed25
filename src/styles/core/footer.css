@@ -6,30 +6,40 @@ footer {
 	padding: 40px 20px;
 	min-height: 600px;
 	text-align: center;
+
 	&::before {
 		content: "";
 		position: absolute;
 		inset: 0;
 		z-index: -1000;
 		background-image:
-			linear-gradient(
-				var(--red-accent-dark-opacity),
-				var(--red-accent-light-opacity)
-			),
+			linear-gradient(var(--red-accent-dark-opacity),
+				var(--red-accent-light-opacity)),
 			url("../../assets/dark-brown-wood-texture-background-with-design-space.jpg");
 		background-repeat: repeat;
 	}
 }
+
 /* Logo */
 .footer-navlink-logo {
 	position: absolute;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
+
+
+
 }
+
 .footer-logo {
 	height: clamp(160px, 25vw, 260px);
 	display: block;
+	transition: 0.2s ease-in-out, filter 0.4s ease-in-out;
+
+	&:hover {
+		transform: scale(1.1);
+		filter: var(--active-shadow)
+	}
 }
 
 
@@ -57,11 +67,13 @@ footer {
 	align-items: center;
 	gap: 20px;
 }
+
 /*  Admin  */
 .footer-admin {
 	cursor: pointer;
 	opacity: 0.8;
 }
+
 .footer-admin:hover {
 	opacity: 1;
 }
@@ -82,6 +94,7 @@ footer {
 		min-height: 500px;
 		padding: 40px;
 	}
+
 	.footer-content {
 		flex-direction: row;
 		justify-content: space-between;
@@ -91,10 +104,7 @@ footer {
 		.button-footer-mobile {
 			display: none;
 		}
-
-
 	}
-
 }
 
 
