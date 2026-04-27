@@ -24,7 +24,7 @@ export const checkDuplicateType = (draft, getMenuItemByType) => {
 
 	// Validate first
 	const { error } = validateTypeSchema.validate(
-		{ type: draft.type }, // 👈 fixed key
+		{ type: draft.type },
 		{ abortEarly: false }
 	)
 	if (error) {
@@ -33,14 +33,22 @@ export const checkDuplicateType = (draft, getMenuItemByType) => {
 
 	// Then check duplicate
 	if (getMenuItemByType(draft.type)) {
-		return { type: 'A menu item with this type already exists' } // 👈 consistent object + correct wording
+		return { type: 'A menu item with this type already exists' }
 	}
 
 	return {}
 }
+
+const itemTypeMessage = (draft) => {
+	if (draft.type === 'Beer & Cider') return 'drink'
+	if (['Starter', 'Main', 'Dessert'].includes(draft.type)) return 'dish'
+	return 'item'
+}
+
 //Validates name, description and price of a menu item, returns an object with error messages for each field if there are any, otherwise returns an empty object
 export const validateMenuItem = (draft) => {
-	const itemType = draft.type === 'Beer & Cider' ? 'drink' : 'dish'
+	const itemType = itemTypeMessage(draft)
+
 
 	const menuItemSchema = Joi.object({
 		name: Joi.string()
