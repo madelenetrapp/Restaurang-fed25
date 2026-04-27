@@ -1,9 +1,23 @@
+/* lägger stjärna för att få med alla element. lägger med befor och after för att inkludera allt och få bort scrollen. detta gör att padding och border räknas in i elementets bredd. */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/* border-box betyder: göm allt som sticker ut åt höger och vänster. */
+
+
+body {
+	overflow-x: hidden;
+}
+
 .menu-background {
 	position: relative;
 	flex: 1;
 	width: 90%;
 	max-width: 1100px;
 	margin: 0 auto;
+
 
 	@media (min-width: 920px) {
 		&:before {
