@@ -48,7 +48,7 @@ export default function Footer() {
 
 					{/* Admin */}
 
-					<NavLink to="/login" role="button"	 className="footer-admin">
+					<NavLink to="/login" role="button" className="footer-admin">
 						{isLoggedIn ? "admin" : "log in"}
 					</NavLink>
 				</div>

@@ -43,7 +43,6 @@
   opacity: 0.6;
   transform: scale(1.05);
 
-  /* same animation so glow tracks the fill */
   animation: fillUp 2.2s infinite forwards;
 }
 
