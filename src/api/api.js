@@ -1,4 +1,4 @@
-import { defaultMenuList } from "../utils/defaultMenuList";
+import { defaultMenuList } from "../utils/defaultMenuList.js";
 
 const API_URL = 'https://forverkliga.se/JavaScript/api/jsonStore.php'
 const KEY = 'mums'

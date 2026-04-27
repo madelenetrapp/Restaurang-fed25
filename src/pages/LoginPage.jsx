@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Navigate } from "react-router";
-import LoginInput from "../components/LoginInput";
-import { useAuthStore } from '../hooks/useAuthStore';
-import { loginSchema } from '../utils/loginValidation'
+import LoginInput from "../components/LoginInput.jsx";
+import { useAuthStore } from '../hooks/useAuthStore.js';
+import { loginSchema } from '../utils/loginValidation.js'
 
 
 export default function LoginPage() {

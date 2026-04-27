@@ -1,5 +1,5 @@
 import { useShallow } from 'zustand/shallow'
-import { authStore } from '../store/authStore'
+import { authStore } from '../store/authStore.js'
 
 //useShallow - se till så man inte råkar ha onödiga extra renderingar*/
 export const useAuthStore = () => {

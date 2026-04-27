@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { useMenuStore } from '../../../hooks/useMenuStore'
-import { newMenuEntry } from '../../../utils/newMenuEntry'
+import { useMenuStore } from '../../../hooks/useMenuStore.js'
+import { newMenuEntry } from '../../../utils/newMenuEntry.js'
 import { validateMenuItem } from '../../../utils/validation.js'
 export default function AddMenuItem({ type }) {
 

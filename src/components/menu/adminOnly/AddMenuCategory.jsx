@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { checkDuplicateType } from '../../../utils/validation'
-import { useMenuStore } from '../../../hooks/useMenuStore'
-import { newMenuEntry } from '../../../utils/newMenuEntry'
+import { checkDuplicateType } from '../../../utils/validation.js'
+import { useMenuStore } from '../../../hooks/useMenuStore.js'
+import { newMenuEntry } from '../../../utils/newMenuEntry.js'
 
 export default function AddMenuCategory() {
 

@@ -4,8 +4,8 @@ import MenuPage from '../pages/MenuPage.jsx'
 import CartPage from '../pages/CartPage.jsx'
 import LoginPage from '../pages/LoginPage.jsx'
 import AdminPage from '../pages/AdminPage.jsx'
-import { delayMenuLoader } from '../api/menuLoader.js'
 import LoadingPage from '../pages/LoadingPage.jsx'
+import { delayMenuLoader } from '../api/menuLoader.js'
 
 export const routing = [
   {

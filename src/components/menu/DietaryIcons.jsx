@@ -18,7 +18,6 @@ export default function DietaryIcons({ tags }) {
 				<img src={veganIcon} alt="Vegan" className="icon-vegan" />
 			)}
 
-			{/* TODO needs to be reworked and simplified */}
 			{Array.from({ length: tags.spicy },
 				(_, i) => (
 					<img key={i} src={spicyIcon} alt="Chili icon" className="icon-spicy" />

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import logo from "../assets/lyan-footer.webp";
-import { useAuthStore } from "../hooks/useAuthStore";
+import { useAuthStore } from "../hooks/useAuthStore.js";
 
 export default function Footer() {
 	const { isLoggedIn } = useAuthStore();

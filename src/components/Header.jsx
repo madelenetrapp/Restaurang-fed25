@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
 import headerLogo from "../assets/lyan-header.webp";
-import { useCartStore } from '../hooks/useCartStore';
+import { useCartStore } from '../hooks/useCartStore.js';
 
 export default function Header() {
 

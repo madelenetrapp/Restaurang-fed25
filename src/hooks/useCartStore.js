@@ -1,5 +1,5 @@
 import { useShallow } from 'zustand/shallow'
-import { cartStore } from '../store/cartStore'
+import { cartStore } from '../store/cartStore.js'
 
 export const useCartStore = () => {
 

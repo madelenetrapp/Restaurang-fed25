@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import DietaryIcons from '../DietaryIcons.jsx'
 import { useMenuStore } from '../../../hooks/useMenuStore.js'
+import DietaryIcons from '../DietaryIcons.jsx'
 import EditingMenuItem from './EditingMenuItem.jsx'
 
 export default function AdminMenu({ item }) {
