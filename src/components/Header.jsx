@@ -19,12 +19,8 @@ export default function Header() {
 				<NavLink to="/menu" role="button" className="button">
 					Menu
 				</NavLink>
-<<<<<<< Updated upstream
-				<NavLink to="/cart" role="button" className="button">
-=======
 				<NavLink to="/cart" className="button relative-cart-button">
 					{totalItems > 0 && <div className='cart-counter' >{totalItems}</div>}
->>>>>>> Stashed changes
 					Cart
 				</NavLink>
 
