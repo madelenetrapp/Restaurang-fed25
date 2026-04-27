@@ -25,7 +25,7 @@ export default function Header() {
 				</NavLink>
 
 				<NavLink to="/" className="button extra-home-button">
-					home
+					Home
 				</NavLink>
 				{/* </nav> */}
 			</div>
