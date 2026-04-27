@@ -1,16 +1,15 @@
 import { NavLink } from 'react-router'
 import headerLogo from "../assets/lyan-header.webp";
+import { useCartStore } from '../hooks/useCartStore';
 
 export default function Header() {
+
+	const { totalItems } = useCartStore()
 
 	return (
 		<header>
 			<NavLink to="/" className="header-navlink-logo">
-				{/* <img
-					className="header-logo"
-					src="./src/assets/lyan-header.webp"
-					alt="logo"
-				/> */}
+				{/* <img */}
 				<img src={headerLogo} className="header-logo" alt="logo" />
 			</NavLink>
 
@@ -20,7 +19,12 @@ export default function Header() {
 				<NavLink to="/menu" role="button" className="button">
 					Menu
 				</NavLink>
+<<<<<<< Updated upstream
 				<NavLink to="/cart" role="button" className="button">
+=======
+				<NavLink to="/cart" className="button relative-cart-button">
+					{totalItems > 0 && <div className='cart-counter' >{totalItems}</div>}
+>>>>>>> Stashed changes
 					Cart
 				</NavLink>
 
