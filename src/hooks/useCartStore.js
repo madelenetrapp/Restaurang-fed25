@@ -7,6 +7,7 @@ export const useCartStore = () => {
     useShallow((s) => ({
       cart: s.cart ?? [],
       totalPrice: s.totalPrice ?? 0,
+      totalItems: s.totalItems ?? 0,
       clearCart: s.clearCart,
       addCartItem: s.addCartItem,
       removeCartItem: s.removeCartItem,

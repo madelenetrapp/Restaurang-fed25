@@ -7,11 +7,13 @@ export const cartStore = create(
     // 1. INIT (sets full list in store)
     cart: [],
     totalPrice: 0,
+    totalItems: 0,
 
     clearCart: () => {
       set(s => {
         s.cart = []
         s.totalPrice = 0
+        s.totalItems = 0
       })
     },
 
@@ -26,7 +28,8 @@ export const cartStore = create(
           s.cart.push({ ...item, quantity: 1 });
         }
         s.totalPrice += Number(item.price);
-        console.log(s.cart)
+
+        s.totalItems = s.cart.reduce((total, item) => total + item.quantity, 0)
       })
     },
 
@@ -44,14 +47,16 @@ export const cartStore = create(
           s.cart = s.cart.filter(i => i.name !== name);
         }
         s.totalPrice -= Number(existing.price)
+
+        s.totalItems = s.cart.reduce((total, item) => total + item.quantity, 0)
       })
     },
-
 
     // OPTIONAL: get an item with id as key
     //Användbar för att skapa cart beställningen
     getCartItemByName: (name) => {
       return get().cart.find((item) => item.name === name);
-    }
+    },
+
   }))
 )
