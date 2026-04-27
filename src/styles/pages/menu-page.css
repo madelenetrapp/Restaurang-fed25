@@ -189,7 +189,7 @@
 	width: 550px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1270px) {
 	.burger-tall-left {
 		display: none;
 	}
@@ -204,7 +204,7 @@
 	width: 550px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1270px) {
 	.burger-tall-right {
 		display: none;
 	}
