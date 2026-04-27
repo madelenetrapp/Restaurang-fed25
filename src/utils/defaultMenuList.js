@@ -141,7 +141,7 @@ export const defaultMenuList = [
   },
 
   {
-    name: " Pure Craft Gluten-Free Burger",
+    name: "Pure Craft Gluten-Free Burger",
     type: "Main",
 
     price: 298,
