@@ -1,8 +1,7 @@
 import { useShallow } from 'zustand/shallow'
 import { authStore } from '../store/authStore'
 
-//TODO explain why useShallow is used! (in every useHook?)
-/** useShallow is used because... TODO */
+//useShallow - se till så man inte råkar ha onödiga extra renderingar*/
 export const useAuthStore = () => {
 
 

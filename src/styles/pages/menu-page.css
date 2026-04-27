@@ -1,10 +1,8 @@
-/* lägger stjärna för att få med alla element. lägger med befor och after för att inkludera allt och få bort scrollen. detta gör att padding och border räknas in i elementets bredd. */
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 }
-/* border-box betyder: göm allt som sticker ut åt höger och vänster. */
 
 
 body {
@@ -47,16 +45,11 @@ body {
 }
 
 .type-box {
-	/* padding-top: 40px; */
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
 
-	/* &:first-child {
-		margin-top: 0px;
-	} */
 }
 
 .grid-box> :first-child .header-box {
@@ -67,7 +60,6 @@ body {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: center; */
 	align-items: center;
 	gap: 15px;
 	margin-top: 40px;
@@ -79,7 +71,6 @@ body {
 	font-family: var(--font-style-artistic);
 	cursor: pointer;
 	position: relative;
-	/* width: 100%; */
 	max-width: 400px;
 	padding: 18px;
 	border-radius: 24px;
@@ -107,9 +98,6 @@ body {
 	max-width: 20ch;
 	margin-bottom: 10px;
 	overflow-wrap: break-word;
-	/* @media (max-width: 500px) {
-		margin-bottom: 40px;
-	} */
 }
 
 .bread-text-area {
@@ -117,27 +105,6 @@ body {
 	flex-direction: column;
 	width: 100%;
 }
-
-/* .remove-wrapper {
-  position: relative;
-  overflow: hidden;
-} */
-
-/* .remove-shape {
-  float: right;
-  width: 130px;
-  height: 130px;
-
-  shape-outside: ellipse(75.85% 61.85% at 73px 376px);
-  clip-path: ellipse(75.85% 61.85% at 73px 376px);
-
-  shape-outside: polygon(97.19% 155px, 102.31% 110.71%, -238px 111.92%);
-
-  margin-top: 130px;
-
-  background-color: rgba(133, 132, 132, 0);
-
-} */
 
 .description {
 	line-height: 1.3;
@@ -153,7 +120,6 @@ body {
 	display: flex;
 	align-items: first baseline;
 	justify-content: left;
-	/* spacing between icons and the title */
 	gap: 5px;
 
 	@media (max-width: 500px) {

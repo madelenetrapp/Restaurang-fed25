@@ -13,9 +13,6 @@ export default function Footer() {
 			</NavLink>
 
 			<div className="footer-content">
-				{/* <NavLink to="/menu" className="button button-footer-mobile">
-					Menu
-				</NavLink> */}
 
 				<NavLink to="/menu" role="button" className="button button-footer-mobile">
 					Menu
