@@ -8,6 +8,13 @@ export const cartStore = create(
     cart: [],
     totalPrice: 0,
 
+    clearCart: () => {
+      set(s => {
+        s.cart = []
+        s.totalPrice = 0
+      })
+    },
+
     // 2. ADD ITEM
     addCartItem: (item) => {
       set(s => {
@@ -18,7 +25,7 @@ export const cartStore = create(
         } else {
           s.cart.push({ ...item, quantity: 1 });
         }
-        s.totalPrice += item.price;
+        s.totalPrice += Number(item.price);
         console.log(s.cart)
       })
     },
@@ -36,7 +43,7 @@ export const cartStore = create(
         } else {
           s.cart = s.cart.filter(i => i.name !== name);
         }
-        s.totalPrice -= existing.price
+        s.totalPrice -= Number(existing.price)
       })
     },
 
@@ -44,7 +51,7 @@ export const cartStore = create(
     // OPTIONAL: get an item with id as key
     //Användbar för att skapa cart beställningen
     getCartItemByName: (name) => {
-      return get().menu.find((item) => item.name === name);
+      return get().cart.find((item) => item.name === name);
     }
   }))
 )

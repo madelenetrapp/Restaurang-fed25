@@ -4,44 +4,55 @@ import { useTypeSort } from '../hooks/useTypeSort.js'
 import CartItem from '../components/cart/CartItem.jsx'
 import PriceDisplay from '../components/cart/PriceDisplay.jsx'
 import CartOverlay from '../components/cart/CartOverlay.jsx'
+import { useMenuStore } from '../hooks/useMenuStore.js'
 
 export default function CartPage() {
 
-  const { cart, totalPrice } = useCartStore()
+  const { clearCart, cart, totalPrice } = useCartStore()
 
-  const menuTypes = useTypeSort(cart)
+  const { menuTypes } = useMenuStore()
+
+  const orderedMenuTypes = useTypeSort(cart, menuTypes)
 
   const [paid, setPaid] = useState(false)
 
 
-  const handlePayment = () => {
-    setPaid(true)
+  const handlePayment = () => setPaid(true)
+
+  const handleDismiss = () => {
+    setPaid(false)
+    clearCart()
   }
 
+  const totalPriceRounded = Math.round(totalPrice)
+
   return (
+
     <>
-      {/* Use conditional rendering instead of CSS to show overlay.. and make it into a true overlay... */}
-      <div className='anchor' data-show={paid ? 'displayed' : 'hidden'}>
-        <CartOverlay />
+
+      <h1>Cart</h1>
+
+      <div className='cart-grid-box'>
+        {orderedMenuTypes.map(type => (
+          <div key={type} className='type-box' >
+
+            <h2> {type} </h2>
+            {cart.filter(s => s.type === type).map(item => (
+              <CartItem key={item.name} item={item} />
+            ))}
+          </div>
+        ))}
       </div>
 
-      <div className='anchor' data-show={paid ? 'hidden' : 'displayed'}>
-        <h1>Cart</h1>
+      <PriceDisplay totalPrice={totalPriceRounded} cart={cart} handlePayment={handlePayment} />
 
-        <div className='cart-grid-box'>
-          {menuTypes.map(type => (
-            <div key={type} className='type-box' >
-
-              <h2> {type} </h2>
-              {cart.filter(s => s.type === type).map(item => (
-                <CartItem key={item.name} item={item} />
-              ))}
-            </div>
-          ))}
-        </div>
-
-        <PriceDisplay totalPrice={totalPrice} cart={cart} handlePayment={handlePayment} />
-      </div>
+      <div className='extra-space'></div>
+      {paid &&
+        <>
+          <div className='not-paid-dark'>
+            <CartOverlay onDismiss={handleDismiss} />
+          </div>
+        </>}
     </>
 
   )
