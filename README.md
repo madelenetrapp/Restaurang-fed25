@@ -1,19 +1,7 @@
-# React + Vite
+# Restaurang Lyan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Figma
+[Figma-design](https://www.figma.com/design/wjZiLSv8X4NBHpJSEPlumT/Lyan?node-id=48-114&t=XA8wTz1av5nIbKLN-1)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-.
+## Trello
+[Trello-board]([KLISTRA-IN-TRELLO-LÄNKEN-HÄR](https://trello.com/invite/b/69d7b1f64a5e0eaa9a07fbf7/ATTId9a1ca05d0237dc5f201f9b0d8f1b2094FED78DD/iron-pirates))
